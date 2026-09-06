@@ -314,7 +314,7 @@ export const contact = {
   // 4. Push. Messages then arrive in your inbox. No server, no cost.
   // Until you do this, the form tells the visitor it is not configured yet
   // and offers your email address instead — it never fails silently.
-  accessKey: "REPLACE_WITH_YOUR_WEB3FORMS_KEY",
+  accessKey: "b24173b5-cb1b-4449-bd0d-4851b5fec5d4",
 
   email: "anshumanagrawal89@gmail.com",
   linkedin: "https://www.linkedin.com/in/anshumanagrawal08072005",
@@ -341,11 +341,11 @@ export const meta = {
   description:
     "Anshuman Agrawal builds machine learning systems and full-stack applications. AI/ML Developer Intern at One Smarter, Inc. B.E. Information Technology, SSGMCE Shegaon.",
 
-  // Set this once your site is live, e.g. "https://anshumanagrawal.vercel.app"
-  // No trailing slash. If you leave it empty and deploy to Vercel or Netlify,
-  // the build reads the deployment URL from the environment instead, so the
-  // link-preview card still works — this is a convenience, not a substitute.
-  siteUrl: "",
+  // No trailing slash. Pinning it here rather than relying on the Vercel
+  // environment keeps the canonical link on one address, so preview deploys
+  // never compete with the real site in search results. Change this line if you
+  // put a custom domain in front of it.
+  siteUrl: "https://portfolio-kohl-theta-24.vercel.app",
 
   // Preview image shown when the link is shared. 1200x630.
   ogImage: "/assets/og-image.jpg",
