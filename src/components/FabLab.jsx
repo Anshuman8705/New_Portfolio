@@ -22,7 +22,7 @@ export default function FabLab() {
               onClick={() => setOpenTitle(m.title)}
               aria-haspopup="dialog"
             >
-              <span className="mod-year">{fablab.year}</span>
+              <span className="mod-year">{m.year || fablab.year}</span>
               <h3>{m.title}</h3>
               <p>{m.body}</p>
               <span className="mod-more">
@@ -37,7 +37,11 @@ export default function FabLab() {
         </div>
       </div>
 
-      <ModuleDialog module={active} year={fablab.year} onClose={() => setOpenTitle(null)} />
+      <ModuleDialog
+        module={active}
+        year={active?.year || fablab.year}
+        onClose={() => setOpenTitle(null)}
+      />
     </section>
   );
 }

@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { contact, profile } from "../data.js";
 import SectionHead from "./SectionHead.jsx";
 
 const KEY_PLACEHOLDER = "REPLACE_WITH_YOUR_WEB3FORMS_KEY";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+// Fields in the order they appear, so validation can focus the first bad one.
+const FIELD_ORDER = ["name", "email", "message"];
 
 const EMPTY = { name: "", email: "", topic: contact.topics[0], message: "" };
 
@@ -12,6 +15,8 @@ export default function Contact() {
   const [errors, setErrors] = useState({});
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState(null); // { kind: "ok" | "no", text, showEmail? }
+  const fields = useRef({});
+  const honeypot = useRef(null);
 
   const configured = contact.accessKey && contact.accessKey !== KEY_PLACEHOLDER;
 
@@ -28,6 +33,12 @@ export default function Contact() {
     if (!values.message.trim())
       next.message = "Add a line or two so I know how to reply.";
     setErrors(next);
+
+    // Send the keyboard and the screen reader to the first thing that is wrong,
+    // rather than leaving the person to hunt for the red text themselves.
+    const firstBad = FIELD_ORDER.find((f) => next[f]);
+    if (firstBad) fields.current[firstBad]?.focus();
+
     return Object.keys(next).length === 0;
   }
 
@@ -45,6 +56,11 @@ export default function Contact() {
       return;
     }
 
+    // The honeypot only works if its real state travels with the request. It is
+    // an uncontrolled input on purpose: a bot that fills the form via the DOM
+    // ticks it, a person never sees it.
+    const trapped = honeypot.current?.checked === true;
+
     setSending(true);
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -58,7 +74,7 @@ export default function Contact() {
           email: values.email.trim(),
           topic: values.topic,
           message: values.message.trim(),
-          botcheck: false,
+          botcheck: trapped,
         }),
       });
       const data = await res.json();
@@ -114,7 +130,7 @@ export default function Contact() {
                 <small>{contact.githubHandle}</small>
               </a>
               {profile.resume ? (
-                <a href={profile.resume} download>
+                <a href={profile.resume} download={profile.resumeFilename || true}>
                   Resume
                   <small>PDF download</small>
                 </a>
@@ -129,6 +145,7 @@ export default function Contact() {
                 id="name"
                 name="name"
                 type="text"
+                ref={(el) => { fields.current.name = el; }}
                 autoComplete="name"
                 value={values.name}
                 onChange={(e) => update("name", e.target.value)}
@@ -144,6 +161,7 @@ export default function Contact() {
                 id="email"
                 name="email"
                 type="email"
+                ref={(el) => { fields.current.email = el; }}
                 autoComplete="email"
                 value={values.email}
                 onChange={(e) => update("email", e.target.value)}
@@ -172,6 +190,7 @@ export default function Contact() {
               <textarea
                 id="message"
                 name="message"
+                ref={(el) => { fields.current.message = el; }}
                 value={values.message}
                 onChange={(e) => update("message", e.target.value)}
                 aria-invalid={errors.message ? "true" : undefined}
@@ -182,10 +201,11 @@ export default function Contact() {
 
             {/* Honeypot: real people never fill this in, bots usually do. */}
             <input
+              ref={honeypot}
               type="checkbox"
               name="botcheck"
               className="hp"
-              tabIndex="-1"
+              tabIndex={-1}
               autoComplete="off"
               aria-hidden="true"
             />
@@ -206,10 +226,13 @@ export default function Contact() {
               )}
             </div>
 
-            {!configured && (
+            {/* Only ever rendered while running `npm run dev`. Visitors to the
+                live site never see it; if the key is missing there, they get the
+                fallback message and the email address on submit instead. */}
+            {!configured && import.meta.env.DEV && (
               <p className="formnote">
-                Setup note for you, not for visitors: add your Web3Forms access key to
-                contact.accessKey in src/data.js and this note disappears.
+                Setup note, visible in development only: add your Web3Forms access key
+                to contact.accessKey in src/data.js and this note disappears.
               </p>
             )}
           </form>

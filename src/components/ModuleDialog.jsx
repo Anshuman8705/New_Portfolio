@@ -9,8 +9,10 @@ export default function ModuleDialog({ module, year, onClose }) {
   useEffect(() => {
     const el = ref.current;
     if (!el || !module) return;
-    if (typeof el.showModal === "function" && !el.open) el.showModal();
-    else el.setAttribute("open", "");     // fallback for older browsers
+    // showModal has been in every current browser since 2022. The old
+    // setAttribute("open") fallback that used to sit here produced a dialog with
+    // no backdrop and no focus trap, which is worse than not opening at all.
+    if (!el.open) el.showModal();
     document.body.style.overflow = "hidden";
     return () => { document.body.style.overflow = ""; };
   }, [module]);

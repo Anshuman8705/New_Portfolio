@@ -1,13 +1,18 @@
 # Anshuman Agrawal — portfolio
 
 A static React site. No backend, no database, no server to maintain. Vite compiles it
-to plain HTML, CSS and JavaScript that any host can serve for free, forever.
+to plain HTML, CSS and JavaScript that any host can serve for free, forever. The build
+also pre-renders the page, so the HTML that ships already contains the content — a
+search engine or a browser with JavaScript turned off sees the real page, not an
+empty div. React attaches to that markup in the browser rather than rebuilding it.
 
 ---
 
 ## Running it locally
 
-You need Node.js 18 or newer. Then, in this folder:
+You need Node.js 20.19 or newer (22.12+ also fine — Vite 7 requires one of those, and
+`package.json` will refuse older versions rather than fail halfway through a build).
+Then, in this folder:
 
 ```bash
 npm install
@@ -79,17 +84,28 @@ photo: "",                        // to →
 photo: "/assets/anshuman.jpg",
 ```
 
-Crop it 4:5 portrait, shoulders up, plain background. Until you set this, a
-placeholder with your initials shows in its place.
+Crop it 4:5 portrait, shoulders up, plain background. 720x900 is plenty — the layout
+never renders it wider than 360 CSS pixels, so anything larger is bytes your visitors
+download for nothing. Until you set this, a placeholder with your initials shows in its
+place. If you also drop a `.webp` of the same picture next to it and point
+`profile.photoWebp` at it, browsers that support WebP take the smaller file.
 
-For the resume, put the PDF at `public/assets/Anshuman_Agrawal_Resume.pdf` and set:
+The resume PDF is already at `public/assets/Anshuman_Agrawal_Resume.pdf` and
+`profile.resume` points at it, so the "Download resume" button in the hero and the Resume
+link in the contact column both render. Set `resume: ""` and neither appears — no broken
+download.
 
-```js
-resume: "/assets/Anshuman_Agrawal_Resume.pdf",
+The PDF is generated, not hand-made. `scripts/build_resume.py` builds it in the same
+typefaces, palette and section rules as the site, from the same content as `data.js`:
+
+```bash
+pip install reportlab
+python scripts/build_resume.py
 ```
 
-A "Download resume" button then appears in the hero and a Resume link in the contact
-column. Leave it as `""` and neither renders — no broken download.
+Edit the content near the bottom of that script and re-run it. Two pages of A4, real
+selectable text with working links (so an applicant tracking system can read it), and
+fonts loaded from `assets-src/fonts` rather than the network.
 
 ### 2. Make the contact form deliver email
 
@@ -102,12 +118,14 @@ The form posts straight to Web3Forms, which emails you the message. You run no s
 
 Until you do this, the form validates normally and then tells the visitor it is not
 connected yet, showing your email address instead. It never fails silently and never
-loses a message without saying so.
+loses a message without saying so. The reminder to set the key only renders while you
+are running `npm run dev` — visitors to the live site never see setup instructions.
 
 The free tier covers 250 submissions a month. The access key sitting in public
 JavaScript is expected and safe — the worst anyone can do with it is send you a message
-through your own form, and there is a hidden honeypot field plus Web3Forms' own spam
-filtering guarding against that.
+through your own form, and a hidden honeypot field plus Web3Forms' own spam filtering
+guard against that. The honeypot's real state is read off the form and sent with the
+request, so a bot that ticks it gets rejected on Web3Forms' side.
 
 **Send yourself a test the moment it goes live.** The first message can land in Gmail's
 spam folder because it arrives from Web3Forms' servers. Mark it "not spam" once and
@@ -119,8 +137,14 @@ Once deployed, put the address in `meta.siteUrl` in `src/data.js`, for example
 `"https://anshuman.vercel.app"`, then push. This switches on `og:url`, `og:image` and
 the canonical link, which is what makes your link show a proper preview card with an
 image when shared on LinkedIn or WhatsApp rather than a plain grey box. The preview
-image itself is at `public/assets/og-image.png` — replace it with your own 1200x630
+image itself is at `public/assets/og-image.jpg` — replace it with your own 1200x630
 design any time.
+
+If you deploy to Vercel or Netlify and forget this step, the build falls back to the
+deployment URL those hosts put in the environment, so the preview card still works. You
+can also set `SITE_URL` yourself on any other host. Setting `meta.siteUrl` explicitly is
+still better, because it pins the canonical link to your real domain rather than to
+whatever preview URL the host happened to generate.
 
 ---
 
@@ -157,7 +181,8 @@ src/
   data.js                  ← all your content. This is the file you edit.
   styles.css               ← the design system: colours, type, spacing
   App.jsx                  ← assembles the sections in order
-  main.jsx                 ← React entry point
+  main.jsx                 ← React entry point (hydrates the pre-rendered markup)
+  entry-server.jsx         ← build-time only: renders the page to HTML
   components/
     Nav.jsx                sticky nav, highlights the section you are reading
     Hero.jsx               headline, intro, photo, facts strip
@@ -172,6 +197,12 @@ src/
     SectionHead.jsx        shared section heading
     Thumb.jsx              the small SVG icons on each project card
 public/assets/             put your photo here
+public/robots.txt          lets search engines index the site
+scripts/
+  sync-meta.mjs            writes the meta block in index.html from data.js
+  prerender.mjs            injects the pre-rendered HTML into dist/index.html
+  build_resume.py          regenerates the resume PDF in the site's own style
+assets-src/fonts/          fonts the resume script renders with (not served)
 ```
 
 Colours, fonts and spacing are all CSS custom properties at the top of `styles.css`. If
@@ -182,8 +213,10 @@ you ever want to change the palette, change them there and the whole site follow
 ## Accessibility and quality notes
 
 - Skip-to-content link for keyboard users
-- Visible focus outlines throughout
-- Form errors linked to their inputs via `aria-describedby`, status announced via `aria-live`
+- Visible focus outlines throughout, and `scroll-padding-top` so anchor jumps never land
+  a heading underneath the sticky nav
+- Form errors linked to their inputs via `aria-describedby`, status announced via
+  `aria-live`, and focus moved to the first invalid field on a failed submit
 - Respects `prefers-reduced-motion`
 - Responsive from 320px up; the project grid drops to one column below 940px
 - Mobile menu below 760px: opens from the header, closes on link tap, on Escape (which
@@ -213,6 +246,9 @@ users.
 
 `index.html` contains a generated block between `<!-- meta:start -->` and
 `<!-- meta:end -->`. Do not edit it by hand — it is rewritten from `meta` in
-`src/data.js` every time you run `npm run dev` or `npm run build`. Social crawlers do
-not execute JavaScript, so these tags have to exist in the static HTML; that is why they
-are baked in at build time rather than set by React.
+`src/data.js` every time you run `npm run dev` or `npm run build`, and again whenever you
+save `data.js` while the dev server is running. Social crawlers do not execute
+JavaScript, so these tags have to exist in the static HTML; that is why they are baked in
+at build time rather than set by React. The block also carries a JSON-LD `Person` record,
+which is what lets a search engine understand the page is a person rather than a document
+about one.

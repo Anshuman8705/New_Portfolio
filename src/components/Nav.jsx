@@ -7,14 +7,44 @@ export default function Nav({ sections }) {
   const panelRef = useRef(null);
   const buttonRef = useRef(null);
 
-  // Highlight the section currently in view.
+  // Highlight the section currently in view. The observer reports changes, not
+  // state, so we keep a running record of what is on screen and pick the entry
+  // closest to the middle of the viewport. That matters in two places the naive
+  // version got wrong: when two sections straddle the band no link wins by
+  // accident, and when nothing is on screen — the hero, the footer — the
+  // highlight clears instead of sticking to whatever was last seen.
   useEffect(() => {
     const els = sections.map((s) => document.getElementById(s.id)).filter(Boolean);
     if (!els.length) return;
+
+    const onScreen = new Map();
+
+    function pick() {
+      if (!onScreen.size) return setActive("");
+      const middle = window.innerHeight / 2;
+      let best = "";
+      let bestDistance = Infinity;
+      for (const [id, rect] of onScreen) {
+        const distance = Math.abs(rect.top + rect.height / 2 - middle);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          best = id;
+        }
+      }
+      setActive(best);
+    }
+
     const obs = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) onScreen.set(e.target.id, e.boundingClientRect);
+          else onScreen.delete(e.target.id);
+        }
+        pick();
+      },
       { rootMargin: "-45% 0px -50% 0px" }
     );
+
     els.forEach((el) => obs.observe(el));
     return () => obs.disconnect();
   }, [sections]);

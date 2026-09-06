@@ -19,14 +19,20 @@ export const profile = {
   // 2. Change photo below to: "/assets/anshuman.jpg"
   // Until then a placeholder with your initials shows instead.
   photo: "/assets/anshuman.jpg",
+  // Optional. A WebP of the same picture, served to browsers that take it.
+  // Leave "" and the JPEG above is used everywhere.
+  photoWebp: "/assets/anshuman.webp",
+  photoWidth: 720,
+  photoHeight: 900,
   photoAlt: "Anshuman Agrawal",
   initials: "AA",
 
   // ── YOUR RESUME ──
-  // Put the PDF in:  public/assets/Anshuman_Agrawal_Resume.pdf
-  // Then set resume below to: "/assets/Anshuman_Agrawal_Resume.pdf"
-  // Leave "" and the download button simply does not render.
-  resume: "",
+  // The PDF lives at public/assets/Anshuman_Agrawal_Resume.pdf. Set this to ""
+  // and the download button simply does not render — no broken link.
+  resume: "/assets/Anshuman_Agrawal_Resume.pdf",
+  // Filename the browser saves it under, rather than whatever the path says.
+  resumeFilename: "Anshuman-Agrawal-Resume.pdf",
 };
 
 export const facts = [
@@ -200,6 +206,10 @@ export const fablab = {
   subtitle: "All eight modules completed · member, then mentor",
   intro:
     "Before any of the machine learning, there was a room with a 3D printer and a laser cutter in it. The Digital Fablab at SSGMCE is where I learned that a thing either works when you switch it on or it does not, which turns out to be the same lesson a confusion matrix teaches. I completed every module the lab offers, joined as a member in March 2025, and have been mentoring there since January 2026.",
+  // Default year badge on every module tile. Any module can override it with its
+  // own `year:` line — worth doing for the ones you finished later, since the
+  // intro above talks about mentoring into 2026 and a single 2024–25 badge on
+  // all eight tiles quietly contradicts it.
   year: "2024–25",
   // Each module opens a panel listing its day-by-day journey.
   // Add or edit days in the arrays below; the panel adjusts on its own.
@@ -304,7 +314,7 @@ export const contact = {
   // 4. Push. Messages then arrive in your inbox. No server, no cost.
   // Until you do this, the form tells the visitor it is not configured yet
   // and offers your email address instead — it never fails silently.
-  accessKey: "b24173b5-cb1b-4449-bd0d-4851b5fec5d4",
+  accessKey: "REPLACE_WITH_YOUR_WEB3FORMS_KEY",
 
   email: "anshumanagrawal89@gmail.com",
   linkedin: "https://www.linkedin.com/in/anshumanagrawal08072005",
@@ -332,11 +342,19 @@ export const meta = {
     "Anshuman Agrawal builds machine learning systems and full-stack applications. AI/ML Developer Intern at One Smarter, Inc. B.E. Information Technology, SSGMCE Shegaon.",
 
   // Set this once your site is live, e.g. "https://anshumanagrawal.vercel.app"
-  // Needed for the link-preview card to show an image. No trailing slash.
+  // No trailing slash. If you leave it empty and deploy to Vercel or Netlify,
+  // the build reads the deployment URL from the environment instead, so the
+  // link-preview card still works — this is a convenience, not a substitute.
   siteUrl: "",
 
   // Preview image shown when the link is shared. 1200x630.
-  ogImage: "/assets/og-image.png",
+  ogImage: "/assets/og-image.jpg",
+  ogImageAlt: "Anshuman Agrawal — AI/ML and software developer",
+
+  // Used only in the structured data block that search engines read.
+  jobTitle: "AI/ML Developer Intern",
+  affiliation: "One Smarter, Inc.",
+  alumniOf: "Shri Sant Gajanan Maharaj College of Engineering, Shegaon",
 
   footerUpdated: "Last updated September 2026",
 };

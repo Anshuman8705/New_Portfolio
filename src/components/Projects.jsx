@@ -10,10 +10,7 @@ export default function Projects() {
   return (
     <section id="work" className="section">
       <div className="wrap">
-        <SectionHead
-          title="Projects"
-          note={`${projects.length} builds, 2024–2026 · newest first`}
-        />
+        <SectionHead title="Projects" note={`${projects.length} builds · newest first`} />
         <div className="grid">
           {projects.map((p) => (
             <article className="card" key={p.id}>

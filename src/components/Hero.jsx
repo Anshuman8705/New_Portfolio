@@ -27,7 +27,7 @@ export default function Hero() {
               <a className="btn btn-solid" href="#work">See the projects</a>
               <a className="btn btn-ghost" href="#contact">Get in touch</a>
               {profile.resume ? (
-                <a className="btn btn-quiet" href={profile.resume} download>
+                <a className="btn btn-quiet" href={profile.resume} download={profile.resumeFilename || true}>
                   Download resume
                 </a>
               ) : null}
@@ -38,14 +38,19 @@ export default function Hero() {
             <div className="portrait">
               <div className="portrait-frame">
                 {profile.photo ? (
-                  <img
-                    src={profile.photo}
-                    alt={profile.photoAlt}
-                    width="880"
-                    height="1100"
-                    loading="eager"
-                    decoding="async"
-                  />
+                  <picture>
+                    {profile.photoWebp ? (
+                      <source srcSet={profile.photoWebp} type="image/webp" />
+                    ) : null}
+                    <img
+                      src={profile.photo}
+                      alt={profile.photoAlt}
+                      width={profile.photoWidth || 720}
+                      height={profile.photoHeight || 900}
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </picture>
                 ) : (
                   <div className="portrait-ph">
                     <b>{profile.initials}</b>

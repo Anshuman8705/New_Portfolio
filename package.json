@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/sync-meta.mjs && vite",
-    "build": "node scripts/sync-meta.mjs && vite build",
+    "build": "node scripts/sync-meta.mjs && vite build && vite build --ssr src/entry-server.jsx --outDir .ssr-build && node scripts/prerender.mjs",
     "preview": "vite preview",
     "sync-meta": "node scripts/sync-meta.mjs"
   },
@@ -16,5 +16,8 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
     "vite": "^7.1.5"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
   }
 }
