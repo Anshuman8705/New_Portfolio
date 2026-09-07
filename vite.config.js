@@ -29,8 +29,13 @@ function syncMetaOnChange() {
   };
 }
 
+// Month and year of the build, e.g. "September 2026". Written into the footer
+// so the "last updated" line is always true without anyone editing it.
+const buildDate = new Date().toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+
 export default defineConfig({
   plugins: [react(), syncMetaOnChange()],
+  define: { __BUILD_DATE__: JSON.stringify(buildDate) },
   // Deploying to Vercel or Netlify? Leave base as "/".
   // Deploying to GitHub Pages at username.github.io/REPO ? Set base to "/REPO/".
   base: "/",

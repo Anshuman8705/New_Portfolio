@@ -63,6 +63,11 @@ export function syncMeta({ quiet = false } = {}) {
       ...(meta.affiliation
         ? { affiliation: { "@type": "Organization", name: meta.affiliation } }
         : {}),
+      // A current student is a member of the college, not an alumnus of it.
+      // Switch this to alumniOf after graduation.
+      ...(meta.memberOf
+        ? { memberOf: { "@type": "CollegeOrUniversity", name: meta.memberOf } }
+        : {}),
       ...(meta.alumniOf
         ? { alumniOf: { "@type": "CollegeOrUniversity", name: meta.alumniOf } }
         : {}),

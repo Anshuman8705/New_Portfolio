@@ -1,3 +1,12 @@
+/* Self-hosted fonts (SIL OFL). Sources in assets-src/fonts, subset to woff2 in public/fonts. */
+@font-face{font-family:Archivo;font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/Archivo-400.woff2) format("woff2")}
+@font-face{font-family:Archivo;font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/Archivo-500.woff2) format("woff2")}
+@font-face{font-family:Archivo;font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/Archivo-600.woff2) format("woff2")}
+@font-face{font-family:Archivo;font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/Archivo-700.woff2) format("woff2")}
+@font-face{font-family:Archivo;font-style:normal;font-weight:800;font-display:swap;src:url(/fonts/Archivo-800.woff2) format("woff2")}
+@font-face{font-family:"Source Serif 4";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/SourceSerif4-400.woff2) format("woff2")}
+@font-face{font-family:"Source Serif 4";font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/SourceSerif4-600.woff2) format("woff2")}
+
 :root{
   --paper:#EEF0EF; --surface:#FFFFFF; --ink:#15181B; --slate:#5C646B; --rule:#D2D8D5;
   --deep:#1A1230; --heat-1:#2B1B5A; --heat-2:#B4306E; --heat-3:#E8913C;

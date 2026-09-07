@@ -157,8 +157,9 @@ whatever preview URL the host happened to generate.
 3. Select the repository. Vercel detects Vite on its own — accept the defaults
 4. Deploy
 
-Every `git push` after that redeploys automatically. Add a custom domain later under
-Project → Settings → Domains.
+Every `git push` after that redeploys automatically. The GitHub Actions workflow in
+`.github/workflows/build.yml` runs `npm ci && npm run build` on every push too, so a
+broken edit to `data.js` shows up as a red cross on the commit before Vercel ships it.
 
 ### GitHub Pages
 
@@ -179,7 +180,7 @@ you use Vercel, Netlify, or a custom domain at the root.
 ```
 src/
   data.js                  ← all your content. This is the file you edit.
-  styles.css               ← the design system: colours, type, spacing
+  styles.css               ← the design system: colours, type, spacing, @font-face
   App.jsx                  ← assembles the sections in order
   main.jsx                 ← React entry point (hydrates the pre-rendered markup)
   entry-server.jsx         ← build-time only: renders the page to HTML
@@ -196,8 +197,10 @@ src/
     Footer.jsx
     SectionHead.jsx        shared section heading
     Thumb.jsx              the small SVG icons on each project card
-public/assets/             put your photo here
+public/assets/             photo, resume PDF, social preview image
+public/fonts/              self-hosted woff2 fonts (no Google Fonts request)
 public/robots.txt          lets search engines index the site
+.github/workflows/         CI: builds on every push
 scripts/
   sync-meta.mjs            writes the meta block in index.html from data.js
   prerender.mjs            injects the pre-rendered HTML into dist/index.html
@@ -206,7 +209,9 @@ assets-src/fonts/          fonts the resume script renders with (not served)
 ```
 
 Colours, fonts and spacing are all CSS custom properties at the top of `styles.css`. If
-you ever want to change the palette, change them there and the whole site follows.
+you ever want to change the palette, change them there and the whole site follows. The
+footer's "Last updated" month is written by `vite.config.js` at build time, so it is
+always the month of the last deploy without anyone touching it.
 
 ---
 
@@ -251,4 +256,5 @@ save `data.js` while the dev server is running. Social crawlers do not execute
 JavaScript, so these tags have to exist in the static HTML; that is why they are baked in
 at build time rather than set by React. The block also carries a JSON-LD `Person` record,
 which is what lets a search engine understand the page is a person rather than a document
-about one.
+about one. The college is listed there as `memberOf` while you are a student; switch
+`meta.memberOf` to `meta.alumniOf` in `data.js` after graduation.

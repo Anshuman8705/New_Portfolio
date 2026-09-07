@@ -79,8 +79,6 @@ export const projects = [
     figures: [
       { value: "41/41", label: "Smoke tests pass" },
       { value: "~2,800", label: "Lines of C#" },
-      { value: "10", label: "Objectives met" },
-      { value: "4", label: "Tables, indexed" },
     ],
     callout: {
       title: "A decision worth recording.",
@@ -88,7 +86,7 @@ export const projects = [
     },
     tags: ["C#", "ASP.NET Core MVC", "EF Core", "SQLite", "Chart.js"],
     repo: "",
-    repoPending: "Repository publishing shortly",
+    repoPending: "Private repository · built as One Smarter, Inc. training material",
   },
   {
     id: "homely",
@@ -96,11 +94,6 @@ export const projects = [
     role: "Webstack Academy MERN internship",
     thumb: "house",
     body: "Full-stack property rental platform serving both tenants and owners. JWT authentication, listings with filtered search across price, location and amenities, an admin dashboard and image uploads. Frontend on Vercel, API on Render, data in MongoDB Atlas.",
-    figures: [
-      { value: "4", label: "Stack layers" },
-      { value: "2", label: "User roles" },
-      { value: "2", label: "Deploy targets" },
-    ],
     tags: ["React", "Node.js", "Express", "MongoDB", "JWT"],
     repo: "https://github.com/Anshuman8705/Homely-Hub",
   },
@@ -110,27 +103,8 @@ export const projects = [
     role: "Innovo Hackathon, SSGMCE",
     thumb: "cards",
     body: "Flask application generating study flashcards from a topic prompt through the OpenAI API, built for students without access to prepared material. Decks persist so a learner can return to them. Built with Mohammad Ammar, Kamran Ali and Kartik Hande under hackathon deadline.",
-    figures: [
-      { value: "4", label: "Team members" },
-      { value: "1", label: "Hackathon weekend" },
-      { value: "LLM", label: "Prompt-driven" },
-    ],
     tags: ["Python", "Flask", "OpenAI API", "SQLite"],
     repo: "https://github.com/Anshuman8705/Flashy_Learn",
-  },
-  {
-    id: "oibsip",
-    title: "Data science task set",
-    role: "Oasis Infobyte internship, AICTE approved",
-    thumb: "scatter",
-    body: "Three supervised learning problems end to end. Iris classification comparing logistic regression, SVM and KNN with SVM winning; a state and month level unemployment analysis; and car price regression pitting linear models against random forests. Each with its own EDA and exported model.",
-    figures: [
-      { value: "3", label: "Complete tasks" },
-      { value: "5", label: "Models compared" },
-      { value: "2", label: "Problem types" },
-    ],
-    tags: ["scikit-learn", "pandas", "seaborn", "Colab"],
-    repo: "https://github.com/Anshuman8705/OIBSIP",
   },
   {
     id: "dotnet",
@@ -138,11 +112,6 @@ export const projects = [
     role: ".NET training, One Smarter Inc. USA",
     thumb: "stack",
     body: "The groundwork the budget application was built on: models, controllers and views, model binding and validation, session and cookie state, authentication and routing, each worked as a separate exercise before being assembled into something real.",
-    figures: [
-      { value: "12", label: "Commits" },
-      { value: "2", label: "Work streams" },
-      { value: "C#", label: "Primary language" },
-    ],
     tags: ["C#", "ASP.NET MVC", "Razor", "REST"],
     repo: "https://github.com/Anshuman8705/Dot-Net-Training",
   },
@@ -156,7 +125,6 @@ export const projects = [
       { value: "14", label: "Pages" },
       { value: "563", label: "Lines of CSS" },
       { value: "0", label: "Dependencies" },
-      { value: "2024", label: "Built in year one" },
     ],
     callout: {
       title: "Kept on purpose.",
@@ -164,16 +132,22 @@ export const projects = [
     },
     tags: ["HTML", "CSS", "JavaScript", "DOM API"],
     repo: "",
-    repoPending: "Repository publishing shortly",
+    repoPending: "Repository not yet public",
   },
 ];
 
 export const experience = [
   {
-    when: "Aug 2026 – present",
+    when: "Aug 2026 – Present",
     where: "One Smarter, Inc. · Ohio, remote",
     title: "AI/ML Developer Intern",
     body: "Healthcare data automation: transforming EDI transaction data into structured formats and generating reports without manual handling. The code is proprietary and stays private, which is the point — it is the first system I have written where handling sensitive data set the constraints rather than the features.",
+  },
+  {
+    when: "Jul 2026 – Present",
+    where: "SSGMCE Shegaon",
+    title: "Chairperson, Robotics and Automation Society",
+    body: "Also on the organising team for ICICGR 2026, the IEEE International Conference on Innovations in Communication, Geoscience and Robotics, coordinating technical sessions and hybrid presentations.",
   },
   {
     when: "Jun – Jul 2026",
@@ -182,34 +156,21 @@ export const experience = [
     body: "Model training, system architecture and application development for DermAI Monitor under the mentorship of Dr. Ankita Tidake, with a co-authored IEEE-format paper covering methodology, results and limitations.",
   },
   {
-    when: "2025 – 2026",
+    when: "Aug – Nov 2025",
     where: "Webstack Academy, Bangalore",
     title: "MERN Stack Development Intern",
     body: "Built Homely Hub end to end across an SDLC-structured cycle, from foundational HTML, CSS, JavaScript and React through to a deployed full-stack application.",
-  },
-  {
-    when: "2026",
-    where: "Oasis Infobyte",
-    title: "Data Science Intern",
-    body: "Three applied machine learning tasks covering exploratory analysis, preprocessing, model comparison and evaluation, each documented and version controlled.",
-  },
-  {
-    when: "Jul 2026 – present",
-    where: "SSGMCE Shegaon",
-    title: "Chairperson, Robotics and Automation Society",
-    body: "Also on the organising team for ICICGR 2026, the IEEE International Conference on Innovations in Communication, Geoscience and Robotics, coordinating technical sessions and hybrid presentations.",
   },
 ];
 
 export const fablab = {
   heading: "The Fab Lab years",
-  subtitle: "All eight modules completed · member, then mentor",
+  subtitle: "Eight modules, 2024–25 · member since Mar 2025 · mentor since Jan 2026",
   intro:
     "Before any of the machine learning, there was a room with a 3D printer and a laser cutter in it. The Digital Fablab at SSGMCE is where I learned that a thing either works when you switch it on or it does not, which turns out to be the same lesson a confusion matrix teaches. I completed every module the lab offers, joined as a member in March 2025, and have been mentoring there since January 2026.",
-  // Default year badge on every module tile. Any module can override it with its
-  // own `year:` line — worth doing for the ones you finished later, since the
-  // intro above talks about mentoring into 2026 and a single 2024–25 badge on
-  // all eight tiles quietly contradicts it.
+  // Year badge on every module tile. All eight were completed in the 2024–25
+  // academic year; membership and mentoring came after, and the subtitle above
+  // carries those dates. A module can override this with its own `year:` line.
   year: "2024–25",
   // Each module opens a panel listing its day-by-day journey.
   // Add or edit days in the arrays below; the panel adjusts on its own.
@@ -282,7 +243,7 @@ export const workshops = {
 
 export const skills = [
   { group: "Machine learning", items: "TensorFlow, Keras, scikit-learn, transfer learning, focal loss, Grad-CAM, model evaluation, computer vision" },
-  { group: "Generative AI", items: "OpenAI API, LangChain, Hugging Face, prompt engineering, retrieval-augmented generation" },
+  { group: "Generative AI", items: "OpenAI API, prompt engineering" },
   { group: "Languages", items: "Python, C#, JavaScript, Java, C, SQL" },
   { group: "Web and software", items: "ASP.NET Core MVC, Entity Framework Core, React, Node.js, Express, Flask, REST APIs" },
   { group: "Data", items: "MongoDB, MySQL, SQLite, pandas, NumPy, Matplotlib, Chart.js" },
@@ -299,7 +260,7 @@ export const certificates = [
 ];
 
 export const about = [
-  { group: "Education", items: "B.E. Information Technology, Shri Sant Gajanan Maharaj College of Engineering, Shegaon. September 2024 to July 2028. SGPA 8.68, 8.86 and 8.18 across the first three semesters." },
+  { group: "Education", items: "B.E. Information Technology, Shri Sant Gajanan Maharaj College of Engineering, Shegaon. September 2024 to July 2028. CGPA 8.57 across the first three semesters." },
   { group: "Outside the screen", items: "State-level softball player, district level in cricket and chess." },
 ];
 
@@ -343,8 +304,9 @@ export const meta = {
 
   // No trailing slash. Pinning it here rather than relying on the Vercel
   // environment keeps the canonical link on one address, so preview deploys
-  // never compete with the real site in search results. Change this line if you
-  // put a custom domain in front of it.
+  // never compete with the real site in search results. This must be the ONE
+  // address the site lives at: when you put a custom domain in front of it,
+  // change this line and delete any older Vercel projects still serving a copy.
   siteUrl: "https://portfolio-kohl-theta-24.vercel.app",
 
   // Preview image shown when the link is shared. 1200x630.
@@ -354,7 +316,9 @@ export const meta = {
   // Used only in the structured data block that search engines read.
   jobTitle: "AI/ML Developer Intern",
   affiliation: "One Smarter, Inc.",
-  alumniOf: "Shri Sant Gajanan Maharaj College of Engineering, Shegaon",
+  // Still a student, so this is memberOf in the structured data, not alumniOf.
+  memberOf: "Shri Sant Gajanan Maharaj College of Engineering, Shegaon",
 
-  footerUpdated: "Last updated September 2026",
+  // The footer date is generated at build time (see vite.config.js), so it can
+  // never go stale. Nothing to edit here.
 };

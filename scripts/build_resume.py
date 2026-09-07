@@ -4,9 +4,7 @@ site: Archivo for anything structural, Source Serif 4 for prose, the same ink /
 slate / heat palette, and the same section-head rule.
 
 Content is reconciled against src/data.js, which is newer than the uploaded PDF
-(it has the One Smarter internship, the budget app, the Oasis Infobyte tasks and
-the later certificates). Typos in the original are fixed: Streamlit, LangChain,
-Webstack, Innovo, Jupyter, Colab, ReportLab.
+Keep the two in step: every date, figure and skill here should match data.js.
 """
 
 import os
@@ -182,6 +180,8 @@ sep = " &nbsp;<font color='#D2D8D5'>|</font>&nbsp; "
 contact = Table([[
     Paragraph(sep.join([
         link("mailto:anshumanagrawal89@gmail.com", "anshumanagrawal89@gmail.com"),
+        # This PDF is public and indexed by search engines. Delete this line if you
+        # would rather not publish the number.
         "+91 70209 57850",
         "Shegaon, Maharashtra, India",
     ]), S["contact"]),
@@ -213,11 +213,17 @@ story.append(Paragraph(
 
 # Experience
 story += open_section("Experience", "Internships and roles", entry(
-    "AI/ML Developer Intern", "One Smarter, Inc. · Ohio, remote", "Aug 2026 – present",
+    "AI/ML Developer Intern", "One Smarter, Inc. · Ohio, remote", "Aug 2026 – Present",
     ["Healthcare data automation: transforming EDI transaction data into structured formats "
      "and generating reports without manual handling.",
      "First system I have written where handling sensitive data set the constraints rather "
      "than the features. Code is proprietary and stays private."]))
+
+story += (entry(
+    "Chairperson, Robotics and Automation Society", "SSGMCE Shegaon", "Jul 2026 – Present",
+    ["On the organising team for ICICGR 2026, the IEEE International Conference on "
+     "Innovations in Communication, Geoscience and Robotics, coordinating technical "
+     "sessions and hybrid presentations."]))
 
 story += (entry(
     "AI/ML Intern", "IEEE EMBS Pune Chapter", "Jun – Jul 2026",
@@ -229,18 +235,8 @@ story += (entry(
 story += (entry(
     "MERN Stack Development Intern", "Webstack Academy, Bangalore", "Aug – Nov 2025",
     ["Built Homely Hub end to end across an SDLC-structured cycle, from foundational HTML, "
-     "CSS, JavaScript and React through to a deployed full-stack application."]))
+     "CSS, JavaScript and React through to a deployed full-stack application."], last=True))
 
-story += (entry(
-    "Data Science Intern", "Oasis Infobyte · AICTE approved", "2026",
-    ["Three applied machine learning tasks covering exploratory analysis, preprocessing, "
-     "model comparison and evaluation, each documented and version controlled."]))
-
-story += (entry(
-    "Chairperson, Robotics and Automation Society", "SSGMCE Shegaon", "Jul 2026 – present",
-    ["On the organising team for ICICGR 2026, the IEEE International Conference on "
-     "Innovations in Communication, Geoscience and Robotics, coordinating technical "
-     "sessions and hybrid presentations."], last=True))
 
 # Skills
 skills_head = section("Skills", "What I can be handed on day one")
@@ -248,8 +244,7 @@ skills_head = section("Skills", "What I can be handed on day one")
 skill_rows = [
     ("Machine learning", "TensorFlow, Keras, scikit-learn, transfer learning, focal loss, "
                          "Grad-CAM, model evaluation, computer vision"),
-    ("Generative AI", "OpenAI API, LangChain, Hugging Face, prompt engineering, "
-                      "retrieval-augmented generation"),
+    ("Generative AI", "OpenAI API, prompt engineering"),
     ("Languages", "Python, C#, JavaScript, Java, C, SQL"),
     ("Web and software", "ASP.NET Core MVC, Entity Framework Core, React, Node.js, Express, "
                          "Flask, REST APIs"),
@@ -295,8 +290,7 @@ story += (entry(
      "Every query filters on the user id from the auth cookie rather than form input, so a "
      "changed id in a URL returns not-found. Money is decimal(18,2), never float — SQLite has "
      "no decimal type, so services total the period's amounts in C# rather than rounding in SQL."],
-    extra=[figs([("41/41", "smoke tests pass"), ("~2,800", "lines of C#"),
-                 ("10", "objectives met"), ("4", "tables, indexed")]),
+    extra=[figs([("41/41", "smoke tests pass"), ("~2,800", "lines of C#")]),
            Spacer(1, 3),
            tags(["C#", "ASP.NET Core MVC", "EF Core", "SQLite", "Chart.js"])]))
 
@@ -320,7 +314,7 @@ story.append(KeepTogether(edu_head + [head_row(
     [Paragraph("B.E. Information Technology", S["role"]),
      Paragraph("Shri Sant Gajanan Maharaj College of Engineering, Shegaon", S["where"])],
     "Sep 2024 – Jul 2028"), Spacer(1, 3), Paragraph(
-    "SGPA 8.68, 8.86 and 8.18 across the first three semesters. "
+    "CGPA 8.57 across the first three semesters. "
     "HSC and SSC at School of Scholars, 2024 and 2022.", S["body"])]))
 
 # Certificates
