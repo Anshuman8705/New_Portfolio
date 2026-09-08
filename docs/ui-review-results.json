@@ -1,0 +1,305 @@
+{
+  "scope": "Offline built-page Chromium fixtures; no external delivery or playback",
+  "checks": [
+    {
+      "check": "Four home download links display Resume without accents",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 320px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 360px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 375px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 390px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 414px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 600px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 601px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 640px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 700px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 720px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 721px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 768px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 820px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 821px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 1024px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 1080px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 1081px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 1280px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 1440px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Home 1920px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "320px: stacked hero buttons have matching width and height",
+      "result": "PASS"
+    },
+    {
+      "check": "360px: stacked hero buttons have matching width and height",
+      "result": "PASS"
+    },
+    {
+      "check": "375px: stacked hero buttons have matching width and height",
+      "result": "PASS"
+    },
+    {
+      "check": "601px: small-tablet portrait sits below text, not beside a cramped column",
+      "result": "PASS"
+    },
+    {
+      "check": "601px: project cards use one readable column",
+      "result": "PASS"
+    },
+    {
+      "check": "640px: small-tablet portrait sits below text, not beside a cramped column",
+      "result": "PASS"
+    },
+    {
+      "check": "640px: project cards use one readable column",
+      "result": "PASS"
+    },
+    {
+      "check": "700px: small-tablet portrait sits below text, not beside a cramped column",
+      "result": "PASS"
+    },
+    {
+      "check": "700px: project cards use one readable column",
+      "result": "PASS"
+    },
+    {
+      "check": "720px: small-tablet portrait sits below text, not beside a cramped column",
+      "result": "PASS"
+    },
+    {
+      "check": "720px: project cards use one readable column",
+      "result": "PASS"
+    },
+    {
+      "check": "320px: contact heading keeps words separated",
+      "result": "PASS"
+    },
+    {
+      "check": "640px: contact heading keeps words separated",
+      "result": "PASS"
+    },
+    {
+      "check": "768px: contact heading keeps words separated",
+      "result": "PASS"
+    },
+    {
+      "check": "1440px: contact heading keeps words separated",
+      "result": "PASS"
+    },
+    {
+      "check": "721px: project summaries align within each row",
+      "result": "PASS"
+    },
+    {
+      "check": "721px: project action rows align",
+      "result": "PASS"
+    },
+    {
+      "check": "768px: project summaries align within each row",
+      "result": "PASS"
+    },
+    {
+      "check": "768px: project action rows align",
+      "result": "PASS"
+    },
+    {
+      "check": "821px: project summaries align within each row",
+      "result": "PASS"
+    },
+    {
+      "check": "821px: project action rows align",
+      "result": "PASS"
+    },
+    {
+      "check": "1024px: project summaries align within each row",
+      "result": "PASS"
+    },
+    {
+      "check": "1024px: project action rows align",
+      "result": "PASS"
+    },
+    {
+      "check": "1081px: project summaries align within each row",
+      "result": "PASS"
+    },
+    {
+      "check": "1081px: project action rows align",
+      "result": "PASS"
+    },
+    {
+      "check": "1440px: project summaries align within each row",
+      "result": "PASS"
+    },
+    {
+      "check": "1440px: project action rows align",
+      "result": "PASS"
+    },
+    {
+      "check": "Mobile form controls use readable 16px text",
+      "result": "PASS"
+    },
+    {
+      "check": "Sending state preserves arrow and announces busy state",
+      "result": "PASS"
+    },
+    {
+      "check": "Failure restores label and arrow without width shift",
+      "result": "PASS"
+    },
+    {
+      "check": "Successful retry also preserves the arrow",
+      "result": "PASS"
+    },
+    {
+      "check": "Copy fallback leaves keyboard focus on the button",
+      "result": "PASS"
+    },
+    {
+      "check": "Loading a video moves focus off the hidden trigger to its frame",
+      "result": "PASS"
+    },
+    {
+      "check": "Mobile certificate dialog stays inside the viewport",
+      "result": "PASS"
+    },
+    {
+      "check": "Certificate close restores the opener focus",
+      "result": "PASS"
+    },
+    {
+      "check": "All three viewports fit: 404.html",
+      "result": "PASS"
+    },
+    {
+      "check": "All three viewports fit: certificates/ai-ml-training/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "All three viewports fit: certificates/aws-foundations/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "All three viewports fit: certificates/cs50p/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "All three viewports fit: certificates/ieee-internship/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "All three viewports fit: certificates/nxtwave-genai/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "All three viewports fit: certificates/prototype-workshop/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "All three viewports fit: certificates/redhat-rh104/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "All three viewports fit: certificates/tcs-appreciation/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "All three viewports fit: certificates/webstack-internship/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "All three viewports fit: index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "All three viewports fit: privacy/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "All three viewports fit: projects/dermai/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "All three viewports fit: projects/dotnet/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "All three viewports fit: projects/expense/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "All three viewports fit: projects/flashy/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "All three viewports fit: projects/homely/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "All three viewports fit: projects/nimbusmart/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "No uncaught UI JavaScript errors",
+      "result": "PASS"
+    }
+  ]
+}

@@ -50,18 +50,20 @@ function setupCertificates(){
  }));
 }
 function setupVideos(){
- $$('[data-video]').forEach(container=>{const button=$('.video-load',container);button?.addEventListener('click',()=>{if($('iframe',container))return;const id=container.dataset.video;if(!/^[\w-]{11}$/.test(id))return;const frame=document.createElement('iframe');frame.src=`https://www.youtube-nocookie.com/embed/${id}?rel=0`;frame.title=container.dataset.title||'Project walkthrough';frame.allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';frame.allowFullscreen=true;frame.referrerPolicy='strict-origin-when-cross-origin';container.append(frame);button.hidden=true;announce('Video player loaded. Use its play button to start the video.');});});
+ $$('[data-video]').forEach(container=>{const button=$('.video-load',container);button?.addEventListener('click',()=>{if($('iframe',container))return;const id=container.dataset.video;if(!/^[\w-]{11}$/.test(id))return;const frame=document.createElement('iframe');frame.src=`https://www.youtube-nocookie.com/embed/${id}?rel=0`;frame.title=container.dataset.title||'Project walkthrough';frame.allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';frame.allowFullscreen=true;frame.referrerPolicy='strict-origin-when-cross-origin';frame.tabIndex=0;container.append(frame);button.hidden=true;frame.focus();announce('Video player loaded. Use its play button to start the video.');});});
 }
 function setupCopy(){
  $$('[data-copy]').forEach(button=>button.addEventListener('click',async()=>{
   const text=button.dataset.copy;
   try{if(navigator.clipboard?.writeText)await navigator.clipboard.writeText(text);else{const field=document.createElement('textarea');field.value=text;field.className='clipboard-helper';document.body.append(field);field.select();const success=document.execCommand('copy');field.remove();if(!success)throw new Error('copy unavailable');}announce('Email address copied.');}
   catch{announce(`Copy unavailable. Email: ${text}`);}
+  finally{if(document.activeElement===document.body)button.focus({preventScroll:true});}
  }));
 }
 function setupContact(){
  const form=$('#contact-form');if(!form)return;
- const submit=$('.form-submit',form),status=$('#form-status');let sending=false;
+ const submit=$('.form-submit',form),status=$('#form-status');
+ const submitLabel=$('[data-submit-label]',submit);let sending=false;
  submit.disabled=false;
  const count=()=>{$('#message-count').textContent=`${form.elements.message.value.length.toLocaleString('en-IN')} / 5,000`;};
  const setError=(field,message)=>{const el=form.elements[field];el.setAttribute('aria-invalid',String(Boolean(message)));$(`#${field}-error`).textContent=message||'';};
@@ -74,7 +76,7 @@ function setupContact(){
   ['name','email','message'].forEach(field=>setError(field,errors[field]));
   if(!valid){form.elements[Object.keys(errors)[0]].focus();return;}
   if(!form.dataset.accessKey||form.dataset.accessKey.startsWith('REPLACE_')){showStatus('error','This form is not connected yet.',true);return;}
-  sending=true;submit.disabled=true;submit.setAttribute('aria-busy','true');submit.textContent='Sending…';
+  sending=true;submit.disabled=true;submit.setAttribute('aria-busy','true');submitLabel.textContent='Sending…';
   const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),15000);
   try{
    const response=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},signal:controller.signal,body:JSON.stringify({access_key:form.dataset.accessKey,subject:`Portfolio message — ${form.elements.topic.value}`,from_name:'Anshuman portfolio contact form',...values,topic:form.elements.topic.value,botcheck:form.elements.botcheck.checked})});
@@ -82,7 +84,7 @@ function setupContact(){
    if(!response.ok||data?.success!==true){showStatus('error','The message was not accepted. Your text has been kept—please try again later.',true);return;}
    showStatus('success','Your message was submitted successfully. Thank you for getting in touch.');form.reset();count();['name','email','message'].forEach(field=>setError(field,''));
   }catch(error){showStatus('error',error.name==='AbortError'?'The request timed out, so delivery could not be confirmed. Your text has been kept.':'The message could not be sent. Check your connection; your text has been kept.',true);}
-  finally{clearTimeout(timer);sending=false;submit.disabled=false;submit.removeAttribute('aria-busy');submit.textContent='Send message';}
+  finally{clearTimeout(timer);sending=false;submit.disabled=false;submit.removeAttribute('aria-busy');submitLabel.textContent='Send message';}
  });
 }
 // Independent setup functions keep an optional widget failure from hiding the page.

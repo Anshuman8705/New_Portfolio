@@ -33,3 +33,66 @@
 /* Keep supporting labels readable on high-density screens. */
 .card-meta{font-size:11px}.certificate-copy .card-meta{font-size:10px}.overview-note{font-size:10px}.overview-top{font-size:10px}
 html.js [hidden]{display:none!important}
+
+
+/* UI review: preserve the existing visual identity and make wrapping predictable. */
+/* Two-line headings/category labels should not shift neighbouring card summaries. */
+@media (min-width: 721px) {
+  .project-card-body .card-meta { min-height: 33px; align-items: flex-start; }
+  .project-card h3 { min-height: 2.4em; }
+  .project-card .tags { margin-top: auto; padding-top: 18px; align-items: flex-start; }
+  .project-actions { margin-top: 0; }
+  .certificate-copy .card-meta { min-height: 30px; align-items: flex-start; }
+  .certificate-copy h3 { min-height: 2.7em; }
+}
+.project-actions { flex-wrap: wrap; gap: 8px 16px; }
+.project-actions a { min-height: 40px; }
+.button, .nav-resume { white-space: normal; }
+.hero-actions .button, .nav-resume { white-space: nowrap; }
+.hero-actions .button { min-height: 48px; }
+.form-submit > .icon { flex-shrink: 0; }
+.menu-toggle { flex-shrink: 0; }
+.dialog-header > div { min-width: 0; }
+.dialog-header h2, .credential-facts dd { overflow-wrap: anywhere; }
+/* Reflow earlier: two columns were cramped on small tablets (601–720px). */
+@media (min-width: 601px) and (max-width: 720px) {
+  .hero { display: flex; flex-direction: column; align-items: stretch; gap: 28px; }
+  .hero h1 { font-size: clamp(40px, 7vw, 48px); }
+  .hero-lede { max-width: 64ch; }
+  .hero .eyebrow { font-size: 10px; }
+  .hero .button { font-size: 14px; padding: 12px 18px; }
+  .portrait { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 24px; align-items: center; }
+  .portrait-image { border-radius: 45px 45px 8px 8px; aspect-ratio: 4/4.5; }
+  .portrait-caption { padding: 7px; font-size: 9px; }
+  .portrait figcaption { padding: 0; gap: 3px; }
+  .portrait figcaption strong { font-size: 18px; }
+  .section-heading { display: block; }
+  .section-note { max-width: 60ch; margin-top: 12px; }
+  .project-grid, .certificate-grid { grid-template-columns: 1fr; }
+  .project-overview { min-height: 180px; }
+  .project-card h3 { font-size: 23px; }
+  .project-card-body > p { font-size: 14px; }
+  .section-bottom { flex-wrap: wrap; gap: 12px; }
+}
+@media (max-width: 600px) {
+  .contact-form input:not([type="checkbox"]), .contact-form select, .contact-form textarea { font-size: 16px; }
+}
+@media (max-width: 380px) {
+  .hero-actions { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .hero-actions .button { width: 100%; }
+  .portrait { grid-template-columns: 104px minmax(0, 1fr); gap: 16px; }
+  .portrait figcaption strong { font-size: 15px; }
+}
+
+/* Shared overview tracks align card bodies without clipping long diagram labels.
+   The flex layout above remains the fallback in browsers without subgrid. */
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 721px) {
+    .project-card {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: span 2;
+      row-gap: 0;
+    }
+  }
+}

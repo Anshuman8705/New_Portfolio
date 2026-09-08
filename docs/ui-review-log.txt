@@ -1,0 +1,76 @@
+PASS Four home download links display Resume without accents
+PASS Home 320px: no horizontal overflow
+PASS Home 360px: no horizontal overflow
+PASS Home 375px: no horizontal overflow
+PASS Home 390px: no horizontal overflow
+PASS Home 414px: no horizontal overflow
+PASS Home 600px: no horizontal overflow
+PASS Home 601px: no horizontal overflow
+PASS Home 640px: no horizontal overflow
+PASS Home 700px: no horizontal overflow
+PASS Home 720px: no horizontal overflow
+PASS Home 721px: no horizontal overflow
+PASS Home 768px: no horizontal overflow
+PASS Home 820px: no horizontal overflow
+PASS Home 821px: no horizontal overflow
+PASS Home 1024px: no horizontal overflow
+PASS Home 1080px: no horizontal overflow
+PASS Home 1081px: no horizontal overflow
+PASS Home 1280px: no horizontal overflow
+PASS Home 1440px: no horizontal overflow
+PASS Home 1920px: no horizontal overflow
+PASS 320px: stacked hero buttons have matching width and height
+PASS 360px: stacked hero buttons have matching width and height
+PASS 375px: stacked hero buttons have matching width and height
+PASS 601px: small-tablet portrait sits below text, not beside a cramped column
+PASS 601px: project cards use one readable column
+PASS 640px: small-tablet portrait sits below text, not beside a cramped column
+PASS 640px: project cards use one readable column
+PASS 700px: small-tablet portrait sits below text, not beside a cramped column
+PASS 700px: project cards use one readable column
+PASS 720px: small-tablet portrait sits below text, not beside a cramped column
+PASS 720px: project cards use one readable column
+PASS 320px: contact heading keeps words separated
+PASS 640px: contact heading keeps words separated
+PASS 768px: contact heading keeps words separated
+PASS 1440px: contact heading keeps words separated
+PASS 721px: project summaries align within each row
+PASS 721px: project action rows align
+PASS 768px: project summaries align within each row
+PASS 768px: project action rows align
+PASS 821px: project summaries align within each row
+PASS 821px: project action rows align
+PASS 1024px: project summaries align within each row
+PASS 1024px: project action rows align
+PASS 1081px: project summaries align within each row
+PASS 1081px: project action rows align
+PASS 1440px: project summaries align within each row
+PASS 1440px: project action rows align
+PASS Mobile form controls use readable 16px text
+PASS Sending state preserves arrow and announces busy state
+PASS Failure restores label and arrow without width shift
+PASS Successful retry also preserves the arrow
+PASS Copy fallback leaves keyboard focus on the button
+PASS Loading a video moves focus off the hidden trigger to its frame
+PASS Mobile certificate dialog stays inside the viewport
+PASS Certificate close restores the opener focus
+PASS All three viewports fit: 404.html
+PASS All three viewports fit: certificates/ai-ml-training/index.html
+PASS All three viewports fit: certificates/aws-foundations/index.html
+PASS All three viewports fit: certificates/cs50p/index.html
+PASS All three viewports fit: certificates/ieee-internship/index.html
+PASS All three viewports fit: certificates/nxtwave-genai/index.html
+PASS All three viewports fit: certificates/prototype-workshop/index.html
+PASS All three viewports fit: certificates/redhat-rh104/index.html
+PASS All three viewports fit: certificates/tcs-appreciation/index.html
+PASS All three viewports fit: certificates/webstack-internship/index.html
+PASS All three viewports fit: index.html
+PASS All three viewports fit: privacy/index.html
+PASS All three viewports fit: projects/dermai/index.html
+PASS All three viewports fit: projects/dotnet/index.html
+PASS All three viewports fit: projects/expense/index.html
+PASS All three viewports fit: projects/flashy/index.html
+PASS All three viewports fit: projects/homely/index.html
+PASS All three viewports fit: projects/nimbusmart/index.html
+PASS No uncaught UI JavaScript errors
+75 focused UI checks passed.

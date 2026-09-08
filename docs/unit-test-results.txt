@@ -1,4 +1,8 @@
 
+> anshuman-portfolio@2.0.0 check
+> npm test && npm run build
+
+
 > anshuman-portfolio@2.0.0 test
 > node --test tests/*.test.mjs
 
@@ -6,141 +10,177 @@ TAP version 13
 # Subtest: All six projects have unique stable IDs and real source links
 ok 1 - All six projects have unique stable IDs and real source links
   ---
-  duration_ms: 4.783189
+  duration_ms: 5.137573
   type: 'test'
   ...
 # Subtest: Nine supplied certificates are represented, not an invented Fab Lab certificate
 ok 2 - Nine supplied certificates are represented, not an invented Fab Lab certificate
   ---
-  duration_ms: 0.229664
+  duration_ms: 0.321756
   type: 'test'
   ...
 # Subtest: All certificate files and previews are present
 ok 3 - All certificate files and previews are present
   ---
-  duration_ms: 3.208987
+  duration_ms: 3.177118
   type: 'test'
   ...
 # Subtest: Five source PDFs are byte-identical to the supplied documents
 ok 4 - Five source PDFs are byte-identical to the supplied documents
   ---
-  duration_ms: 40.036796
+  duration_ms: 32.169171
   type: 'test'
   ...
 # Subtest: Photos and resume assets exist
 ok 5 - Photos and resume assets exist
   ---
-  duration_ms: 0.391185
+  duration_ms: 0.61781
   type: 'test'
   ...
 # Subtest: Equal-contribution wording is retained for both team projects
 ok 6 - Equal-contribution wording is retained for both team projects
   ---
-  duration_ms: 0.34245
+  duration_ms: 0.367458
   type: 'test'
   ...
 # Subtest: Expense project uses the public .NET source
 ok 7 - Expense project uses the public .NET source
   ---
-  duration_ms: 0.47377
+  duration_ms: 0.534011
   type: 'test'
   ...
 # Subtest: Research boundary and project-reported metrics are visible
 ok 8 - Research boundary and project-reported metrics are visible
   ---
-  duration_ms: 1.539931
+  duration_ms: 1.504159
   type: 'test'
   ...
 # Subtest: Source-supported internship dates are used
 ok 9 - Source-supported internship dates are used
   ---
-  duration_ms: 0.70373
+  duration_ms: 0.858395
   type: 'test'
   ...
 # Subtest: AWS and Red Hat have the correct training/attendance labels
 ok 10 - AWS and Red Hat have the correct training/attendance labels
   ---
-  duration_ms: 0.732119
+  duration_ms: 1.033805
   type: 'test'
   ...
 # Subtest: Credential links match the supplied documents
 ok 11 - Credential links match the supplied documents
   ---
-  duration_ms: 0.466693
+  duration_ms: 0.513247
   type: 'test'
   ...
 # Subtest: Two owner-supplied videos are distinct from application demos
 ok 12 - Two owner-supplied videos are distinct from application demos
   ---
-  duration_ms: 6.295122
+  duration_ms: 9.771353
   type: 'test'
   ...
 # Subtest: All eight Fab Lab module journeys remain
 ok 13 - All eight Fab Lab module journeys remain
   ---
-  duration_ms: 0.288356
+  duration_ms: 0.22493
   type: 'test'
   ...
 # Subtest: HTML escaping prevents markup injection
 ok 14 - HTML escaping prevents markup injection
   ---
-  duration_ms: 0.146462
+  duration_ms: 0.182667
   type: 'test'
   ...
 # Subtest: JSON script data cannot terminate its own script
 ok 15 - JSON script data cannot terminate its own script
   ---
-  duration_ms: 0.181725
+  duration_ms: 0.177496
   type: 'test'
   ...
 # Subtest: Home and all detail pages have one H1
 ok 16 - Home and all detail pages have one H1
   ---
-  duration_ms: 1.471269
+  duration_ms: 2.021151
   type: 'test'
   ...
 # Subtest: Generated pages include static metadata and a canonical URL
 ok 17 - Generated pages include static metadata and a canonical URL
   ---
-  duration_ms: 3.283821
+  duration_ms: 2.676163
   type: 'test'
   ...
 # Subtest: No-JS fallbacks link to real detail pages
 ok 18 - No-JS fallbacks link to real detail pages
   ---
-  duration_ms: 6.481099
+  duration_ms: 6.813909
   type: 'test'
   ...
 # Subtest: Valid contact data is trimmed
 ok 19 - Valid contact data is trimmed
   ---
-  duration_ms: 0.601178
+  duration_ms: 0.454985
   type: 'test'
   ...
 # Subtest: Missing contact fields all have actionable errors
 ok 20 - Missing contact fields all have actionable errors
   ---
-  duration_ms: 0.423394
+  duration_ms: 0.248634
   type: 'test'
   ...
 # Subtest: Contact rejects bad email and excessive lengths
 ok 21 - Contact rejects bad email and excessive lengths
   ---
-  duration_ms: 0.351163
+  duration_ms: 0.183021
   type: 'test'
   ...
 # Subtest: No font files, dependencies, or private environment files are packaged as public assets
 ok 22 - No font files, dependencies, or private environment files are packaged as public assets
   ---
-  duration_ms: 1.741861
+  duration_ms: 1.70472
   type: 'test'
   ...
-1..22
-# tests 22
+# Subtest: All four home resume links use plain Resume wording
+ok 23 - All four home resume links use plain Resume wording
+  ---
+  duration_ms: 3.197938
+  type: 'test'
+  ...
+# Subtest: Resume download URLs and filenames are unchanged
+ok 24 - Resume download URLs and filenames are unchanged
+  ---
+  duration_ms: 4.104248
+  type: 'test'
+  ...
+# Subtest: Project and certificate page navigation also uses plain Resume
+ok 25 - Project and certificate page navigation also uses plain Resume
+  ---
+  duration_ms: 1.836589
+  type: 'test'
+  ...
+# Subtest: Contact heading keeps a word separator when its line break is hidden
+ok 26 - Contact heading keeps a word separator when its line break is hidden
+  ---
+  duration_ms: 5.046806
+  type: 'test'
+  ...
+# Subtest: Contact submit label and arrow are separate so async states preserve the icon
+ok 27 - Contact submit label and arrow are separate so async states preserve the icon
+  ---
+  duration_ms: 0.926048
+  type: 'test'
+  ...
+1..27
+# tests 27
 # suites 0
-# pass 22
+# pass 27
 # fail 0
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 359.933565
+# duration_ms 352.822049
+
+> anshuman-portfolio@2.0.0 build
+> node scripts/build.mjs
+
+Built 18 HTML pages: 6 case studies, 9 certificate pages, home, privacy and 404.
+All local page and asset references resolve. Output: dist/

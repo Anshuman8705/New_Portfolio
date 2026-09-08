@@ -7,7 +7,7 @@
     {
       "path": "/404.html",
       "status": 200,
-      "bytes": 7278,
+      "bytes": 7274,
       "matchesBuiltFile": true
     },
     {
@@ -227,15 +227,15 @@
       "matchesBuiltFile": true
     },
     {
-      "path": "/assets/styles-b7937bf3dab1.css",
+      "path": "/assets/styles-5080090c8457.css",
       "status": 200,
-      "bytes": 33042,
+      "bytes": 35890,
       "matchesBuiltFile": true
     },
     {
-      "path": "/assets/ui-13f31df10bc4.js",
+      "path": "/assets/ui-e108fa84e800.js",
       "status": 200,
-      "bytes": 10084,
+      "bytes": 10266,
       "matchesBuiltFile": true
     },
     {
@@ -247,55 +247,55 @@
     {
       "path": "/certificates/ai-ml-training/",
       "status": 200,
-      "bytes": 9017,
+      "bytes": 9013,
       "matchesBuiltFile": true
     },
     {
       "path": "/certificates/aws-foundations/",
       "status": 200,
-      "bytes": 9140,
+      "bytes": 9136,
       "matchesBuiltFile": true
     },
     {
       "path": "/certificates/cs50p/",
       "status": 200,
-      "bytes": 8990,
+      "bytes": 8986,
       "matchesBuiltFile": true
     },
     {
       "path": "/certificates/ieee-internship/",
       "status": 200,
-      "bytes": 9438,
+      "bytes": 9434,
       "matchesBuiltFile": true
     },
     {
       "path": "/certificates/nxtwave-genai/",
       "status": 200,
-      "bytes": 9353,
+      "bytes": 9349,
       "matchesBuiltFile": true
     },
     {
       "path": "/certificates/prototype-workshop/",
       "status": 200,
-      "bytes": 9400,
+      "bytes": 9396,
       "matchesBuiltFile": true
     },
     {
       "path": "/certificates/redhat-rh104/",
       "status": 200,
-      "bytes": 8985,
+      "bytes": 8981,
       "matchesBuiltFile": true
     },
     {
       "path": "/certificates/tcs-appreciation/",
       "status": 200,
-      "bytes": 9441,
+      "bytes": 9437,
       "matchesBuiltFile": true
     },
     {
       "path": "/certificates/webstack-internship/",
       "status": 200,
-      "bytes": 8917,
+      "bytes": 8913,
       "matchesBuiltFile": true
     },
     {
@@ -307,49 +307,49 @@
     {
       "path": "/",
       "status": 200,
-      "bytes": 66487,
+      "bytes": 66511,
       "matchesBuiltFile": true
     },
     {
       "path": "/privacy/",
       "status": 200,
-      "bytes": 8834,
+      "bytes": 8830,
       "matchesBuiltFile": true
     },
     {
       "path": "/projects/dermai/",
       "status": 200,
-      "bytes": 13309,
+      "bytes": 13305,
       "matchesBuiltFile": true
     },
     {
       "path": "/projects/dotnet/",
       "status": 200,
-      "bytes": 10560,
+      "bytes": 10556,
       "matchesBuiltFile": true
     },
     {
       "path": "/projects/expense/",
       "status": 200,
-      "bytes": 12231,
+      "bytes": 12227,
       "matchesBuiltFile": true
     },
     {
       "path": "/projects/flashy/",
       "status": 200,
-      "bytes": 10677,
+      "bytes": 10673,
       "matchesBuiltFile": true
     },
     {
       "path": "/projects/homely/",
       "status": 200,
-      "bytes": 11297,
+      "bytes": 11293,
       "matchesBuiltFile": true
     },
     {
       "path": "/projects/nimbusmart/",
       "status": 200,
-      "bytes": 12161,
+      "bytes": 12157,
       "matchesBuiltFile": true
     },
     {

@@ -1,3 +1,9 @@
+## Latest UI review
+
+See **UI_REVIEW.md**, **ui-review-results.json** and **ui-review-log.txt** for the latest changes and checks.
+
+---
+
 # Validation — completed build, 9 September 2026
 
 ## Results actually obtained

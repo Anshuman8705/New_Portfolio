@@ -1,0 +1,24 @@
+{
+  "baseGitCommit": "b3e8c3219e7008b561ed866a8ae4cc13fd603467",
+  "changedRuntimeFiles": [
+    "src/templates.mjs",
+    "src/styles.css",
+    "src/ui.js"
+  ],
+  "fileHashes": {
+    "src/templates.mjs": {
+      "before": "7764b41e4afdea2756744e60e2a427d899f55d58a930fde3d958d9f47fca9ea8",
+      "after": "43da0cd7f105e6a6b7b0b21d2a27d0254763c9735ca3b12ef3912146ff447c7d"
+    },
+    "src/styles.css": {
+      "before": "b7937bf3dab1d09b9f87f89d6c43d4d883511fc0884ee67fc855a83e31d669d4",
+      "after": "5080090c8457777917ffac7db84daa4f31291a4c79fc416b005e9e88ed65f431"
+    },
+    "src/ui.js": {
+      "before": "d0ea0ae0a87425745b3fcc6ff325e8d10ff26ccf6a18d775c526d04e3753d788",
+      "after": "7c70c53958313942071b4c340ab957ca5510f08e801158142f1bea7ca187e43e"
+    }
+  },
+  "runtimeConfigurationAndAssetsUnchanged": true,
+  "deployed": false
+}

@@ -1,6 +1,9 @@
 # Anshuman Agrawal — Complete Portfolio
 
-Full source + a built website. Prepared 9 September 2026.
+Full source + a built website. UI refresh prepared 9 September 2026.
+
+**Existing repository update:** see `docs/UI_REVIEW.md`. Only three active source
+files need replacing; build/deployment configuration is unchanged.
 
 **This is a complete replacement project, not a changes-only patch.** The earlier
 Portfolio_Content_Update ZIP does not need to be applied. NimbusMart itself is a
@@ -9,7 +12,7 @@ separate project and is not modified by this package.
 ## Open it on Windows
 
 Install Node.js 20 or newer if it is not already installed. Extract this ZIP, open
-`Anshuman_Portfolio_Complete`, and double-click **start-preview.bat**. Keep its
+`Anshuman_Portfolio_UI_Fixed`, and double-click **start-preview.bat**. Keep its
 terminal window open while browsing `http://127.0.0.1:4173`.
 
 Or use a terminal in this folder:
