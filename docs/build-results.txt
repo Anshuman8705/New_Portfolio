@@ -1,0 +1,6 @@
+
+> anshuman-portfolio@2.0.0 build
+> node scripts/build.mjs
+
+Built 18 HTML pages: 6 case studies, 9 certificate pages, home, privacy and 404.
+All local page and asset references resolve. Output: dist/

@@ -1,0 +1,32 @@
+[
+  {
+    "sourceFilename": "CS50P.pdf",
+    "path": "public/assets/certificates/documents/cs50p.pdf",
+    "sha256": "7258d9ba5751a0ea23c27cf5977d0d2ea999a8db12cbe0c27200e96bbbc2d126",
+    "processing": "Unchanged source PDF; web previews were rendered separately."
+  },
+  {
+    "sourceFilename": "AWS.pdf",
+    "path": "public/assets/certificates/documents/aws-foundations.pdf",
+    "sha256": "f7658b16d68e73c89f22fdc37fa10db2f6d87f6c2975087ebe1014ac3ef73969",
+    "processing": "Unchanged source PDF; web previews were rendered separately."
+  },
+  {
+    "sourceFilename": "Redhat.pdf",
+    "path": "public/assets/certificates/documents/redhat-rh104.pdf",
+    "sha256": "a9da1ffe0c6ba63df7c3a6544652e4d83de543282658deb18fe44746c7e24071",
+    "processing": "Unchanged source PDF; web previews were rendered separately."
+  },
+  {
+    "sourceFilename": "Internship Completion.pdf",
+    "path": "public/assets/certificates/documents/webstack-internship.pdf",
+    "sha256": "2d897c2dab1d1096bafb4bccb9b51ec48b9a14ae131da973d1e2588cbf114e17",
+    "processing": "Unchanged source PDF; web previews were rendered separately."
+  },
+  {
+    "sourceFilename": "AI-ML Training.pdf",
+    "path": "public/assets/certificates/documents/ai-ml-training.pdf",
+    "sha256": "176bacac560004bac928ac144404f3bb2d49907fc25bfd27446786f350ad61d3",
+    "processing": "Unchanged source PDF; web previews were rendered separately."
+  }
+]

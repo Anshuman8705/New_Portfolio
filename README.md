@@ -1,260 +1,170 @@
-# Anshuman Agrawal — portfolio
+# Anshuman Agrawal — Complete Portfolio
 
-A static React site. No backend, no database, no server to maintain. Vite compiles it
-to plain HTML, CSS and JavaScript that any host can serve for free, forever. The build
-also pre-renders the page, so the HTML that ships already contains the content — a
-search engine or a browser with JavaScript turned off sees the real page, not an
-empty div. React attaches to that markup in the browser rather than rebuilding it.
+Full source + a built website. Prepared 9 September 2026.
 
----
+**This is a complete replacement project, not a changes-only patch.** The earlier
+Portfolio_Content_Update ZIP does not need to be applied. NimbusMart itself is a
+separate project and is not modified by this package.
 
-## Running it locally
+## Open it on Windows
 
-You need Node.js 20.19 or newer (22.12+ also fine — Vite 7 requires one of those, and
-`package.json` will refuse older versions rather than fail halfway through a build).
-Then, in this folder:
+Install Node.js 20 or newer if it is not already installed. Extract this ZIP, open
+`Anshuman_Portfolio_Complete`, and double-click **start-preview.bat**. Keep its
+terminal window open while browsing `http://127.0.0.1:4173`.
 
-```bash
-npm install
-npm run dev
-```
+Or use a terminal in this folder:
 
-Open the address it prints (usually http://localhost:5173).
-
-To check the production build before deploying:
-
-```bash
+```sh
 npm run build
 npm run preview
 ```
 
----
+The prebuilt `dist/` folder is included. Do not double-click `dist/index.html`:
+root-relative document links and browser modules should be served over HTTP.
 
-## Updating the site — the only file you need
+## What is complete
 
-**Everything on the site lives in `src/data.js`.** Your projects, experience, Fab Lab
-modules, skills, certificates and contact details are all plain text in there. Edit that
-file, save, and the page updates. You never need to open a component or touch any CSS.
+- Responsive homepage with portrait, clearer positioning and project filters.
+- Six standalone project case studies with public source links, honest boundaries
+  and the agreed equal-contribution credits for DermAI and Expense & Budget Management.
+- NimbusMart project entry and the public .NET repository link.
+- Two owner-supplied YouTube walkthroughs. Players load only after a click; regular
+  YouTube links also remain available. The CS50 video is not assigned to the .NET project.
+- Nine certificate cards, category filters, five featured entries, a keyboard-operable
+  preview dialog, individual document pages and downloads.
+- All five original certificate PDFs, unchanged. IEEE and TCS photos are rotated for
+  reading; untouched original photo files are also linked on their document pages.
+- Existing Fab Lab learning journeys, hardware builds, experience, skills and education.
+- An updated, linked, two-page PDF resume. It uses the new credits and document-supported
+  internship dates, and does not label research as a clinical product.
+- Contact validation, timeout, error recovery, duplicate-submit prevention, a real
+  honeypot field, copy-email action and direct email fallback.
+- Static metadata, social preview, per-page canonical URLs, sitemap, robots file,
+  favicon, privacy page and 404 page.
 
-To add a project, copy an existing block inside the `projects` array and change the values:
+## Implementation change from the old ZIP
 
-```js
-{
-  id: "something-unique",
-  title: "Project name",
-  role: "Where it came from",
-  thumb: "stack",              // heat | bars | house | cards | scatter | stack | cart
-  body: "Two or three sentences on what it does and how.",
-  figures: [                   // use 2, 3 or 4 — the layout adjusts
-    { value: "41/41", label: "Tests passing" },
-  ],
-  callout: {                   // optional; delete these three lines if not needed
-    title: "A note.",
-    body: "Something honest about a limitation or a decision.",
-  },
-  tags: ["Python", "Flask"],
-  repo: "https://github.com/Anshuman8705/repo-name",
-  demo: "https://optional-live-url.com",   // optional; delete if none
-}
-```
+The previous portfolio was a React/Vite project. This complete edition uses a
+**dependency-free Node.js static build plus native browser JavaScript**, rather
+than another unverified React/Vite patch. It keeps the portfolio content and
+features, and pre-renders every page. No `node_modules`, frontend framework
+runtime, database, server-side application or new paid service is required for
+normal hosting. The optional resume generator and browser tests have their own
+Python test/build requirements; the website build does not.
 
-Projects appear in the order they are listed, newest first. If a repo is not published
-yet, set `repo: ""` and the card shows the `repoPending` text instead of a dead link.
+The old React/Vite files are not the active application in this package. Keep your
+original ZIP/repository as a rollback copy. Do not mix the earlier JSX patch files
+into this source tree. System typefaces are used; there are no font downloads.
 
-Then publish the change:
-
-```bash
-git add .
-git commit -m "Add new project"
-git push
-```
-
-Vercel and Netlify rebuild automatically on push.
-
----
-
-## Two things to do before you go live
-
-### 1. Add your photo and resume
-
-Put the file at `public/assets/anshuman.jpg`, then in `src/data.js` change:
-
-```js
-photo: "",                        // to →
-photo: "/assets/anshuman.jpg",
-```
-
-Crop it 4:5 portrait, shoulders up, plain background. 720x900 is plenty — the layout
-never renders it wider than 360 CSS pixels, so anything larger is bytes your visitors
-download for nothing. Until you set this, a placeholder with your initials shows in its
-place. If you also drop a `.webp` of the same picture next to it and point
-`profile.photoWebp` at it, browsers that support WebP take the smaller file.
-
-The resume PDF is already at `public/assets/Anshuman_Agrawal_Resume.pdf` and
-`profile.resume` points at it, so the "Download resume" button in the hero and the Resume
-link in the contact column both render. Set `resume: ""` and neither appears — no broken
-download.
-
-The PDF is generated, not hand-made. `scripts/build_resume.py` builds it in the same
-typefaces, palette and section rules as the site, from the same content as `data.js`:
-
-```bash
-pip install reportlab
-python scripts/build_resume.py
-```
-
-Edit the content near the bottom of that script and re-run it. Two pages of A4, real
-selectable text with working links (so an applicant tracking system can read it), and
-fonts loaded from `assets-src/fonts` rather than the network.
-
-### 2. Make the contact form deliver email
-
-The form posts straight to Web3Forms, which emails you the message. You run no server.
-
-1. Go to https://web3forms.com and enter **anshumanagrawal89@gmail.com**
-2. They email you an access key
-3. In `src/data.js`, replace `REPLACE_WITH_YOUR_WEB3FORMS_KEY` with that key
-4. Push
-
-Until you do this, the form validates normally and then tells the visitor it is not
-connected yet, showing your email address instead. It never fails silently and never
-loses a message without saying so. The reminder to set the key only renders while you
-are running `npm run dev` — visitors to the live site never see setup instructions.
-
-The free tier covers 250 submissions a month. The access key sitting in public
-JavaScript is expected and safe — the worst anyone can do with it is send you a message
-through your own form, and a hidden honeypot field plus Web3Forms' own spam filtering
-guard against that. The honeypot's real state is read off the form and sent with the
-request, so a bot that ticks it gets rejected on Web3Forms' side.
-
-**Send yourself a test the moment it goes live.** The first message can land in Gmail's
-spam folder because it arrives from Web3Forms' servers. Mark it "not spam" once and
-everything after that goes to your inbox.
-
-### 3. Set your live URL
-
-Once deployed, put the address in `meta.siteUrl` in `src/data.js`, for example
-`"https://anshuman.vercel.app"`, then push. This switches on `og:url`, `og:image` and
-the canonical link, which is what makes your link show a proper preview card with an
-image when shared on LinkedIn or WhatsApp rather than a plain grey box. The preview
-image itself is at `public/assets/og-image.jpg` — replace it with your own 1200x630
-design any time.
-
-If you deploy to Vercel or Netlify and forget this step, the build falls back to the
-deployment URL those hosts put in the environment, so the preview card still works. You
-can also set `SITE_URL` yourself on any other host. Setting `meta.siteUrl` explicitly is
-still better, because it pins the canonical link to your real domain rather than to
-whatever preview URL the host happened to generate.
-
----
-
-## Deploying
-
-### Vercel (recommended)
-
-1. Push this folder to a GitHub repository
-2. Go to vercel.com, sign in with GitHub, click **Add New → Project**
-3. Select the repository. Vercel detects Vite on its own — accept the defaults
-4. Deploy
-
-Every `git push` after that redeploys automatically. The GitHub Actions workflow in
-`.github/workflows/build.yml` runs `npm ci && npm run build` on every push too, so a
-broken edit to `data.js` shows up as a red cross on the commit before Vercel ships it.
-
-### GitHub Pages
-
-Works too, with one extra step. If your site will live at
-`anshuman8705.github.io/portfolio`, open `vite.config.js` and set:
-
-```js
-base: "/portfolio/",
-```
-
-Then build and publish the `dist` folder to a `gh-pages` branch. Leave `base: "/"` if
-you use Vercel, Netlify, or a custom domain at the root.
-
----
-
-## What is in here
+## Folder guide
 
 ```
-src/
-  data.js                  ← all your content. This is the file you edit.
-  styles.css               ← the design system: colours, type, spacing, @font-face
-  App.jsx                  ← assembles the sections in order
-  main.jsx                 ← React entry point (hydrates the pre-rendered markup)
-  entry-server.jsx         ← build-time only: renders the page to HTML
-  components/
-    Nav.jsx                sticky nav, highlights the section you are reading
-    Hero.jsx               headline, intro, photo, facts strip
-    Projects.jsx           the project grid
-    Experience.jsx         the role timeline
-    FabLab.jsx             the eight modules, each opening its journey panel
-    ModuleDialog.jsx       the day-by-day panel a module opens
-    Workshops.jsx          the ESP32 and Raspberry Pi builds
-    Skills.jsx             skills, certificates, education
-    Contact.jsx            the working contact form
-    Footer.jsx
-    SectionHead.jsx        shared section heading
-    Thumb.jsx              the small SVG icons on each project card
-public/assets/             photo, resume PDF, social preview image
-public/fonts/              self-hosted woff2 fonts (no Google Fonts request)
-public/robots.txt          lets search engines index the site
-.github/workflows/         CI: builds on every push
-scripts/
-  sync-meta.mjs            writes the meta block in index.html from data.js
-  prerender.mjs            injects the pre-rendered HTML into dist/index.html
-  build_resume.py          regenerates the resume PDF in the site's own style
-assets-src/fonts/          fonts the resume script renders with (not served)
+src/data.js          Your profile, projects, skills, modules, videos and certificates
+src/templates.mjs    HTML templates for the home and detail pages
+src/styles.css       Responsive styling
+src/ui.js            Navigation, filters, dialogs, videos and contact behavior
+src/form.mjs         Shared contact validation
+public/assets/       Portrait, resume, social preview and local certificate assets
+scripts/build.mjs    Creates and validates all pages in dist/
+scripts/serve.mjs    Local preview server; not needed on a static host
+scripts/build_resume.py  Optional resume regeneration from src/data.js
+scripts/make_previews.py Optional PDF/image preview regeneration
+tests/               Content, browser and HTTP checks
+docs/                Source notes, test results and preview screenshots
+dist/                Ready-built website (18 HTML pages)
 ```
 
-Colours, fonts and spacing are all CSS custom properties at the top of `styles.css`. If
-you ever want to change the palette, change them there and the whole site follows. The
-footer's "Last updated" month is written by `vite.config.js` at build time, so it is
-always the month of the last deploy without anyone touching it.
+## Editing content
 
----
+Edit `src/data.js`, then run `npm run build`. It is the source for all project and
+certificate descriptions. Keep image/PDF paths under `public/assets/`.
 
-## Accessibility and quality notes
+Add a certificate with a unique `id`, accurate `title`, `issuer`, `kind`, `group`,
+`date`, and paths for `document`, `preview` and `thumbnail`. Only add `credentialUrl`
+when it comes from a real credential record. Set `featured: true` to put it in the
+initial featured view. Existing labels distinguish course attendance, completion,
+workshop participation, internship and appreciation; they are not interchangeable.
 
-- Skip-to-content link for keyboard users
-- Visible focus outlines throughout, and `scroll-padding-top` so anchor jumps never land
-  a heading underneath the sticky nav
-- Form errors linked to their inputs via `aria-describedby`, status announced via
-  `aria-live`, and focus moved to the first invalid field on a failed submit
-- Respects `prefers-reduced-motion`
-- Responsive from 320px up; the project grid drops to one column below 940px
-- Mobile menu below 760px: opens from the header, closes on link tap, on Escape (which
-  returns focus to the button), on an outside tap, and automatically if the window is
-  widened past the breakpoint
+The site address is `meta.siteUrl`. It currently retains the address you supplied:
+`https://portfolio-kohl-theta-24.vercel.app`. Update it only when moving the site.
+The content review date is `meta.contentUpdated`, not an automatically invented
+credential date.
 
-## The Fab Lab modules
+To regenerate the resume after material content changes:
 
-Each module tile opens a panel listing its day-by-day journey. Both the tile text and the
-day list come from `fablab.modules` in `src/data.js`:
-
-```js
-{
-  title: "Laser cutting",
-  body: "The one-line summary shown on the tile.",
-  days: ["Introduction and applications", "Hardware and software"],
-  takeaway: "Optional closing line at the bottom of the panel.",
-}
+```sh
+python -m pip install reportlab
+npm run resume
+npm run build
 ```
 
-Add or remove days freely — the tile's "N days" label and the panel both count the array,
-so they can never disagree. The panel uses the browser's native `<dialog>`, which handles
-the focus trap, Escape-to-close and the backdrop properly for keyboard and screen reader
-users.
+Review the PDF after adding more content; the included version is two pages.
 
-## Page metadata
+## Publish through the existing Vercel project
 
-`index.html` contains a generated block between `<!-- meta:start -->` and
-`<!-- meta:end -->`. Do not edit it by hand — it is rewritten from `meta` in
-`src/data.js` every time you run `npm run dev` or `npm run build`, and again whenever you
-save `data.js` while the dev server is running. Social crawlers do not execute
-JavaScript, so these tags have to exist in the static HTML; that is why they are baked in
-at build time rather than set by React. The block also carries a JSON-LD `Person` record,
-which is what lets a search engine understand the page is a person rather than a document
-about one. The college is listed there as `memberOf` while you are a student; switch
-`meta.memberOf` to `meta.alumniOf` in `data.js` after graduation.
+Back up the existing repository or create a new review branch first. Use this
+folder's contents as the project root, rather than nesting it inside the old root.
+The included `vercel.json` supplies these settings:
+
+| Setting | Value |
+| --- | --- |
+| Framework preset | Other (not Vite) |
+| Install command | `npm ci --ignore-scripts` |
+| Build command | `npm run build` |
+| Output directory | `dist` |
+| Node | 22 |
+
+The lockfile has no external package dependencies. Review a preview deployment
+before merging to the production branch. No GitHub push or Vercel deployment was
+performed while preparing this ZIP. Preview builds set `noindex` when Vercel
+reports `VERCEL_ENV=preview`.
+
+Alternatively, upload the **contents of `dist/`** to a static host. A separate
+ready-to-host ZIP is supplied for that route. Root-relative paths assume the site
+is at a domain root, as in the current Vercel address; subfolder hosting needs a
+base-path adaptation.
+
+## Contact configuration and live verification
+
+The existing public Web3Forms form access key is retained in `src/data.js`.
+It is a public form identifier intended to appear in the client; do not put a
+private API key there. An optional build environment variable
+`WEB3FORMS_ACCESS_KEY` overrides it.
+
+Success and failure states were tested using mocked provider responses. **A real
+message was not sent**, and inbox delivery has not been confirmed. After publishing,
+send one message yourself, confirm it arrives, and check spam. A successful API
+response is described as submission success, not proof of inbox delivery.
+
+YouTube playback, live GitHub availability and issuer credential records were not
+independently verified. The links retain the owner's supplied destinations.
+
+## Quality checks
+
+```sh
+npm test
+npm run build
+npm run preview
+```
+
+With the preview server running, the optional HTTP check is:
+
+```sh
+python tests/http_check.py
+```
+
+For browser checks in a normal development environment:
+
+```sh
+python -m pip install playwright beautifulsoup4
+python -m playwright install chromium
+python tests/browser_check.py --screenshots
+```
+
+The delivered run used `--offline` because browser navigation and package downloads
+were restricted in the build environment. That run rendered the actual built HTML,
+inlined its local CSS/images and executed the same UI logic in Chromium. It is not
+represented as a deployed-site test. Separately, the local HTTP checks fetched all
+built assets and compared response bytes to the corresponding files.
+
+See `docs/VALIDATION.md` for actual results and remaining post-deployment checks.

@@ -1,0 +1,57 @@
+PASS Homepage: one H1 and six rendered projects
+PASS Default gallery displays five featured certificates
+PASS Project filter: ml
+PASS Project filter: web
+PASS Project filter: tools
+PASS Project filter: all
+PASS Certificate filter: all
+PASS Certificate filter: internship
+PASS Certificate filter: course
+PASS Certificate filter: workshop
+PASS Certificate filter: recognition
+PASS Certificate filter: featured
+PASS Certificate preview opens with correct title
+PASS Certificate preview includes an actual download target
+PASS Modal keeps keyboard focus inside
+PASS Escape closes preview and restores opener focus
+PASS Videos make no connection before user activation
+PASS Click-to-load video uses the supplied ID and privacy-enhanced domain
+PASS Fab Lab journey expands
+PASS Fab Lab journey collapses
+PASS Mobile menu opens
+PASS Mobile menu closes and restores toggle focus
+PASS Empty contact form shows errors and focuses name
+PASS Invalid email is blocked
+PASS Mocked success clears fields without claiming inbox delivery
+PASS Submitted payload contains selected topic and real honeypot state
+PASS Provider rejection preserves text and shows email fallback
+PASS Network failure preserves message and re-enables submit
+PASS Duplicate submissions create only one request
+PASS Request timeout preserves the draft and enables retry
+PASS Homepage at 320px: no horizontal overflow
+PASS Homepage at 390px: no horizontal overflow
+PASS Homepage at 768px: no horizontal overflow
+PASS Homepage at 1024px: no horizontal overflow
+PASS Homepage at 1440px: no horizontal overflow
+PASS Navigation highlights the section being read
+PASS Detail page renders: projects/dermai/index.html
+PASS Detail page renders: projects/dotnet/index.html
+PASS Detail page renders: projects/expense/index.html
+PASS Detail page renders: projects/flashy/index.html
+PASS Detail page renders: projects/homely/index.html
+PASS Detail page renders: projects/nimbusmart/index.html
+PASS Detail page renders: certificates/ai-ml-training/index.html
+PASS Detail page renders: certificates/aws-foundations/index.html
+PASS Detail page renders: certificates/cs50p/index.html
+PASS Detail page renders: certificates/ieee-internship/index.html
+PASS Detail page renders: certificates/nxtwave-genai/index.html
+PASS Detail page renders: certificates/prototype-workshop/index.html
+PASS Detail page renders: certificates/redhat-rh104/index.html
+PASS Detail page renders: certificates/tcs-appreciation/index.html
+PASS Detail page renders: certificates/webstack-internship/index.html
+PASS Privacy page renders
+PASS 404 page renders
+PASS No-JS: all projects and documents remain visible
+PASS No-JS: disabled contact form does not expose a GET submission
+PASS No uncaught JavaScript errors in tested pages
+56 browser checks passed.

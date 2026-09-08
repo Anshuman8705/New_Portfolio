@@ -1,0 +1,237 @@
+{
+  "mode": "offline Chromium DOM fixture",
+  "checks": 56,
+  "passed": 56,
+  "failed": 0,
+  "results": [
+    {
+      "check": "Homepage: one H1 and six rendered projects",
+      "result": "PASS"
+    },
+    {
+      "check": "Default gallery displays five featured certificates",
+      "result": "PASS"
+    },
+    {
+      "check": "Project filter: ml",
+      "result": "PASS"
+    },
+    {
+      "check": "Project filter: web",
+      "result": "PASS"
+    },
+    {
+      "check": "Project filter: tools",
+      "result": "PASS"
+    },
+    {
+      "check": "Project filter: all",
+      "result": "PASS"
+    },
+    {
+      "check": "Certificate filter: all",
+      "result": "PASS"
+    },
+    {
+      "check": "Certificate filter: internship",
+      "result": "PASS"
+    },
+    {
+      "check": "Certificate filter: course",
+      "result": "PASS"
+    },
+    {
+      "check": "Certificate filter: workshop",
+      "result": "PASS"
+    },
+    {
+      "check": "Certificate filter: recognition",
+      "result": "PASS"
+    },
+    {
+      "check": "Certificate filter: featured",
+      "result": "PASS"
+    },
+    {
+      "check": "Certificate preview opens with correct title",
+      "result": "PASS"
+    },
+    {
+      "check": "Certificate preview includes an actual download target",
+      "result": "PASS"
+    },
+    {
+      "check": "Modal keeps keyboard focus inside",
+      "result": "PASS"
+    },
+    {
+      "check": "Escape closes preview and restores opener focus",
+      "result": "PASS"
+    },
+    {
+      "check": "Videos make no connection before user activation",
+      "result": "PASS"
+    },
+    {
+      "check": "Click-to-load video uses the supplied ID and privacy-enhanced domain",
+      "result": "PASS"
+    },
+    {
+      "check": "Fab Lab journey expands",
+      "result": "PASS"
+    },
+    {
+      "check": "Fab Lab journey collapses",
+      "result": "PASS"
+    },
+    {
+      "check": "Mobile menu opens",
+      "result": "PASS"
+    },
+    {
+      "check": "Mobile menu closes and restores toggle focus",
+      "result": "PASS"
+    },
+    {
+      "check": "Empty contact form shows errors and focuses name",
+      "result": "PASS"
+    },
+    {
+      "check": "Invalid email is blocked",
+      "result": "PASS"
+    },
+    {
+      "check": "Mocked success clears fields without claiming inbox delivery",
+      "result": "PASS"
+    },
+    {
+      "check": "Submitted payload contains selected topic and real honeypot state",
+      "result": "PASS"
+    },
+    {
+      "check": "Provider rejection preserves text and shows email fallback",
+      "result": "PASS"
+    },
+    {
+      "check": "Network failure preserves message and re-enables submit",
+      "result": "PASS"
+    },
+    {
+      "check": "Duplicate submissions create only one request",
+      "result": "PASS"
+    },
+    {
+      "check": "Request timeout preserves the draft and enables retry",
+      "result": "PASS"
+    },
+    {
+      "check": "Homepage at 320px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Homepage at 390px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Homepage at 768px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Homepage at 1024px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Homepage at 1440px: no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "check": "Navigation highlights the section being read",
+      "result": "PASS"
+    },
+    {
+      "check": "Detail page renders: projects/dermai/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "Detail page renders: projects/dotnet/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "Detail page renders: projects/expense/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "Detail page renders: projects/flashy/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "Detail page renders: projects/homely/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "Detail page renders: projects/nimbusmart/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "Detail page renders: certificates/ai-ml-training/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "Detail page renders: certificates/aws-foundations/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "Detail page renders: certificates/cs50p/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "Detail page renders: certificates/ieee-internship/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "Detail page renders: certificates/nxtwave-genai/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "Detail page renders: certificates/prototype-workshop/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "Detail page renders: certificates/redhat-rh104/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "Detail page renders: certificates/tcs-appreciation/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "Detail page renders: certificates/webstack-internship/index.html",
+      "result": "PASS"
+    },
+    {
+      "check": "Privacy page renders",
+      "result": "PASS"
+    },
+    {
+      "check": "404 page renders",
+      "result": "PASS"
+    },
+    {
+      "check": "No-JS: all projects and documents remain visible",
+      "result": "PASS"
+    },
+    {
+      "check": "No-JS: disabled contact form does not expose a GET submission",
+      "result": "PASS"
+    },
+    {
+      "check": "No uncaught JavaScript errors in tested pages",
+      "result": "PASS"
+    }
+  ],
+  "limitations": [
+    "No real messages submitted; provider responses were mocked.",
+    "No external video playback or credential verification performed.",
+    "HTTP navigation and production CSP were not exercised by the offline browser fixture."
+  ]
+}

@@ -1,0 +1,388 @@
+{
+  "checks": 64,
+  "passed": 64,
+  "failed": 0,
+  "method": "HTTP against the local Node preview server; built file bodies compared byte-for-byte",
+  "results": [
+    {
+      "path": "/404.html",
+      "status": 200,
+      "bytes": 7278,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/Anshuman_Agrawal_Resume.pdf",
+      "status": 200,
+      "bytes": 10874,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/anshuman.jpg",
+      "status": 200,
+      "bytes": 140069,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/anshuman.webp",
+      "status": 200,
+      "bytes": 95980,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/documents/ai-ml-training.pdf",
+      "status": 200,
+      "bytes": 1275836,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/documents/aws-foundations.pdf",
+      "status": 200,
+      "bytes": 976241,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/documents/cs50p.pdf",
+      "status": 200,
+      "bytes": 426416,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/documents/ieee-internship-original.jpeg",
+      "status": 200,
+      "bytes": 147749,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/documents/ieee-internship.jpg",
+      "status": 200,
+      "bytes": 484107,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/documents/nxtwave-genai-original.png",
+      "status": 200,
+      "bytes": 367556,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/documents/nxtwave-genai.jpg",
+      "status": 200,
+      "bytes": 141352,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/documents/prototype-workshop-original.png",
+      "status": 200,
+      "bytes": 268371,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/documents/prototype-workshop.jpg",
+      "status": 200,
+      "bytes": 142864,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/documents/redhat-rh104.pdf",
+      "status": 200,
+      "bytes": 55473,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/documents/tcs-appreciation-original.jpeg",
+      "status": 200,
+      "bytes": 91727,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/documents/tcs-appreciation.jpg",
+      "status": 200,
+      "bytes": 222810,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/documents/webstack-internship.pdf",
+      "status": 200,
+      "bytes": 656522,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/previews/ai-ml-training-thumb.webp",
+      "status": 200,
+      "bytes": 50068,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/previews/ai-ml-training.webp",
+      "status": 200,
+      "bytes": 167018,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/previews/aws-foundations-thumb.webp",
+      "status": 200,
+      "bytes": 15544,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/previews/aws-foundations.webp",
+      "status": 200,
+      "bytes": 52396,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/previews/cs50p-thumb.webp",
+      "status": 200,
+      "bytes": 21182,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/previews/cs50p.webp",
+      "status": 200,
+      "bytes": 80926,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/previews/ieee-internship-thumb.webp",
+      "status": 200,
+      "bytes": 34946,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/previews/ieee-internship.webp",
+      "status": 200,
+      "bytes": 141612,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/previews/nxtwave-genai-thumb.webp",
+      "status": 200,
+      "bytes": 22582,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/previews/nxtwave-genai.webp",
+      "status": 200,
+      "bytes": 47094,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/previews/prototype-workshop-thumb.webp",
+      "status": 200,
+      "bytes": 21582,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/previews/prototype-workshop.webp",
+      "status": 200,
+      "bytes": 42504,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/previews/redhat-rh104-thumb.webp",
+      "status": 200,
+      "bytes": 18122,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/previews/redhat-rh104.webp",
+      "status": 200,
+      "bytes": 60944,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/previews/tcs-appreciation-thumb.webp",
+      "status": 200,
+      "bytes": 20498,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/previews/tcs-appreciation.webp",
+      "status": 200,
+      "bytes": 80970,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/previews/webstack-internship-thumb.webp",
+      "status": 200,
+      "bytes": 24206,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/certificates/previews/webstack-internship.webp",
+      "status": 200,
+      "bytes": 75058,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/form-2f5571e118be.js",
+      "status": 200,
+      "bytes": 970,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/og-image.jpg",
+      "status": 200,
+      "bytes": 88731,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/styles-b7937bf3dab1.css",
+      "status": 200,
+      "bytes": 33042,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/ui-13f31df10bc4.js",
+      "status": 200,
+      "bytes": 10084,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/build-info.json",
+      "status": 200,
+      "bytes": 213,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/certificates/ai-ml-training/",
+      "status": 200,
+      "bytes": 9017,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/certificates/aws-foundations/",
+      "status": 200,
+      "bytes": 9140,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/certificates/cs50p/",
+      "status": 200,
+      "bytes": 8990,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/certificates/ieee-internship/",
+      "status": 200,
+      "bytes": 9438,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/certificates/nxtwave-genai/",
+      "status": 200,
+      "bytes": 9353,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/certificates/prototype-workshop/",
+      "status": 200,
+      "bytes": 9400,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/certificates/redhat-rh104/",
+      "status": 200,
+      "bytes": 8985,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/certificates/tcs-appreciation/",
+      "status": 200,
+      "bytes": 9441,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/certificates/webstack-internship/",
+      "status": 200,
+      "bytes": 8917,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/favicon.svg",
+      "status": 200,
+      "bytes": 269,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 66487,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/privacy/",
+      "status": 200,
+      "bytes": 8834,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/projects/dermai/",
+      "status": 200,
+      "bytes": 13309,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/projects/dotnet/",
+      "status": 200,
+      "bytes": 10560,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/projects/expense/",
+      "status": 200,
+      "bytes": 12231,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/projects/flashy/",
+      "status": 200,
+      "bytes": 10677,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/projects/homely/",
+      "status": 200,
+      "bytes": 11297,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/projects/nimbusmart/",
+      "status": 200,
+      "bytes": 12161,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "bytes": 87,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "bytes": 1594,
+      "matchesBuiltFile": true
+    },
+    {
+      "method": "GET",
+      "path": "/missing-portfolio-page",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/projects/dermai",
+      "status": 301
+    },
+    {
+      "method": "POST",
+      "path": "/",
+      "status": 405
+    },
+    {
+      "method": "HEAD",
+      "path": "/",
+      "status": 200
+    }
+  ]
+}

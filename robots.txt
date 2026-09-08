@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://portfolio-kohl-theta-24.vercel.app/sitemap.xml

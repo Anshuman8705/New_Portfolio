@@ -1,0 +1,128 @@
+TAP version 13
+# Subtest: project IDs are unique and existing six projects remain represented
+ok 1 - project IDs are unique and existing six projects remain represented
+  ---
+  duration_ms: 0.945059
+  type: 'test'
+  ...
+# Subtest: featured order is DermAI, Expense, NimbusMart
+ok 2 - featured order is DermAI, Expense, NimbusMart
+  ---
+  duration_ms: 0.744868
+  type: 'test'
+  ...
+# Subtest: DermAI keeps collaborator and equal contribution in two sentences
+ok 3 - DermAI keeps collaborator and equal contribution in two sentences
+  ---
+  duration_ms: 0.248573
+  type: 'test'
+  ...
+# Subtest: Expense keeps collaborator and equal contribution in two sentences
+ok 4 - Expense keeps collaborator and equal contribution in two sentences
+  ---
+  duration_ms: 0.111778
+  type: 'test'
+  ...
+# Subtest: Expense uses the newly public repository and no stale private label
+ok 5 - Expense uses the newly public repository and no stale private label
+  ---
+  duration_ms: 0.091167
+  type: 'test'
+  ...
+# Subtest: NimbusMart uses current stack and supplied live URL
+ok 6 - NimbusMart uses current stack and supplied live URL
+  ---
+  duration_ms: 0.169104
+  type: 'test'
+  ...
+# Subtest: DermAI retains the clinical-use boundary and known fallback limitation
+ok 7 - DermAI retains the clinical-use boundary and known fallback limitation
+  ---
+  duration_ms: 0.128894
+  type: 'test'
+  ...
+# Subtest: the CS50 link is preserved separately from the Expense project
+ok 8 - the CS50 link is preserved separately from the Expense project
+  ---
+  duration_ms: 0.132969
+  type: 'test'
+  ...
+# Subtest: the Webstack video ID is preserved
+ok 9 - the Webstack video ID is preserved
+  ---
+  duration_ms: 0.261864
+  type: 'test'
+  ...
+# Subtest: both videos are described as walkthroughs, not live applications
+ok 10 - both videos are described as walkthroughs, not live applications
+  ---
+  duration_ms: 0.477538
+  type: 'test'
+  ...
+# Subtest: no autoplay, third-party embed, or injected HTML was introduced
+ok 11 - no autoplay, third-party embed, or injected HTML was introduced
+  ---
+  duration_ms: 0.846843
+  type: 'test'
+  ...
+# Subtest: every project, video and credential URL uses HTTPS
+ok 12 - every project, video and credential URL uses HTTPS
+  ---
+  duration_ms: 0.214121
+  type: 'test'
+  ...
+# Subtest: credential entries do not assert unverified Credly validation
+ok 13 - credential entries do not assert unverified Credly validation
+  ---
+  duration_ms: 0.128543
+  type: 'test'
+  ...
+# Subtest: project notes use native accessible details and link labels describe purpose
+ok 14 - project notes use native accessible details and link labels describe purpose
+  ---
+  duration_ms: 0.118498
+  type: 'test'
+  ...
+# Subtest: new external-link components use new-tab isolation
+ok 15 - new external-link components use new-tab isolation
+  ---
+  duration_ms: 0.238168
+  type: 'test'
+  ...
+# Subtest: photo and resume paths remain present in original project
+ok 16 - photo and resume paths remain present in original project
+  ---
+  duration_ms: 0.180721
+  type: 'test'
+  ...
+# Subtest: all eight Fab Lab modules are retained
+ok 17 - all eight Fab Lab modules are retained
+  ---
+  duration_ms: 0.080641
+  type: 'test'
+  ...
+# Subtest: all relative source imports resolve to files
+ok 18 - all relative source imports resolve to files
+  ---
+  duration_ms: 1.392302
+  type: 'test'
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 18
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 63.296232
+
+JSX parsing: 16 files, no syntax errors.
+
+Production build attempt (not successful):
+
+> anshuman-portfolio@1.0.0 build
+> node scripts/sync-meta.mjs && vite build && vite build --ssr src/entry-server.jsx --outDir .ssr-build && node scripts/prerender.mjs
+
+sync-meta: already current 19 tags  (site: https://portfolio-kohl-theta-24.vercel.app)
+sh: 1: vite: not found

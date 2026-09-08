@@ -1,0 +1,36 @@
+{
+  "base": "New_Portfolio-fixed.zip",
+  "version": "2026-09-08-content-update",
+  "files": [
+    {
+      "path": "src/data.js",
+      "original_sha256": "2fc10fe6ce282762af694ededf33af1736a208e72aa023a9a170b347fe6f7208",
+      "updated_sha256": "89dd5da98a8c754afcc594f8d7103f3d03e5d36289b7ed83445fd4840b865d8d"
+    },
+    {
+      "path": "src/components/Projects.jsx",
+      "original_sha256": "5ed45a8b5504ed3fa22c1597542ed3fbc5fd60c917b7885636453e2cfc3f3204",
+      "updated_sha256": "472f3e1edcc502ea75ef03a7fa4f3337d11a833656ea7206128c2d97ebfb57a2"
+    },
+    {
+      "path": "src/components/ProjectVideos.jsx",
+      "original_sha256": null,
+      "updated_sha256": "f9f84117d3825fac5fb3beabb0998c3af582a7e090f6d4d80739f96041f3221e"
+    },
+    {
+      "path": "src/components/Skills.jsx",
+      "original_sha256": "9a11977898c1329eff10a40600a77881192291791d10beecfc43760aeeaca5cc",
+      "updated_sha256": "debade273059f779dcb7762105557c365d4ebe538b599628cc45d1c5cf24a8da"
+    },
+    {
+      "path": "src/styles.css",
+      "original_sha256": "1cd012e160dd80829899bc03daf9882a0fc5197ebc3c2678524b4cfa64050b69",
+      "updated_sha256": "34cac5aaf45357389f88191b9b0eef700746d680965cd66de415ecdf6a23f57e"
+    },
+    {
+      "path": "scripts/test-content.mjs",
+      "original_sha256": null,
+      "updated_sha256": "f9944e5a0670fe3f31892a90a4f34f79925b5d1fa75392bd67123762790d16ed"
+    }
+  ]
+}

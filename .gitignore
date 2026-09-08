@@ -1,7 +1,9 @@
-node_modules
-dist
-.DS_Store
-*.local
+node_modules/
 .env
-
-.ssr-build
+.env.*
+!.env.example
+dist/
+playwright-report/
+test-results/
+__pycache__/
+.DS_Store
