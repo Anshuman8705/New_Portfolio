@@ -1,8 +1,8 @@
 {
   "version": "2.0.0",
   "contentUpdated": "1 November 2026",
-  "htmlPages": 18,
+  "htmlPages": 20,
   "projects": 6,
-  "certificates": 9,
+  "certificates": 11,
   "build": "Native Node.js static rendering; no framework runtime or package dependencies"
 }

@@ -36,10 +36,10 @@ story.extend([P(E(profile['fullName']),'Name'),P('AI/ML &amp; full-stack develop
 story.append(P('PROFILE','Section'))
 story.append(P('Third-year B.E. Information Technology student at SSGMCE Shegaon and an AI/ML Developer Intern at One Smarter, Inc. Work spans machine learning research prototypes, account-based web applications and hardware prototyping, with an emphasis on practical implementation and honest evaluation.'))
 story.append(P('EXPERIENCE','Section'))
-for x in d['experience']:
+for x in [x for x in d['experience'] if x['title'] not in ['Mentor','Member']]:
  text=x['body']
  if x['title']=='AI/ML Developer Intern': text='Healthcare data automation: transforming EDI transaction data into structured formats and generating reports. Proprietary implementation remains private.'
- if x['title']=='AI/ML Intern': text='Collaborative model development, evaluation and application work for DermAI Monitor under Dr. Ankita Tidake. Co-authored an IEEE-format manuscript covering methods, results and limitations; publication is not asserted.'
+ if x['title']=='AI/ML Intern': text='Collaborative model development, evaluation and application work for DermAI Monitor under Dr. Ankita Tidake. Developed the research prototype with Tanushri Khawale.'
  story.extend([P(E(x['title']),'Role'),P(E(x['where'])+' | '+E(x['when']),'Meta'),P(E(text))])
 story.append(P('TECHNICAL SKILLS','Section'))
 for s in d['skills']:

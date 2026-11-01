@@ -42,7 +42,7 @@ retained as a visible limitation, with no clinical-use claim.
 
 The two-sentence equal-contribution credits follow the owner's instruction, naming
 Tanushri Khawale and Rahul Paghrut. They do not invent who built individual layers.
-An IEEE-format manuscript is not described as an accepted/published IEEE paper.
+Owner correction, 1 November 2026: no DermAI paper authorship is claimed. Contributions concern project development and evaluation.
 
 The project diagrams are labelled pipeline/application overviews. They are not
 presented as application screenshots or measured analytics. No product screenshot

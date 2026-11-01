@@ -10,7 +10,7 @@ import { escapeHtml,safeJson,homePage,caseStudy,certificatePage,layout } from '.
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const valid={name:'Anshuman Agrawal',email:'test@example.com',message:'A project enquiry.'};
 test('All six projects have unique stable IDs and real source links',()=>{assert.equal(projects.length,6);assert.equal(new Set(projects.map(p=>p.id)).size,6);projects.forEach(p=>{assert.match(p.repo,/^https:\/\/github\.com\/Anshuman8705\//);assert.equal(p.href,`/projects/${p.id}/`);});});
-test('Nine supplied certificates are represented, not an invented Fab Lab certificate',()=>{assert.equal(certificates.length,9);assert.equal(new Set(certificates.map(c=>c.id)).size,9);assert.equal(certificates.some(c=>c.id==='fablab'),false);});
+test('Eleven supported credentials are represented, not an invented Fab Lab certificate',()=>{assert.equal(certificates.length,11);assert.equal(new Set(certificates.map(c=>c.id)).size,11);assert.equal(certificates.some(c=>c.id==='fablab'),false);});
 test('All certificate files and previews are present',()=>{certificates.forEach(c=>{for(const f of [c.document,c.preview,c.thumbnail,c.originalDocument].filter(Boolean))assert.ok(existsSync(join(root,'public',f)),f);});});
 test('Five source PDFs are byte-identical to the supplied documents',()=>{const records=JSON.parse(readFileSync(join(root,'docs/source-manifest.json')));assert.equal(records.length,5);for(const record of records){const actual=createHash('sha256').update(readFileSync(join(root,record.path))).digest('hex');assert.equal(actual,record.sha256,record.sourceFilename);}});
 test('Photos and resume assets exist',()=>{[profile.photo,profile.photoWebp,profile.resume,meta.ogImage].forEach(f=>assert.ok(existsSync(join(root,'public',f))));});
@@ -45,6 +45,6 @@ test('ANSHUVO branding, source, and live demo match the current project',()=>{
 });
 test('Contact details match the GitHub profile',()=>{
  assert.equal(contact.github,'https://github.com/Anshuman8705');
- assert.equal(contact.linkedin,'https://www.linkedin.com/in/anshuman-agrawal-65aa69328');
+ assert.equal(contact.linkedin,'https://www.linkedin.com/in/anshumanagrawal08072005/');
  assert.equal(contact.email,'anshumanagrawal89@gmail.com');
 });

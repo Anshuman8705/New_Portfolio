@@ -1,7 +1,4 @@
-// Portfolio content. Edit this file, then run npm run build.
-// Credentials use the supplied documents; project metrics are project-reported.
-// The Web3Forms access key below is a public form identifier, not a private API secret.
-
+// Portfolio content. Dates and credentials are based on supplied documents and LinkedIn records.
 export const about = [
   {
     "group": "Education",
@@ -14,6 +11,34 @@ export const about = [
 ];
 
 export const certificates = [
+  {
+    "id": "certifyera-dotnet",
+    "title": "Advanced DotNet and SQL Server Developer Course",
+    "issuer": "CertifyEra",
+    "kind": "Course completion",
+    "group": "course",
+    "date": "25 October 2026",
+    "description": "Completion of the Advanced DotNet and SQL Server Developer Course.",
+    "credentialId": "CERA102026000127",
+    "sourceUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7521552020923629568/",
+    "featured": true,
+    "format": "Credential record",
+    "href": "/certificates/certifyera-dotnet/"
+  },
+  {
+    "id": "nptel-dbms",
+    "title": "Data Base Management System",
+    "issuer": "NPTEL",
+    "kind": "Course completion",
+    "group": "course",
+    "date": "2026 · course session July–September",
+    "description": "NPTEL course in database management systems. Exact certificate issue month is not specified.",
+    "credentialId": "NPTEL26CS117S368000002",
+    "sourceUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7521123673932673026/",
+    "featured": true,
+    "format": "Credential record",
+    "href": "/certificates/nptel-dbms/"
+  },
   {
     "id": "cs50p",
     "title": "CS50’s Introduction to Programming with Python",
@@ -137,7 +162,7 @@ export const certificates = [
     "issuer": "NxtWave",
     "kind": "Workshop completion",
     "group": "workshop",
-    "date": "2025",
+    "date": "23 February 2025",
     "description": "Completion of the workshop’s hands-on project. The supplied image is cropped at its right edge.",
     "document": "/assets/certificates/documents/nxtwave-genai.jpg",
     "originalDocument": "/assets/certificates/documents/nxtwave-genai-original.png",
@@ -173,8 +198,8 @@ export const contact = {
   "intro": "Have an AI/ML opportunity, a software project or a research idea? Tell me what you’re working on. Email is the most direct way to reach me.",
   "accessKey": "b24173b5-cb1b-4449-bd0d-4851b5fec5d4",
   "email": "anshumanagrawal89@gmail.com",
-  "linkedin": "https://www.linkedin.com/in/anshuman-agrawal-65aa69328",
-  "linkedinHandle": "anshuman-agrawal-65aa69328",
+  "linkedin": "https://www.linkedin.com/in/anshumanagrawal08072005/",
+  "linkedinHandle": "anshumanagrawal08072005",
   "github": "https://github.com/Anshuman8705",
   "githubHandle": "Anshuman8705",
   "topics": [
@@ -199,10 +224,16 @@ export const experience = [
     "body": "Also on the organising team for ICICGR 2026, the IEEE International Conference on Innovations in Communication, Geoscience and Robotics, coordinating technical sessions and hybrid presentations."
   },
   {
+    "when": "Jan 2026 – Present",
+    "where": "Digital Fablab SSGMCE",
+    "title": "Mentor",
+    "body": "Mentoring students in Java, Figma and AI/ML, alongside hands-on learning in CAD, digital fabrication and embedded prototyping."
+  },
+  {
     "when": "1–30 Jun 2026",
     "where": "IEEE EMBS Pune Chapter",
     "title": "AI/ML Intern",
-    "body": "Model training, system architecture and application development for DermAI Monitor under the mentorship of Dr. Ankita Tidake, with a co-authored IEEE-format paper covering methodology, results and limitations.",
+    "body": "Co-developed DermAI Monitor with Tanushri Khawale during the IEEE EMBS Pune Chapter internship, contributing to model development, evaluation and the Streamlit application. The seven-class skin-lesion prototype uses EfficientNetB3, Grad-CAM and SQLite and is intended for research only.",
     "certificateId": "ieee-internship"
   },
   {
@@ -211,6 +242,18 @@ export const experience = [
     "title": "MERN Stack Development Intern",
     "body": "Built Homely Hub end to end across an SDLC-structured cycle, from foundational HTML, CSS, JavaScript and React through to a deployed full-stack application.",
     "certificateId": "webstack-internship"
+  },
+  {
+    "when": "Aug 2025 – Jul 2026",
+    "where": "IEEE · SSGMCE Student Branch",
+    "title": "Member",
+    "body": "Participated in technical events, seminars and workshops, sharing knowledge with peers in AI/ML, cybersecurity and web development."
+  },
+  {
+    "when": "Mar 2025 – Jan 2026",
+    "where": "Digital Fablab SSGMCE",
+    "title": "Member",
+    "body": "Hands-on learning in Fusion 360, web development, AI/ML and digital fabrication, before moving into the mentor role."
   }
 ];
 
@@ -336,7 +379,7 @@ export const facts = [
   },
   {
     "label": "Currently",
-    "value": "AI/ML Intern · One Smarter, Inc."
+    "value": "AI/ML Developer Intern · One Smarter, Inc."
   },
   {
     "label": "Education",
@@ -437,10 +480,6 @@ export const projects = [
       {
         "heading": "Evaluation and limitations",
         "body": "The figures above are the project's recorded evaluation results, not evidence of clinical validation. Performance across individual classes and the unsafe low-confidence fallback need to be considered alongside overall accuracy."
-      },
-      {
-        "heading": "Collaboration",
-        "body": "The project and accompanying IEEE-format paper were prepared collaboratively. An IEEE-format manuscript is not a claim of IEEE publication or peer-reviewed acceptance."
       }
     ],
     "tags": [
@@ -618,11 +657,12 @@ export const projects = [
     "title": "Flashy Learn",
     "role": "Innovo Hackathon, SSGMCE · team project",
     "thumb": "cards",
-    "body": "A study-flashcard application built with Mohammad Ammar, Kamran Ali and Kartik Hande during the Innovo Hackathon. The repository provides the implementation for review.",
+    "body": "A collaborative JavaScript flashcard application using the Open Trivia Database API. Users choose question categories and quiz length, then reveal answers through animated cards.",
     "tags": [
-      "Study tools",
-      "Hackathon",
-      "Team project"
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Open Trivia Database API"
     ],
     "repo": "https://github.com/Anshuman8705/Flashy_Learn",
     "href": "/projects/flashy/",
@@ -646,7 +686,7 @@ export const projects = [
       },
       {
         "heading": "Implementation evidence",
-        "body": "The repository is provided for inspection. No unverified usage counts, evaluation results or production-readiness claims are made."
+        "body": "Uses asynchronous API requests, JSON parsing, dynamic DOM updates, loading states and error handling to deliver trivia flashcards."
       }
     ]
   },
@@ -719,19 +759,23 @@ export const skills = [
 export const workshops = {
   "heading": "Hardware and prototyping",
   "subtitle": "IEEE SSGMCE workshop series, ESP32 and Raspberry Pi",
-  "intro": "Three builds from the IEEE SSGMCE Prototype to Product workshop series, where the brief each time was to take an idea to something that works inside a day.",
+  "intro": "Hands-on builds in embedded systems, sensors and digital fabrication.",
   "items": [
     {
-      "title": "Ultrasonic distance monitor",
-      "body": "An HC-SR04 sensor on an ESP8266 hosting its own web server, streaming live distance readings to a phone. Built at the Prototype to Product workshop at IIT Bombay under IEEE SSGMCE."
+      "title": "IoT Ultrasonic Distance Monitor",
+      "body": "An HC-SR04 sensor connected to an ESP8266 web server for viewing live distance readings on a phone. Team project with Mohammad Ammar, Ummehani Sayyad, Kamran Ali, Saloni Ghodkhande and Tanushri Khawale."
     },
     {
-      "title": "IR presence detector",
-      "body": "A Raspberry Pi reading an infrared sensor and driving an LED response, built with a five-person team at the I3PLI workshop."
+      "title": "Raspberry Pi IR Presence Detector",
+      "body": "A Raspberry Pi reading an infrared sensor and driving an LED response at the IEEE I3PLI workshop. Built with Mohammad Ammar, Ummehani Sayyad, Kamran Ali, Saloni Ghodkhande and Tanushri Khawale."
     },
     {
       "title": "ESP32 prototyping",
       "body": "Hardware interfacing and the product development lifecycle, from the Prototype to Product session at the Pursuit 2026 national technical symposium."
+    },
+    {
+      "title": "Excavator Arm — Fusion 360",
+      "body": "Digital Fablab CAD project covering 3D modelling, assembly and motion simulation of an excavator arm."
     }
   ]
 };

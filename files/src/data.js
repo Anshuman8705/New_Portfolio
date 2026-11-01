@@ -72,7 +72,7 @@ export const projects = [
     details: [
       { heading: "Implementation", body: "The documented pipeline uses a merged HAM10000 and ISIC 2019 dataset, two-phase transfer learning, focal loss and oversampling. The application adds Grad-CAM visualisation, an ABCD-style score, longitudinal records and PDF reporting." },
       { heading: "Evaluation and limitations", body: "The figures above are the project's recorded evaluation results, not evidence of clinical validation. Performance across individual classes and the unsafe low-confidence fallback need to be considered alongside overall accuracy." },
-      { heading: "Collaboration", body: "The project and accompanying IEEE-format paper were prepared collaboratively. An IEEE-format manuscript is not a claim of IEEE publication or peer-reviewed acceptance." },
+      { heading: "Collaboration", body: "Co-developed DermAI Monitor with Tanushri Khawale, contributing to the model and supporting application." },
     ],
     tags: ["TensorFlow", "EfficientNetB3", "Grad-CAM", "Streamlit", "SQLite"],
     repo: "https://github.com/Anshuman8705/Skin_Classification_DermAI",
@@ -172,7 +172,7 @@ export const experience = [
     when: "Jun – Jul 2026",
     where: "IEEE EMBS Pune Chapter",
     title: "AI/ML Intern",
-    body: "Model training, system architecture and application development for DermAI Monitor under the mentorship of Dr. Ankita Tidake, with a co-authored IEEE-format paper covering methodology, results and limitations.",
+    body: "Model development, evaluation and application development for DermAI Monitor with Tanushri Khawale.",
   },
   {
     when: "Aug – Nov 2025",
