@@ -1,12 +1,16 @@
 # Anshuman Agrawal — Complete Portfolio
 
-Full source + a built website. UI refresh prepared 9 September 2026.
+Source and built portfolio for [Anshuman8705](https://github.com/Anshuman8705). Project links and contact information updated 1 November 2026.
+
+Live store: **[ANSHUVO](https://anshuvo.onrender.com/)** · [Source repository](https://github.com/Anshuman8705/Anshuvo)
+
+The active source is `src/`; `npm run build` generates `dist/`. The root HTML/assets are a synchronized static export. `files/`, `apply_update.py`, `manifest.json`, and `NIMBUSMART_BRIEF.md` are historical migration materials, not active site content. The old `/projects/nimbusmart/` URL redirects to `/projects/anshuvo/`.
 
 **Existing repository update:** see `docs/UI_REVIEW.md`. Only three active source
 files need replacing; build/deployment configuration is unchanged.
 
 **This is a complete replacement project, not a changes-only patch.** The earlier
-Portfolio_Content_Update ZIP does not need to be applied. NimbusMart itself is a
+Portfolio_Content_Update ZIP does not need to be applied. ANSHUVO itself is a
 separate project and is not modified by this package.
 
 ## Open it on Windows
@@ -30,7 +34,7 @@ root-relative document links and browser modules should be served over HTTP.
 - Responsive homepage with portrait, clearer positioning and project filters.
 - Six standalone project case studies with public source links, honest boundaries
   and the agreed equal-contribution credits for DermAI and Expense & Budget Management.
-- NimbusMart project entry and the public .NET repository link.
+- ANSHUVO project entry and the public .NET repository link.
 - Two owner-supplied YouTube walkthroughs. Players load only after a click; regular
   YouTube links also remain available. The CS50 video is not assigned to the .NET project.
 - Nine certificate cards, category filters, five featured entries, a keyboard-operable
@@ -118,8 +122,7 @@ The included `vercel.json` supplies these settings:
 | Node | 22 |
 
 The lockfile has no external package dependencies. Review a preview deployment
-before merging to the production branch. No GitHub push or Vercel deployment was
-performed while preparing this ZIP. Preview builds set `noindex` when Vercel
+before merging to the production branch. Changes pushed to the connected repository can trigger Vercel deployments. Preview builds set `noindex` when Vercel
 reports `VERCEL_ENV=preview`.
 
 Alternatively, upload the **contents of `dist/`** to a static host. A separate

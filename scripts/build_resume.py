@@ -48,15 +48,15 @@ story.append(P('EDUCATION','Section'))
 story.append(P('<b>B.E. Information Technology</b> | Shri Sant Gajanan Maharaj College of Engineering, Shegaon<br/>September 2024–July 2028 (expected). CGPA 8.57 across the first three semesters.'))
 story.append(PageBreak())
 story.append(P('SELECTED PROJECTS','Section'))
-for id in ['dermai','expense','nimbusmart','homely']:
+for id in ['dermai','expense','anshuvo','homely']:
  x=next(p for p in d['projects'] if p['id']==id)
  story.append(P(E(x['title']),'Role'))
- story.append(P(E(x['category'])+' | '+link(x['repo'],'Source code')+' | '+link(d['meta']['siteUrl']+x['href'],'Case study'),'Meta'))
+ story.append(P(E(x['category'])+' | '+link(x['repo'],'Source code')+' | '+link(d['meta']['siteUrl']+x['href'],'Case study')+((' | '+link(x['demo'],'Live demo')) if x.get('demo') else ''),'Meta'))
  story.append(P(E(x['body'])))
  if id in ['dermai','expense']: story.append(P(E(x['contribution']),'SmallResume'))
  if id=='dermai': story.append(P('Project-reported results: 68.97% accuracy, 0.9143 macro ROC-AUC, 0.5426 macro F1. Research use only—not for clinical decisions. The documented low-confidence fallback is a known safety limitation.','SmallResume'))
  if id=='expense': story.append(P('Controller/service/data separation, EF Core with SQLite, account-scoped queries and decimal-based calculations. The repository includes HTTP smoke-test instructions; no current pass count is claimed.','SmallResume'))
- if id=='nimbusmart': story.append(P('React, Express, SQLite and Tailwind CSS. Demo payments only; no real goods, charges or shipments.','SmallResume'))
+ if id=='anshuvo': story.append(P('React, Express, SQLite and Tailwind CSS. Demo payments only; no real goods, charges or shipments.','SmallResume'))
  story.append(Spacer(1,5))
 story.append(P('CERTIFICATES & TRAINING','Section'))
 for id in ['cs50p','ieee-internship','webstack-internship','aws-foundations','redhat-rh104']:
@@ -70,7 +70,7 @@ def page(canvas,doc):
  canvas.saveState(); width,height=A4
  canvas.setStrokeColor(colors.HexColor('#d7dcd4'));canvas.line(42,35,width-42,35)
  canvas.setFont('Helvetica',7.5);canvas.setFillColor(muted)
- canvas.drawString(42,23,'Anshuman Rupesh Agrawal | Portfolio updated 9 September 2026')
+ canvas.drawString(42,23,'Anshuman Rupesh Agrawal | Portfolio updated 1 November 2026')
  canvas.drawRightString(width-42,23,f'{doc.page}')
  if doc.page>1:
   canvas.setFont('Helvetica-Bold',8);canvas.setFillColor(ink);canvas.drawString(42,height-28,'ANSHUMAN AGRAWAL / PROJECTS & CREDENTIALS')

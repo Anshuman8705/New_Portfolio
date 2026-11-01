@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { profile,projects,certificates,projectVideos,experience,fablab,meta } from '../src/data.js';
+import { profile,projects,certificates,projectVideos,experience,fablab,meta,contact } from '../src/data.js';
 import { validateMessage } from '../src/form.mjs';
 import { escapeHtml,safeJson,homePage,caseStudy,certificatePage,layout } from '../src/templates.mjs';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
@@ -31,3 +31,20 @@ test('Valid contact data is trimmed',()=>{const r=validateMessage({...valid,name
 test('Missing contact fields all have actionable errors',()=>{const r=validateMessage({});assert.equal(r.valid,false);assert.deepEqual(Object.keys(r.errors),['name','email','message']);});
 test('Contact rejects bad email and excessive lengths',()=>{assert.ok(validateMessage({...valid,email:'not an address'}).errors.email);assert.ok(validateMessage({...valid,name:'a'.repeat(101)}).errors.name);assert.ok(validateMessage({...valid,message:'x'.repeat(5001)}).errors.message);});
 test('No font files, dependencies, or private environment files are packaged as public assets',()=>{const walk=dir=>readdirSync(dir,{withFileTypes:true}).flatMap(x=>x.isDirectory()?walk(join(dir,x.name)):[join(dir,x.name)]);assert.deepEqual(walk(join(root,'public')).filter(f=>/\.(woff2?|ttf|otf|eot|env)$/i.test(f)),[]);assert.equal(Object.keys(JSON.parse(readFileSync(join(root,'package.json'))).dependencies||{}).length,0);});
+
+test('ANSHUVO branding, source, and live demo match the current project',()=>{
+ const p=projects.find(p=>p.id==='anshuvo');
+ assert.equal(p.title,'ANSHUVO');
+ assert.equal(p.repo,'https://github.com/Anshuman8705/Anshuvo');
+ assert.equal(p.demo,'https://anshuvo.onrender.com/');
+ assert.equal(p.href,'/projects/anshuvo/');
+ for(const html of [homePage(),caseStudy(p)]) {
+  assert.match(html,/https:\/\/anshuvo.onrender.com\//);
+  assert.doesNotMatch(html,/NimbusMart|Amazon\.clone|nimbusmart\.onrender/);
+ }
+});
+test('Contact details match the GitHub profile',()=>{
+ assert.equal(contact.github,'https://github.com/Anshuman8705');
+ assert.equal(contact.linkedin,'https://www.linkedin.com/in/anshuman-agrawal-65aa69328');
+ assert.equal(contact.email,'anshumanagrawal89@gmail.com');
+});

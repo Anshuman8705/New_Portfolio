@@ -173,8 +173,8 @@ export const contact = {
   "intro": "Have an AI/ML opportunity, a software project or a research idea? Tell me what you’re working on. Email is the most direct way to reach me.",
   "accessKey": "b24173b5-cb1b-4449-bd0d-4851b5fec5d4",
   "email": "anshumanagrawal89@gmail.com",
-  "linkedin": "https://www.linkedin.com/in/anshumanagrawal08072005",
-  "linkedinHandle": "anshumanagrawal08072005",
+  "linkedin": "https://www.linkedin.com/in/anshuman-agrawal-65aa69328",
+  "linkedinHandle": "anshuman-agrawal-65aa69328",
   "github": "https://github.com/Anshuman8705",
   "githubHandle": "Anshuman8705",
   "topics": [
@@ -357,7 +357,7 @@ export const meta = {
   "jobTitle": "AI/ML Developer Intern",
   "affiliation": "One Smarter, Inc.",
   "memberOf": "Shri Sant Gajanan Maharaj College of Engineering, Shegaon",
-  "contentUpdated": "9 September 2026"
+  "contentUpdated": "1 November 2026"
 };
 
 export const profile = {
@@ -521,8 +521,8 @@ export const projects = [
     ]
   },
   {
-    "id": "nimbusmart",
-    "title": "NimbusMart",
+    "id": "anshuvo",
+    "title": "ANSHUVO",
     "role": "Full-stack e-commerce demonstration",
     "thumb": "cart",
     "featured": true,
@@ -538,7 +538,7 @@ export const projects = [
       },
       {
         "heading": "Demo boundaries",
-        "body": "This is a learning project, not a real retailer. No actual goods are sold, shipped or charged for. An India/INR update has been prepared separately; the public demo may still show the earlier version. Free-hosting persistence is a separate deployment task."
+        "body": "This is a learning project, not a real retailer. No actual goods are sold, shipped or charged for. The active app uses USD demo prices and simulated checkout. The legacy India/INR package is separate and unapplied. Hosted SQLite storage requires a persistence plan."
       }
     ],
     "tags": [
@@ -548,9 +548,9 @@ export const projects = [
       "Tailwind CSS",
       "Vitest"
     ],
-    "repo": "https://github.com/Anshuman8705/Amazon.clone",
-    "demo": "https://nimbusmart.onrender.com/",
-    "href": "/projects/nimbusmart/",
+    "repo": "https://github.com/Anshuman8705/Anshuvo",
+    "demo": "https://anshuvo.onrender.com/",
+    "href": "/projects/anshuvo/",
     "category": "Full-stack / commerce",
     "categoryId": "web",
     "year": "2026",

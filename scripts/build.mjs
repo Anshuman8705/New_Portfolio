@@ -25,6 +25,10 @@ const pages=[{path:'/',filename:'index.html',home:true,body:homePage()},
  {path:'/privacy/',filename:'privacy/index.html',body:privacyPage(),title:'Privacy & site information — Anshuman Agrawal',description:'How contact messages, videos and documents work on this portfolio.'},
  {path:'/404.html',filename:'404.html',body:notFoundPage(),title:'Page not found — Anshuman Agrawal',noindex:true}];
 for(const page of pages){const file=join(dist,page.filename);mkdirSync(dirname(file),{recursive:true});writeFileSync(file,layout({...page,noindex:preview||page.noindex,assetNames}));}
+// Preserve the old case-study link on static hosts as well as Vercel.
+const legacyPage=join(dist,'projects/nimbusmart/index.html');
+mkdirSync(dirname(legacyPage),{recursive:true});
+writeFileSync(legacyPage,`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, follow"><meta http-equiv="refresh" content="0;url=/projects/anshuvo/"><link rel="canonical" href="${meta.siteUrl}/projects/anshuvo/"><title>ANSHUVO � project page moved</title></head><body><p>This project is now ANSHUVO. <a href="/projects/anshuvo/">Continue to the case study</a>.</p></body></html>`);
 const indexable=pages.filter(p=>!p.noindex);
 writeFileSync(join(dist,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${indexable.map(p=>`\n<url><loc>${meta.siteUrl}${p.path}</loc></url>`).join('')}\n</urlset>\n`);
 writeFileSync(join(dist,'robots.txt'),`User-agent: *\n${preview?'Disallow: /':'Allow: /'}\nSitemap: ${meta.siteUrl}/sitemap.xml\n`);

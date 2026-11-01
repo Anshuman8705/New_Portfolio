@@ -1,19 +1,13 @@
 {
-  "checks": 64,
-  "passed": 64,
+  "checks": 67,
+  "passed": 67,
   "failed": 0,
   "method": "HTTP against the local Node preview server; built file bodies compared byte-for-byte",
   "results": [
     {
       "path": "/404.html",
       "status": 200,
-      "bytes": 7274,
-      "matchesBuiltFile": true
-    },
-    {
-      "path": "/assets/Anshuman_Agrawal_Resume.pdf",
-      "status": 200,
-      "bytes": 10874,
+      "bytes": 7276,
       "matchesBuiltFile": true
     },
     {
@@ -26,6 +20,12 @@
       "path": "/assets/anshuman.webp",
       "status": 200,
       "bytes": 95980,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/Anshuman_Agrawal_Resume.pdf",
+      "status": 200,
+      "bytes": 11094,
       "matchesBuiltFile": true
     },
     {
@@ -215,9 +215,9 @@
       "matchesBuiltFile": true
     },
     {
-      "path": "/assets/form-2f5571e118be.js",
+      "path": "/assets/form-a393ca7364d1.js",
       "status": 200,
-      "bytes": 970,
+      "bytes": 982,
       "matchesBuiltFile": true
     },
     {
@@ -227,129 +227,147 @@
       "matchesBuiltFile": true
     },
     {
-      "path": "/assets/styles-5080090c8457.css",
+      "path": "/assets/og-image.png",
       "status": 200,
-      "bytes": 35890,
+      "bytes": 356929,
       "matchesBuiltFile": true
     },
     {
-      "path": "/assets/ui-e108fa84e800.js",
+      "path": "/assets/README.txt",
       "status": 200,
-      "bytes": 10266,
+      "bytes": 202,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/styles-17ffa5ea367a.css",
+      "status": 200,
+      "bytes": 35976,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/assets/ui-5f653dd29bc0.js",
+      "status": 200,
+      "bytes": 10359,
       "matchesBuiltFile": true
     },
     {
       "path": "/build-info.json",
       "status": 200,
-      "bytes": 213,
+      "bytes": 212,
       "matchesBuiltFile": true
     },
     {
       "path": "/certificates/ai-ml-training/",
       "status": 200,
-      "bytes": 9013,
+      "bytes": 9015,
       "matchesBuiltFile": true
     },
     {
       "path": "/certificates/aws-foundations/",
       "status": 200,
-      "bytes": 9136,
+      "bytes": 9138,
       "matchesBuiltFile": true
     },
     {
       "path": "/certificates/cs50p/",
       "status": 200,
-      "bytes": 8986,
+      "bytes": 8988,
       "matchesBuiltFile": true
     },
     {
       "path": "/certificates/ieee-internship/",
       "status": 200,
-      "bytes": 9434,
+      "bytes": 9436,
       "matchesBuiltFile": true
     },
     {
       "path": "/certificates/nxtwave-genai/",
       "status": 200,
-      "bytes": 9349,
+      "bytes": 9351,
       "matchesBuiltFile": true
     },
     {
       "path": "/certificates/prototype-workshop/",
       "status": 200,
-      "bytes": 9396,
+      "bytes": 9398,
       "matchesBuiltFile": true
     },
     {
       "path": "/certificates/redhat-rh104/",
       "status": 200,
-      "bytes": 8981,
+      "bytes": 8983,
       "matchesBuiltFile": true
     },
     {
       "path": "/certificates/tcs-appreciation/",
       "status": 200,
-      "bytes": 9437,
+      "bytes": 9439,
       "matchesBuiltFile": true
     },
     {
       "path": "/certificates/webstack-internship/",
       "status": 200,
-      "bytes": 8913,
+      "bytes": 8915,
       "matchesBuiltFile": true
     },
     {
       "path": "/favicon.svg",
       "status": 200,
-      "bytes": 269,
+      "bytes": 270,
       "matchesBuiltFile": true
     },
     {
       "path": "/",
       "status": 200,
-      "bytes": 66511,
+      "bytes": 66501,
       "matchesBuiltFile": true
     },
     {
       "path": "/privacy/",
       "status": 200,
-      "bytes": 8830,
+      "bytes": 8831,
+      "matchesBuiltFile": true
+    },
+    {
+      "path": "/projects/anshuvo/",
+      "status": 200,
+      "bytes": 12127,
       "matchesBuiltFile": true
     },
     {
       "path": "/projects/dermai/",
       "status": 200,
-      "bytes": 13305,
+      "bytes": 13307,
       "matchesBuiltFile": true
     },
     {
       "path": "/projects/dotnet/",
       "status": 200,
-      "bytes": 10556,
+      "bytes": 10558,
       "matchesBuiltFile": true
     },
     {
       "path": "/projects/expense/",
       "status": 200,
-      "bytes": 12227,
+      "bytes": 12229,
       "matchesBuiltFile": true
     },
     {
       "path": "/projects/flashy/",
       "status": 200,
-      "bytes": 10673,
+      "bytes": 10675,
       "matchesBuiltFile": true
     },
     {
       "path": "/projects/homely/",
       "status": 200,
-      "bytes": 11293,
+      "bytes": 11295,
       "matchesBuiltFile": true
     },
     {
       "path": "/projects/nimbusmart/",
       "status": 200,
-      "bytes": 12157,
+      "bytes": 493,
       "matchesBuiltFile": true
     },
     {
@@ -361,7 +379,7 @@
     {
       "path": "/sitemap.xml",
       "status": 200,
-      "bytes": 1594,
+      "bytes": 1591,
       "matchesBuiltFile": true
     },
     {

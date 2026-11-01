@@ -19,4 +19,6 @@ jobs:
       - run: npm ci
       - run: npm run build
       - name: Check the pre-render actually ran
-        run: grep -q 'id="root"><' dist/index.html
+        run: |
+          grep -q 'id="main"' dist/index.html
+          grep -q 'https://anshuvo.onrender.com/' dist/projects/anshuvo/index.html
