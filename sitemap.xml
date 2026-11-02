@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://portfolio-kohl-theta-24.vercel.app/</loc></url>
+<url><loc>https://portfolio-kohl-theta-24.vercel.app/projects/</loc></url>
+<url><loc>https://portfolio-kohl-theta-24.vercel.app/learning/</loc></url>
 <url><loc>https://portfolio-kohl-theta-24.vercel.app/projects/dermai/</loc></url>
 <url><loc>https://portfolio-kohl-theta-24.vercel.app/projects/expense/</loc></url>
 <url><loc>https://portfolio-kohl-theta-24.vercel.app/projects/anshuvo/</loc></url>

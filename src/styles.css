@@ -96,3 +96,11 @@ html.js [hidden]{display:none!important}
     }
   }
 }
+
+/* Project evidence and compact home layout. */
+.selected-projects{grid-template-columns:repeat(3,minmax(0,1fr))}.selected-projects .project-card.featured{grid-column:auto}
+.project-screenshot{display:block;background:#e8ece9;position:relative;border-bottom:1px solid var(--line);overflow:hidden}.project-screenshot img{display:block;width:100%;height:225px;object-fit:cover;object-position:top}.project-screenshot span{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;font-size:11px;background:#edf0ed;color:#233d35}
+.project-evidence{border-left:3px solid #793d50;padding:10px 14px;margin:18px 0;background:#f6f4f0}.project-evidence strong{font-size:24px;display:block;line-height:1.2}.project-evidence span{font-size:12px;font-weight:600}.project-evidence p{font-size:12px!important;line-height:1.65;margin:6px 0 0!important}
+.project-screens{margin:28px 0 44px}.project-screens h2{margin-bottom:20px}.project-screens figure{margin:0;background:#f5f4f0;border:1px solid #deded5;border-radius:12px;overflow:hidden}.project-screens img{display:block;width:100%;height:auto}.project-screens figcaption{padding:14px 20px;font-size:13px;color:#58645d}.screen-step{margin-top:16px;border:1px solid #deded5;border-radius:12px}.screen-step summary{cursor:pointer;display:flex;justify-content:space-between;padding:18px;font-weight:600}.screen-step figure{border:0;border-radius:0}.screen-step[open] summary{border-bottom:1px solid #deded5}
+.learning-teaser{display:flex;gap:32px;align-items:center;justify-content:space-between}.learning-teaser p{max-width:680px}.learning-teaser .section-heading{margin-bottom:15px}.learning-teaser .button{flex-shrink:0}.selected-projects .project-card-body{padding:24px}.selected-projects .project-actions{flex-wrap:wrap;gap:16px}
+@media(max-width:1000px){.selected-projects{grid-template-columns:1fr}.selected-projects .project-screenshot img{height:auto;max-height:400px;object-fit:cover;object-position:top}.learning-teaser{display:block}.learning-teaser .button{margin-top:24px}}

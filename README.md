@@ -2,7 +2,7 @@
 
 [Live portfolio](https://portfolio-kohl-theta-24.vercel.app) · [GitHub](https://github.com/Anshuman8705) · [LinkedIn](https://www.linkedin.com/in/anshumanagrawal08072005/)
 
-Portfolio of an Information Technology undergraduate at SSGMCE Shegaon and **AI/ML Developer Intern at One Smarter, Inc.** Content synchronized with verified LinkedIn and certificate details on 1 November 2026.
+Portfolio of an Information Technology undergraduate at SSGMCE Shegaon and **AI/ML Developer Intern at One Smarter, Inc.** Portfolio presentation updated on 3 November 2026.
 
 ## Projects
 
@@ -38,3 +38,5 @@ Open http://127.0.0.1:4173. Edit `src/data.js` for content, `src/templates.mjs` 
 The existing `vercel.json` uses `npm run build` and serves `dist/`. Publish from the repository root. The old `/projects/nimbusmart/` path redirects to `/projects/anshuvo/` for existing bookmarks.
 
 The public Web3Forms identifier is intended for the browser. Never place private credentials in public assets. Contact validation is tested with mocked responses; real inbox delivery requires a manual check. Videos load only when requested.
+
+The homepage features three projects; `/projects/` retains all six and video walkthroughs. `/learning/` contains the complete experience timeline and eight Fab Lab modules. Screenshots for Expense Management were captured from the running development app with synthetic data; ANSHUVO was captured from its live demo, and Homely Hub uses the screenshot in its source repository. Evidence summaries link to repository notes and distinguish reported results from newly run checks.

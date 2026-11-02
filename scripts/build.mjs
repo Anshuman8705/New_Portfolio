@@ -3,7 +3,7 @@ import { dirname, resolve, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { projects, certificates, meta } from '../src/data.js';
-import { layout, homePage, caseStudy, certificatePage, privacyPage, notFoundPage } from '../src/templates.mjs';
+import { layout, homePage, caseStudy, certificatePage, privacyPage, notFoundPage, projectsPage, learningPage } from '../src/templates.mjs';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const dist=join(root,'dist');
@@ -20,6 +20,8 @@ for(const [name,content] of [[formName,form],[cssName,css],[jsName,js]])writeFil
 const assetNames={css:cssName,js:jsName};
 const preview=process.env.VERCEL_ENV==='preview'||process.env.PORTFOLIO_NOINDEX==='1';
 const pages=[{path:'/',filename:'index.html',home:true,body:homePage()},
+ {path:'/projects/',filename:'projects/index.html',body:projectsPage(),title:'Projects & walkthroughs — Anshuman Agrawal'},
+ {path:'/learning/',filename:'learning/index.html',body:learningPage(),title:'Experience & learning — Anshuman Agrawal'},
  ...projects.map(p=>({path:p.href,filename:`projects/${p.id}/index.html`,body:caseStudy(p),title:`${p.title} — Anshuman Agrawal`,description:p.body})),
  ...certificates.map(c=>({path:c.href,filename:`certificates/${c.id}/index.html`,body:certificatePage(c),title:`${c.title} — Anshuman Agrawal`,description:`${c.kind} · ${c.issuer} · ${c.date}. ${c.description}`})),
  {path:'/privacy/',filename:'privacy/index.html',body:privacyPage(),title:'Privacy & site information — Anshuman Agrawal',description:'How contact messages, videos and documents work on this portfolio.'},
@@ -28,7 +30,7 @@ for(const page of pages){const file=join(dist,page.filename);mkdirSync(dirname(f
 // Preserve the old case-study link on static hosts as well as Vercel.
 const legacyPage=join(dist,'projects/nimbusmart/index.html');
 mkdirSync(dirname(legacyPage),{recursive:true});
-writeFileSync(legacyPage,`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, follow"><meta http-equiv="refresh" content="0;url=/projects/anshuvo/"><link rel="canonical" href="${meta.siteUrl}/projects/anshuvo/"><title>ANSHUVO � project page moved</title></head><body><p>This project is now ANSHUVO. <a href="/projects/anshuvo/">Continue to the case study</a>.</p></body></html>`);
+writeFileSync(legacyPage,`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, follow"><meta http-equiv="refresh" content="0;url=/projects/anshuvo/"><link rel="canonical" href="${meta.siteUrl}/projects/anshuvo/"><title>ANSHUVO — project page moved</title></head><body><p>This project is now ANSHUVO. <a href="/projects/anshuvo/">Continue to the case study</a>.</p></body></html>`);
 const indexable=pages.filter(p=>!p.noindex);
 writeFileSync(join(dist,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${indexable.map(p=>`\n<url><loc>${meta.siteUrl}${p.path}</loc></url>`).join('')}\n</urlset>\n`);
 writeFileSync(join(dist,'robots.txt'),`User-agent: *\n${preview?'Disallow: /':'Allow: /'}\nSitemap: ${meta.siteUrl}/sitemap.xml\n`);

@@ -468,7 +468,7 @@ export const meta = {
   "jobTitle": "AI/ML Developer Intern",
   "affiliation": "One Smarter, Inc.",
   "memberOf": "Shri Sant Gajanan Maharaj College of Engineering, Shegaon",
-  "contentUpdated": "1 November 2026"
+  "contentUpdated": "3 November 2026"
 };
 
 export const profile = {
@@ -576,7 +576,13 @@ export const projects = [
       "Seven-class image classification",
       "Grad-CAM visualisation",
       "Longitudinal records and PDF reporting"
-    ]
+    ],
+    "evidence": {
+      "value": "2,343",
+      "label": "Held-out test images",
+      "detail": "68.97% reported accuracy · 0.9143 macro ROC-AUC. Research evaluation, not clinical validation.",
+      "url": "https://github.com/Anshuman8705/Skin_Classification_DermAI#results"
+    }
   },
   {
     "id": "expense",
@@ -607,7 +613,7 @@ export const projects = [
       "SQLite",
       "Chart.js"
     ],
-    "repo": "https://github.com/Anshuman8705/.NET-Final-Project",
+    "repo": "https://github.com/Anshuman8705/ExpenseManagementSystem",
     "href": "/projects/expense/",
     "category": "Full-stack / .NET",
     "categoryId": "web",
@@ -625,7 +631,28 @@ export const projects = [
       "Income and expense tracking",
       "Monthly category budgets",
       "Dashboard and period reports"
-    ]
+    ],
+    "screenshot": "/assets/projects/expense.png",
+    "screenshotAlt": "Expense dashboard showing synthetic income, spending and monthly budget data",
+    "screenshotCaption": "Running .NET application with synthetic development data. No personal financial records are shown.",
+    "gallery": [
+      {
+        "image": "/assets/projects/expense-budgets.png",
+        "title": "Monthly budgets",
+        "caption": "Compare category limits with actual spending and remaining amounts."
+      },
+      {
+        "image": "/assets/projects/expense-reports.png",
+        "title": "Period reports",
+        "caption": "Filter income and expenses by month, year, date range, category and type."
+      }
+    ],
+    "evidence": {
+      "value": "4 tables",
+      "label": "Account-scoped data model",
+      "detail": "Users, categories, transactions and budgets; amounts calculated with C# decimal.",
+      "url": "https://github.com/Anshuman8705/ExpenseManagementSystem#database-structure"
+    }
   },
   {
     "id": "anshuvo",
@@ -674,7 +701,17 @@ export const projects = [
       "Guest and signed-in carts",
       "Inventory and transactional orders",
       "Customer and administrator workflows"
-    ]
+    ],
+    "screenshot": "/assets/projects/anshuvo.png",
+    "screenshotAlt": "Live ANSHUVO storefront with product categories and shopping cards",
+    "screenshotCaption": "Captured from the live demo storefront. Prices and checkout are for demonstration only.",
+    "evidence": {
+      "value": "45 tests",
+      "label": "Reported application checks",
+      "detail": "Repository records 45 passing application tests on 1 November 2026, covering storefront, API and cart flows.",
+      "url": "https://github.com/Anshuman8705/Anshuvo#verification"
+    },
+    "demoNote": "The hosted demo may take a moment to wake up. Checkout uses test details only."
   },
   {
     "id": "homely",
@@ -718,7 +755,10 @@ export const projects = [
         "heading": "Evidence",
         "body": "A public repository and the owner-supplied Webstack video accompany the internship certificate."
       }
-    ]
+    ],
+    "screenshot": "/assets/projects/homely.jpg",
+    "screenshotAlt": "Homely Hub rental listing interface with property cards and search controls",
+    "screenshotCaption": "Project screenshot supplied in the Homely Hub repository."
   },
   {
     "id": "flashy",

@@ -6,7 +6,7 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { profile,projects,certificates,projectVideos,experience,fablab,meta,contact } from '../src/data.js';
 import { validateMessage } from '../src/form.mjs';
-import { escapeHtml,safeJson,homePage,caseStudy,certificatePage,layout } from '../src/templates.mjs';
+import { escapeHtml,safeJson,homePage,caseStudy,certificatePage,layout,projectsPage,learningPage } from '../src/templates.mjs';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const valid={name:'Anshuman Agrawal',email:'test@example.com',message:'A project enquiry.'};
 test('All six projects have unique stable IDs and real source links',()=>{assert.equal(projects.length,6);assert.equal(new Set(projects.map(p=>p.id)).size,6);projects.forEach(p=>{assert.match(p.repo,/^https:\/\/github\.com\/Anshuman8705\//);assert.equal(p.href,`/projects/${p.id}/`);});});
@@ -15,7 +15,7 @@ test('All certificate files and previews are present',()=>{certificates.forEach(
 test('Source documents are byte-identical to the supplied originals',()=>{const records=JSON.parse(readFileSync(join(root,'docs/source-manifest.json')));assert.equal(records.length,13);for(const record of records){const actual=createHash('sha256').update(readFileSync(join(root,record.path))).digest('hex');assert.equal(actual,record.sha256,record.sourceFilename);}});
 test('Photos and resume assets exist',()=>{[profile.photo,profile.photoWebp,profile.resume,meta.ogImage].forEach(f=>assert.ok(existsSync(join(root,'public',f))));});
 test('Equal-contribution wording is retained for both team projects',()=>{const a=projects.find(p=>p.id==='dermai').contribution;const b=projects.find(p=>p.id==='expense').contribution;assert.match(a,/Tanushri Khawale/);assert.match(a,/equally/);assert.match(b,/Rahul Paghrut/);assert.match(b,/equally/);});
-test('Expense project uses the public .NET source',()=>{assert.equal(projects.find(p=>p.id==='expense').repo,'https://github.com/Anshuman8705/.NET-Final-Project');});
+test('Expense project uses the public .NET source',()=>{assert.equal(projects.find(p=>p.id==='expense').repo,'https://github.com/Anshuman8705/ExpenseManagementSystem');});
 test('Research boundary and project-reported metrics are visible',()=>{const html=caseStudy(projects.find(p=>p.id==='dermai'));assert.match(html,/not intended for clinical decision-making/i);assert.match(html,/Project-reported evaluation/);assert.match(html,/low-confidence fallback/);});
 test('Source-supported internship dates are used',()=>{assert.equal(experience.find(x=>x.where==='IEEE EMBS Pune Chapter').when,'1–30 Jun 2026');assert.equal(experience.find(x=>x.where.startsWith('Webstack')).when,'3 Sep–20 Nov 2025');});
 test('AWS and Red Hat have the correct training/attendance labels',()=>{assert.equal(certificates.find(c=>c.id==='redhat-rh104').kind,'Course attendance');assert.equal(certificates.find(c=>c.id==='aws-foundations').date,'2026');assert.ok(certificates.find(c=>c.id==='aws-foundations').note.includes('05/06/2026'));});
@@ -26,7 +26,7 @@ test('HTML escaping prevents markup injection',()=>{assert.equal(escapeHtml('<im
 test('JSON script data cannot terminate its own script',()=>{assert.ok(!safeJson({title:'</script><script>alert(1)</script>'}).includes('<'));});
 test('Home and all detail pages have one H1',()=>{for(const body of [homePage(),...projects.map(caseStudy),...certificates.map(certificatePage)])assert.equal((body.match(/<h1[ >]/g)||[]).length,1);});
 test('Generated pages include static metadata and a canonical URL',()=>{const html=layout({body:homePage(),home:true});assert.match(html,/<link rel="canonical"/);assert.match(html,/application\/ld\+json/);assert.match(html,/<html lang="en-IN">/);});
-test('No-JS fallbacks link to real detail pages',()=>{assert.match(homePage(),/href="\/certificates\/cs50p\/"/);assert.match(homePage(),/href="\/projects\/dermai\/"/);assert.match(homePage(),/<details class="module">/);});
+test('No-JS fallbacks link to real detail pages',()=>{assert.match(homePage(),/href="\/certificates\/cs50p\/"/);assert.match(homePage(),/href="\/projects\/dermai\/"/);assert.match(homePage(),/href="\/learning\/"/);assert.match(learningPage(),/<details class="module">/);});
 test('Valid contact data is trimmed',()=>{const r=validateMessage({...valid,name:' Anshuman Agrawal '});assert.equal(r.valid,true);assert.equal(r.values.name,'Anshuman Agrawal');});
 test('Missing contact fields all have actionable errors',()=>{const r=validateMessage({});assert.equal(r.valid,false);assert.deepEqual(Object.keys(r.errors),['name','email','message']);});
 test('Contact rejects bad email and excessive lengths',()=>{assert.ok(validateMessage({...valid,email:'not an address'}).errors.email);assert.ok(validateMessage({...valid,name:'a'.repeat(101)}).errors.name);assert.ok(validateMessage({...valid,message:'x'.repeat(5001)}).errors.message);});
@@ -47,4 +47,19 @@ test('Contact details match the GitHub profile',()=>{
  assert.equal(contact.github,'https://github.com/Anshuman8705');
  assert.equal(contact.linkedin,'https://www.linkedin.com/in/anshumanagrawal08072005/');
  assert.equal(contact.email,'anshumanagrawal89@gmail.com');
+});
+
+
+test('Home features three projects while archive retains all six',()=>{
+ assert.equal((homePage().match(/data-project-category=/g)||[]).length,3);
+ assert.equal((projectsPage().match(/data-project-category=/g)||[]).length,6);
+ for(const page of [projectsPage(),learningPage()]) assert.equal((page.match(/<h1[ >]/g)||[]).length,1);
+});
+test('Screenshot tours preserve source links and do not advertise a broken Expense demo',()=>{
+ const expense=projects.find(p=>p.id==='expense');
+ assert.equal(expense.demo,undefined);
+ assert.equal(expense.gallery.length,2);
+ assert.match(caseStudy(expense),/ExpenseManagementSystem/);
+ for(const p of projects)for(const asset of [p.screenshot,...(p.gallery||[]).map(g=>g.image)].filter(Boolean))assert.ok(existsSync(join(root,'public',asset)),asset);
+ assert.equal((learningPage().match(/<details class="module">/g)||[]).length,8);
 });
