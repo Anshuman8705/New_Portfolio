@@ -124,3 +124,9 @@ html.js [hidden]{display:none!important}
 .project-card .project-actions .small-link{justify-self:start}
 /* Improve the photographed certificate's display without altering its source. */
 img[src*="previews/ieee-internship"]{filter:brightness(1.16) contrast(1.08)}
+
+/* Secondary labels remain readable without changing the content hierarchy. */
+.portrait-caption,.hero .eyebrow,.facts-grid span,.image-hint{font-size:12px}
+.education-row .eyebrow{font-size:12px}
+@media(max-width:720px){.portrait{grid-template-columns:140px minmax(0,1fr)}.portrait-caption{font-size:11px;padding:6px}.portrait-caption .icon{width:11px;height:11px}}
+@media(max-width:380px){.portrait{grid-template-columns:120px minmax(0,1fr);gap:12px}.portrait figcaption strong{font-size:15px}.portrait-caption{font-size:10px}}

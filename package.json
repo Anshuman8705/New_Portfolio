@@ -10,7 +10,10 @@
     "preview": "node scripts/serve.mjs",
     "test": "node --test tests/*.test.mjs",
     "check": "npm test && npm run build",
-    "resume": "python scripts/build_resume.py"
+    "resume": "python scripts/build_resume.py",
+    "export": "npm run build && node scripts/sync-export.mjs"
   },
-  "engines": {"node": ">=20"}
+  "engines": {
+    "node": ">=20"
+  }
 }

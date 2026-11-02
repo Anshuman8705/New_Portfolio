@@ -40,3 +40,8 @@ The existing `vercel.json` uses `npm run build` and serves `dist/`. Publish from
 The public Web3Forms identifier is intended for the browser. Never place private credentials in public assets. Contact validation is tested with mocked responses; real inbox delivery requires a manual check. Videos load only when requested.
 
 The homepage features three projects; `/projects/` retains all six and video walkthroughs. `/learning/` contains the complete experience timeline and eight Fab Lab modules. Screenshots for Expense Management were captured from the running development app with synthetic data; ANSHUVO was captured from its live demo, and Homely Hub uses the screenshot in its source repository. Evidence summaries link to repository notes and distinguish reported results from newly run checks.
+
+
+## Maintaining the static export
+
+Use `npm run export` after source changes to refresh the root HTML/assets and remove obsolete hashed bundles. Vercel builds `dist/` directly. The active renderer is `src/templates.mjs`; obsolete React/Vite entrypoints have been removed. Project screenshots receive content-hashed URLs under `/assets/versioned/` and immutable caching; replacing an image produces a new URL. Legacy NimbusMart URLs redirect through `vercel.json`.

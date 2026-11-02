@@ -19,18 +19,28 @@ const js=readFileSync(join(root,'src/ui.js'),'utf8').replace("'./form.mjs'",JSON
 for(const [name,content] of [[formName,form],[cssName,css],[jsName,js]])writeFileSync(join(dist,name),content);
 const assetNames={css:cssName,js:jsName};
 const preview=process.env.VERCEL_ENV==='preview'||process.env.PORTFOLIO_NOINDEX==='1';
+// Content-addressed project images can be cached without serving stale revisions.
+const versionedDir=join(dist,'assets/versioned');mkdirSync(versionedDir,{recursive:true});
+const imageUrls=new Map();
+for(const p of projects){
+ for(const url of [p.screenshot,...(p.gallery||[]).map(g=>g.image)].filter(Boolean)){
+  if(imageUrls.has(url))continue;
+  const bytes=readFileSync(join(root,'public',url));
+  const name=url.split('/').pop();const dot=name.lastIndexOf('.');
+  const versioned=`/assets/versioned/${name.slice(0,dot)}-${hash(bytes)}${name.slice(dot)}`;
+  writeFileSync(join(dist,versioned),bytes);imageUrls.set(url,versioned);
+ }
+}
+const versionImages=html=>{for(const [original,versioned] of imageUrls)html=html.replaceAll(original,versioned);return html;};
 const pages=[{path:'/',filename:'index.html',home:true,body:homePage()},
- {path:'/projects/',filename:'projects/index.html',body:projectsPage(),title:'Projects & walkthroughs — Anshuman Agrawal'},
- {path:'/learning/',filename:'learning/index.html',body:learningPage(),title:'Experience & learning — Anshuman Agrawal'},
+ {path:'/projects/',filename:'projects/index.html',body:projectsPage(),title:'Projects & walkthroughs — Anshuman Agrawal',description:'Explore six projects by Anshuman Agrawal: machine learning, .NET, commerce and learning tools, with source code, screenshots and walkthroughs.'},
+ {path:'/learning/',filename:'learning/index.html',body:learningPage(),title:'Experience & learning — Anshuman Agrawal',description:'Anshuman Agrawal’s internships, technical leadership and eight Digital Fablab learning modules in software, electronics and fabrication.'},
  ...projects.map(p=>({path:p.href,filename:`projects/${p.id}/index.html`,body:caseStudy(p),title:`${p.title} — Anshuman Agrawal`,description:p.body})),
  ...certificates.map(c=>({path:c.href,filename:`certificates/${c.id}/index.html`,body:certificatePage(c),title:`${c.title} — Anshuman Agrawal`,description:`${c.kind} · ${c.issuer} · ${c.date}. ${c.description}`})),
  {path:'/privacy/',filename:'privacy/index.html',body:privacyPage(),title:'Privacy & site information — Anshuman Agrawal',description:'How contact messages, videos and documents work on this portfolio.'},
  {path:'/404.html',filename:'404.html',body:notFoundPage(),title:'Page not found — Anshuman Agrawal',noindex:true}];
-for(const page of pages){const file=join(dist,page.filename);mkdirSync(dirname(file),{recursive:true});writeFileSync(file,layout({...page,noindex:preview||page.noindex,assetNames}));}
-// Preserve the old case-study link on static hosts as well as Vercel.
-const legacyPage=join(dist,'projects/nimbusmart/index.html');
-mkdirSync(dirname(legacyPage),{recursive:true});
-writeFileSync(legacyPage,`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, follow"><meta http-equiv="refresh" content="0;url=/projects/anshuvo/"><link rel="canonical" href="${meta.siteUrl}/projects/anshuvo/"><title>ANSHUVO — project page moved</title></head><body><p>This project is now ANSHUVO. <a href="/projects/anshuvo/">Continue to the case study</a>.</p></body></html>`);
+for(const page of pages){const file=join(dist,page.filename);mkdirSync(dirname(file),{recursive:true});writeFileSync(file,versionImages(layout({...page,noindex:preview||page.noindex,assetNames})));}
+// Legacy project URLs are handled by permanent host redirects.
 const indexable=pages.filter(p=>!p.noindex);
 writeFileSync(join(dist,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${indexable.map(p=>`\n<url><loc>${meta.siteUrl}${p.path}</loc></url>`).join('')}\n</urlset>\n`);
 writeFileSync(join(dist,'robots.txt'),`User-agent: *\n${preview?'Disallow: /':'Allow: /'}\nSitemap: ${meta.siteUrl}/sitemap.xml\n`);

@@ -765,12 +765,13 @@ export const projects = [
     "title": "Flashy Learn",
     "role": "Innovo Hackathon, SSGMCE · team project",
     "thumb": "cards",
-    "body": "A collaborative JavaScript flashcard application using the Open Trivia Database API. Users choose question categories and quiz length, then reveal answers through animated cards.",
+    "body": "A collaborative Python and Flask study prototype that generates topic-based flashcards with Gemini, stores cards in SQLite, and tracks learning progress for signed-in users.",
     "tags": [
-      "JavaScript",
-      "HTML",
-      "CSS",
-      "Open Trivia Database API"
+      "Python",
+      "Flask",
+      "Gemini API",
+      "SQLAlchemy",
+      "SQLite"
     ],
     "repo": "https://github.com/Anshuman8705/Flashy_Learn",
     "href": "/projects/flashy/",
@@ -794,7 +795,7 @@ export const projects = [
       },
       {
         "heading": "Implementation evidence",
-        "body": "Uses asynchronous API requests, JSON parsing, dynamic DOM updates, loading states and error handling to deliver trivia flashcards."
+        "body": "The Flask backend handles accounts and sessions, requests topic-based flashcards from Gemini, and persists users, cards and scores through SQLAlchemy with SQLite. The frontend uses HTML, CSS and JavaScript."
       }
     ]
   },
