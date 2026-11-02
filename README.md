@@ -18,7 +18,7 @@ Portfolio of an Information Technology undergraduate at SSGMCE Shegaon and **AI/
 
 Includes One Smarter (August 2026–present), IEEE EMBS (1–30 June 2026), Webstack Academy (3 September–20 November 2025), Digital Fablab mentoring and Robotics and Automation Society leadership.
 
-Eleven records cover CS50 Python, IEEE and Webstack internship completion, AWS Academy Cloud Foundations, Red Hat RH104, iBase AI/ML training, NxtWave, Pursuit 2026, TCS Tech Day appreciation, CertifyEra Advanced DotNet and SQL Server, and NPTEL Data Base Management System. Original local documents are retained where supplied; the two newer credentials link to their source LinkedIn posts. Training and appreciation are labelled accurately, not presented as professional certifications.
+Fifteen records cover CS50 Python, IEEE and Webstack internship completion, AWS Academy Cloud Foundations, Red Hat RH104, iBase AI/ML training, NxtWave, Pursuit 2026, TCS Tech Day appreciation, CertifyEra Advanced DotNet and SQL Server, NPTEL Data Base Management System and Operating System Fundamentals, AWS Cloud Developing, and Red Hat RH124 and DO180. All fifteen entries include local documents and previews. The DotNet and DBMS PDFs are now included, and the ESP32 and NxtWave previews use higher-resolution originals. NxtWave retains the crop present in its source. Training and appreciation are labelled accurately, not presented as professional certifications.
 
 ## Run and maintain
 

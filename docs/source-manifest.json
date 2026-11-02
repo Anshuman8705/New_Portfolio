@@ -28,5 +28,53 @@
     "path": "public/assets/certificates/documents/ai-ml-training.pdf",
     "sha256": "176bacac560004bac928ac144404f3bb2d49907fc25bfd27446786f350ad61d3",
     "processing": "Unchanged source PDF; web previews were rendered separately."
+  },
+  {
+    "sourceFilename": "Certificate_Anshuman_Agrawal_DotNet.pdf",
+    "path": "public/assets/certificates/documents/certifyera-dotnet.pdf",
+    "sha256": "0d31c4ab6ca5db02cf81ecdd6e1759a540fc23b3a01e50cf7208ea07459b9c51",
+    "processing": "Unchanged source document; web previews rendered separately."
+  },
+  {
+    "sourceFilename": "NPTEL_DBMS.pdf",
+    "path": "public/assets/certificates/documents/nptel-dbms.pdf",
+    "sha256": "94bab9b6b39536041c2346448ae8783e04bd31b10c9f61b115977ce97ce725ae",
+    "processing": "Unchanged source document; web previews rendered separately."
+  },
+  {
+    "sourceFilename": "NPTEL_OS.pdf",
+    "path": "public/assets/certificates/documents/nptel-os.pdf",
+    "sha256": "871d4f7c86162cd670f0dc89e3d4eb8dbcebb43a4a977ae6aec2307e3bb12a93",
+    "processing": "Unchanged source document; web previews rendered separately."
+  },
+  {
+    "sourceFilename": "AWS_Academy_Graduate___Cloud_Developing___Training_Badge_Badge20261029-20-c3p8o1.pdf",
+    "path": "public/assets/certificates/documents/aws-developing.pdf",
+    "sha256": "705aa5eac5c08f789f0a044632c85ab58357f75873673a38d9ad5fe3609d389e",
+    "processing": "Unchanged source document; web previews rendered separately."
+  },
+  {
+    "sourceFilename": "CourseAttendance20261030-21-ddytmj.pdf",
+    "path": "public/assets/certificates/documents/redhat-rh124.pdf",
+    "sha256": "9c0dbf8c16f17ac1beb1c957bd4422f5476af1b5b703b43308e65d64b31a8bf6",
+    "processing": "Unchanged source document; web previews rendered separately."
+  },
+  {
+    "sourceFilename": "CourseAttendance20261030-21-4pmtik.pdf",
+    "path": "public/assets/certificates/documents/redhat-do180.pdf",
+    "sha256": "d53e5ee003ef2f1f53f190f4894fb67fe052691f0f6809c3e762550aa7268bed",
+    "processing": "Unchanged source document; web previews rendered separately."
+  },
+  {
+    "sourceFilename": "ESP32 workshop certificate.jpeg",
+    "path": "public/assets/certificates/documents/prototype-workshop.jpeg",
+    "sha256": "9630d92cd4eb85a5c961f0d3534cb9516bd76d0ee6d4ea93982b039436d79333",
+    "processing": "Unchanged source document; web previews rendered separately."
+  },
+  {
+    "sourceFilename": "NXTWave.png",
+    "path": "public/assets/certificates/documents/nxtwave-genai.png",
+    "sha256": "addadca5dbd014fd14d946de5c407c04571e775b548fd0f6504aac9ecdf4e8bb",
+    "processing": "Unchanged source document; web previews rendered separately."
   }
 ]

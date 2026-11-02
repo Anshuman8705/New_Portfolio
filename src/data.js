@@ -22,8 +22,11 @@ export const certificates = [
     "credentialId": "CERA102026000127",
     "sourceUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7521552020923629568/",
     "featured": true,
-    "format": "Credential record",
-    "href": "/certificates/certifyera-dotnet/"
+    "format": "PDF",
+    "href": "/certificates/certifyera-dotnet/",
+    "document": "/assets/certificates/documents/certifyera-dotnet.pdf",
+    "preview": "/assets/certificates/previews/certifyera-dotnet.webp",
+    "thumbnail": "/assets/certificates/previews/certifyera-dotnet-thumb.webp"
   },
   {
     "id": "nptel-dbms",
@@ -36,8 +39,11 @@ export const certificates = [
     "credentialId": "NPTEL26CS117S368000002",
     "sourceUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7521123673932673026/",
     "featured": true,
-    "format": "Credential record",
-    "href": "/certificates/nptel-dbms/"
+    "format": "PDF",
+    "href": "/certificates/nptel-dbms/",
+    "document": "/assets/certificates/documents/nptel-dbms.pdf",
+    "preview": "/assets/certificates/previews/nptel-dbms.webp",
+    "thumbnail": "/assets/certificates/previews/nptel-dbms-thumb.webp"
   },
   {
     "id": "cs50p",
@@ -147,8 +153,7 @@ export const certificates = [
     "group": "workshop",
     "date": "25–28 March 2026",
     "description": "Participation in the workshop at the Pursuit 2026 national-level technical symposium in Shegaon.",
-    "document": "/assets/certificates/documents/prototype-workshop.jpg",
-    "originalDocument": "/assets/certificates/documents/prototype-workshop-original.png",
+    "document": "/assets/certificates/documents/prototype-workshop.jpeg",
     "preview": "/assets/certificates/previews/prototype-workshop.webp",
     "thumbnail": "/assets/certificates/previews/prototype-workshop-thumb.webp",
     "credentialUrl": "",
@@ -164,8 +169,7 @@ export const certificates = [
     "group": "workshop",
     "date": "23 February 2025",
     "description": "Completion of the workshop’s hands-on project. The supplied image is cropped at its right edge.",
-    "document": "/assets/certificates/documents/nxtwave-genai.jpg",
-    "originalDocument": "/assets/certificates/documents/nxtwave-genai-original.png",
+    "document": "/assets/certificates/documents/nxtwave-genai.png",
     "preview": "/assets/certificates/previews/nxtwave-genai.webp",
     "thumbnail": "/assets/certificates/previews/nxtwave-genai-thumb.webp",
     "credentialUrl": "",
@@ -191,6 +195,70 @@ export const certificates = [
     "format": "Image",
     "note": "Rotated for readability. This is event appreciation, not a TCS internship or professional certification.",
     "href": "/certificates/tcs-appreciation/"
+  },
+  {
+    "id": "nptel-os",
+    "title": "Operating System Fundamentals",
+    "issuer": "NPTEL / IIT Kharagpur",
+    "kind": "Course completion",
+    "group": "course",
+    "date": "2026 · course session July–October",
+    "description": "Completion of the 12-week NPTEL course in operating system fundamentals.",
+    "credentialId": "NPTEL26CS156S664400071",
+    "featured": false,
+    "href": "/certificates/nptel-os/",
+    "document": "/assets/certificates/documents/nptel-os.pdf",
+    "preview": "/assets/certificates/previews/nptel-os.webp",
+    "thumbnail": "/assets/certificates/previews/nptel-os-thumb.webp",
+    "format": "PDF"
+  },
+  {
+    "id": "aws-developing",
+    "title": "AWS Academy Graduate – Cloud Developing",
+    "issuer": "AWS Academy",
+    "kind": "Training completion",
+    "group": "course",
+    "date": "29 October 2026",
+    "description": "Cloud Developing training badge · 40 course hours.",
+    "credentialUrl": "https://www.credly.com/go/McHRRNNp",
+    "featured": false,
+    "href": "/certificates/aws-developing/",
+    "document": "/assets/certificates/documents/aws-developing.pdf",
+    "preview": "/assets/certificates/previews/aws-developing.webp",
+    "thumbnail": "/assets/certificates/previews/aws-developing-thumb.webp",
+    "format": "PDF"
+  },
+  {
+    "id": "redhat-rh124",
+    "title": "Red Hat System Administration I",
+    "issuer": "Red Hat",
+    "kind": "Course attendance",
+    "group": "course",
+    "date": "30 October 2026",
+    "description": "RH124 – RHA, version 10 · 40 credit hours.",
+    "credentialUrl": "https://www.credly.com/badges/6e4526ae-cc35-46d5-b0d2-95345eaf179f",
+    "featured": false,
+    "href": "/certificates/redhat-rh124/",
+    "document": "/assets/certificates/documents/redhat-rh124.pdf",
+    "preview": "/assets/certificates/previews/redhat-rh124.webp",
+    "thumbnail": "/assets/certificates/previews/redhat-rh124-thumb.webp",
+    "format": "PDF"
+  },
+  {
+    "id": "redhat-do180",
+    "title": "Red Hat OpenShift Administration I: Operating a Production Cluster",
+    "issuer": "Red Hat",
+    "kind": "Course attendance",
+    "group": "course",
+    "date": "30 October 2026",
+    "description": "DO180 – RHA, version 4.18 · 32 credit hours.",
+    "credentialUrl": "https://www.credly.com/badges/6f4ff48c-20cc-4a15-b0f0-04a1f3a9fd95",
+    "featured": false,
+    "href": "/certificates/redhat-do180/",
+    "document": "/assets/certificates/documents/redhat-do180.pdf",
+    "preview": "/assets/certificates/previews/redhat-do180.webp",
+    "thumbnail": "/assets/certificates/previews/redhat-do180-thumb.webp",
+    "format": "PDF"
   }
 ];
 
