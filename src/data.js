@@ -125,7 +125,7 @@ export const certificates = [
     "preview": "/assets/certificates/previews/redhat-rh104.webp",
     "thumbnail": "/assets/certificates/previews/redhat-rh104-thumb.webp",
     "credentialUrl": "https://www.credly.com/badges/ad2b046a-6122-4405-9d9b-558c78b3906a",
-    "featured": true,
+    "featured": false,
     "format": "PDF",
     "href": "/certificates/redhat-rh104/"
   },

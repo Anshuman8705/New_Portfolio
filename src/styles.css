@@ -104,3 +104,23 @@ html.js [hidden]{display:none!important}
 .project-screens{margin:28px 0 44px}.project-screens h2{margin-bottom:20px}.project-screens figure{margin:0;background:#f5f4f0;border:1px solid #deded5;border-radius:12px;overflow:hidden}.project-screens img{display:block;width:100%;height:auto}.project-screens figcaption{padding:14px 20px;font-size:13px;color:#58645d}.screen-step{margin-top:16px;border:1px solid #deded5;border-radius:12px}.screen-step summary{cursor:pointer;display:flex;justify-content:space-between;padding:18px;font-weight:600}.screen-step figure{border:0;border-radius:0}.screen-step[open] summary{border-bottom:1px solid #deded5}
 .learning-teaser{display:flex;gap:32px;align-items:center;justify-content:space-between}.learning-teaser p{max-width:680px}.learning-teaser .section-heading{margin-bottom:15px}.learning-teaser .button{flex-shrink:0}.selected-projects .project-card-body{padding:24px}.selected-projects .project-actions{flex-wrap:wrap;gap:16px}
 @media(max-width:1000px){.selected-projects{grid-template-columns:1fr}.selected-projects .project-screenshot img{height:auto;max-height:400px;object-fit:cover;object-position:top}.learning-teaser{display:block}.learning-teaser .button{margin-top:24px}}
+
+/* Audit fixes: consistent page gutters, readable cards and complete previews. */
+.project-archive{padding-top:12px}
+.project-card .tags span,.project-card .card-meta,.certificate-copy .card-meta,
+.project-overview .overview-note,.project-overview .overview-top,.project-screenshot span{font-size:12px}
+.project-screenshot img,.selected-projects .project-screenshot img{height:225px;max-height:none;object-fit:contain;object-position:center}
+.project-overview{container-type:inline-size}
+.flow-node strong{overflow-wrap:normal;word-break:normal}
+@container (max-width:420px){
+ .flow{flex-direction:column;align-items:stretch;gap:6px}
+ .flow-node{display:flex;align-items:center;gap:12px;padding:8px 12px}
+ .flow-node strong{font-size:13px}
+ .flow-node .node-index{margin:0;font-size:11px}
+ .flow-arrow{align-self:center;transform:rotate(90deg);width:12px;height:12px}
+}
+.project-card .project-actions{display:grid;grid-template-columns:1fr;gap:0;margin-top:0}
+.project-card .project-actions a{min-height:44px;font-size:13px}
+.project-card .project-actions .small-link{justify-self:start}
+/* Improve the photographed certificate's display without altering its source. */
+img[src*="previews/ieee-internship"]{filter:brightness(1.16) contrast(1.08)}
