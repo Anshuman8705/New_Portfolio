@@ -3,7 +3,7 @@ import { dirname, resolve, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { projects, certificates, meta } from '../src/data.js';
-import { layout, homePage, caseStudy, certificatePage, privacyPage, notFoundPage, projectsPage, learningPage } from '../src/templates.mjs';
+import { layout, homePage, caseStudy, certificatePage, privacyPage, notFoundPage, projectsPage, learningPage, experiencePage } from '../src/templates.mjs';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const dist=join(root,'dist');
@@ -34,7 +34,8 @@ for(const p of projects){
 const versionImages=html=>{for(const [original,versioned] of imageUrls)html=html.replaceAll(original,versioned);return html;};
 const pages=[{path:'/',filename:'index.html',home:true,body:homePage()},
  {path:'/projects/',filename:'projects/index.html',body:projectsPage(),title:'Projects & walkthroughs — Anshuman Agrawal',description:'Explore six projects by Anshuman Agrawal: machine learning, .NET, commerce and learning tools, with source code, screenshots and walkthroughs.'},
- {path:'/learning/',filename:'learning/index.html',body:learningPage(),title:'Experience & learning — Anshuman Agrawal',description:'Anshuman Agrawal’s internships, technical leadership and eight Digital Fablab learning modules in software, electronics and fabrication.'},
+ {path:'/learning/',filename:'learning/index.html',body:learningPage(),title:'Fab Lab & learning — Anshuman Agrawal',description:'Explore Anshuman Agrawal’s eight Digital Fablab modules, hardware prototypes and hands-on learning in software, electronics and fabrication.'},
+ {path:'/experience/',filename:'experience/index.html',body:experiencePage(),title:'Experience & leadership — Anshuman Agrawal',description:'Anshuman Agrawal’s internships, mentoring and technical leadership in machine learning, software development and robotics.'},
  ...projects.map(p=>({path:p.href,filename:`projects/${p.id}/index.html`,body:caseStudy(p),title:`${p.title} — Anshuman Agrawal`,description:p.body})),
  ...certificates.map(c=>({path:c.href,filename:`certificates/${c.id}/index.html`,body:certificatePage(c),title:`${c.title} — Anshuman Agrawal`,description:`${c.kind} · ${c.issuer} · ${c.date}. ${c.description}`})),
  {path:'/privacy/',filename:'privacy/index.html',body:privacyPage(),title:'Privacy & site information — Anshuman Agrawal',description:'How contact messages, videos and documents work on this portfolio.'},

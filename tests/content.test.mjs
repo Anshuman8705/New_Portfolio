@@ -6,7 +6,7 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { profile,projects,certificates,projectVideos,experience,fablab,meta,contact } from '../src/data.js';
 import { validateMessage } from '../src/form.mjs';
-import { escapeHtml,safeJson,homePage,caseStudy,certificatePage,layout,projectsPage,learningPage } from '../src/templates.mjs';
+import { escapeHtml,safeJson,homePage,caseStudy,certificatePage,layout,projectsPage,learningPage,experiencePage } from '../src/templates.mjs';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const valid={name:'Anshuman Agrawal',email:'test@example.com',message:'A project enquiry.'};
 test('All six projects have unique stable IDs and real source links',()=>{assert.equal(projects.length,6);assert.equal(new Set(projects.map(p=>p.id)).size,6);projects.forEach(p=>{assert.match(p.repo,/^https:\/\/github\.com\/Anshuman8705\//);assert.equal(p.href,`/projects/${p.id}/`);});});
@@ -62,4 +62,13 @@ test('Screenshot tours preserve source links and do not advertise a broken Expen
  assert.match(caseStudy(expense),/ExpenseManagementSystem/);
  for(const p of projects)for(const asset of [p.screenshot,...(p.gallery||[]).map(g=>g.image)].filter(Boolean))assert.ok(existsSync(join(root,'public',asset)),asset);
  assert.equal((learningPage().match(/<details class="module">/g)||[]).length,8);
+});
+
+test('Fab Lab and experience links lead to distinct focused pages',()=>{
+ assert.match(homePage(),/href="\/experience\/">Full experience/);
+ assert.match(learningPage(),/<h1>Fab Lab & learning<\/h1>/);
+ assert.doesNotMatch(learningPage(),/class="timeline"/);
+ assert.equal((learningPage().match(/<details class="module">/g)||[]).length,8);
+ assert.match(experiencePage(),/class="timeline"/);
+ assert.doesNotMatch(experiencePage(),/<details class="module">/);
 });
