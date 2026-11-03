@@ -516,8 +516,8 @@ export const projects = [
     "role": "IEEE EMBS Pune Chapter AI/ML internship · team project",
     "thumb": "heat",
     "featured": true,
-    "body": "A research prototype for seven-class skin-lesion classification, combining an EfficientNetB3 model, Grad-CAM visualisations and a Streamlit application for reviewing results.",
-    "contribution": "I co-developed DermAI Monitor with Tanushri Khawale, with both of us contributing equally to the project. Our combined work brought together model development, evaluation and the supporting application.",
+    "body": "A seven-class skin-lesion research prototype, from EfficientNetB3 predictions to Grad-CAM review and PDF reports.",
+    "contribution": "Co-developed equally with Tanushri Khawale during the IEEE EMBS internship: model development, evaluation and the supporting application.",
     "figures": [
       {
         "value": "68.97%",
@@ -542,12 +542,8 @@ export const projects = [
     },
     "details": [
       {
-        "heading": "Implementation",
-        "body": "The documented pipeline uses a merged HAM10000 and ISIC 2019 dataset, two-phase transfer learning, focal loss and oversampling. The application adds Grad-CAM visualisation, an ABCD-style score, longitudinal records and PDF reporting."
-      },
-      {
-        "heading": "Evaluation and limitations",
-        "body": "The figures above are the project's recorded evaluation results, not evidence of clinical validation. Performance across individual classes and the unsafe low-confidence fallback need to be considered alongside overall accuracy."
+        "heading": "From model to review",
+        "body": "Merged HAM10000 and ISIC 2019 data, two-phase transfer learning, focal loss and oversampling support classification. Streamlit adds Grad-CAM, longitudinal records and PDF reports."
       }
     ],
     "tags": [
@@ -580,9 +576,10 @@ export const projects = [
     "evidence": {
       "value": "2,343",
       "label": "Held-out test images",
-      "detail": "68.97% reported accuracy · 0.9143 macro ROC-AUC. Research evaluation, not clinical validation.",
+      "detail": "Project-reported evaluation on 2,343 held-out images; not clinical validation.",
       "url": "https://github.com/Anshuman8705/Skin_Classification_DermAI#results"
-    }
+    },
+    "previewLabel": "Classification & visual explanation"
   },
   {
     "id": "expense",
@@ -590,20 +587,16 @@ export const projects = [
     "role": ".NET training project · One Smarter, Inc. · team project",
     "thumb": "bars",
     "featured": true,
-    "body": "An ASP.NET Core MVC application for recording income and expenses, setting monthly category budgets, and exploring spending through dashboards and reports.",
-    "contribution": "I co-developed the Expense & Budget Management System with Rahul Paghrut, sharing the project work equally. Our combined work delivered the application's account management, transaction tracking, budgeting and reporting features.",
+    "body": "Track income, spending and monthly budgets in an account-scoped .NET dashboard.",
+    "contribution": "Co-developed equally with Rahul Paghrut, covering accounts, transaction tracking, budgets and reports.",
     "details": [
       {
-        "heading": "Architecture",
-        "body": "Controllers handle web requests, services contain business rules, and Entity Framework Core accesses SQLite. Account-scoped queries use the signed-in user's identity rather than trusting a user ID submitted in a form."
+        "heading": "Keep money and access rules explicit",
+        "body": "Controllers handle requests, services calculate with C# decimal values, and EF Core accesses SQLite. Queries use the signed-in identity to isolate each account."
       },
       {
-        "heading": "Money calculations",
-        "body": "The implementation uses C# decimal values and aggregates amounts in the service layer. This keeps the calculation approach explicit without relying on floating-point SQL sums."
-      },
-      {
-        "heading": "Testing",
-        "body": "The public repository includes a smoke-test script covering registration, sign-in, transactions, budget calculations and isolation between users. Its setup and execution instructions are in the README; no current pass count is asserted here."
+        "heading": "Check the complete workflow",
+        "body": "The repository includes smoke tests for registration, transactions, budget calculations and user isolation. See the README for execution instructions."
       }
     ],
     "tags": [
@@ -650,9 +643,10 @@ export const projects = [
     "evidence": {
       "value": "4 tables",
       "label": "Account-scoped data model",
-      "detail": "Users, categories, transactions and budgets; amounts calculated with C# decimal.",
+      "detail": "Users, categories, transactions and budgets, scoped to each account.",
       "url": "https://github.com/Anshuman8705/ExpenseManagementSystem#database-structure"
-    }
+    },
+    "previewLabel": "Spending, budgets & reports"
   },
   {
     "id": "anshuvo",
@@ -660,19 +654,15 @@ export const projects = [
     "role": "Full-stack e-commerce demonstration",
     "thumb": "cart",
     "featured": true,
-    "body": "A React and Express shopping application with accounts, guest and account carts, inventory, reviews, order management and an administrator area. Payments are simulated.",
+    "body": "A React storefront connected to carts, inventory and transactional orders through an Express API.",
     "details": [
       {
-        "heading": "Application",
-        "body": "The project evolved from a static storefront into a React application backed by an Express API and SQLite. Customer and administrator screens share the same catalogue and order records."
+        "heading": "One order, consistent stock",
+        "body": "The server validates checkout and updates orders and stock in one database transaction. Guest and account carts share the catalogue; administrators manage products and orders."
       },
       {
-        "heading": "Order processing",
-        "body": "The server validates checkout data and updates order records and stock within a database transaction. The repository includes API, validation and user-flow tests."
-      },
-      {
-        "heading": "Demo boundaries",
-        "body": "This is a learning project, not a real retailer. No actual goods are sold, shipped or charged for. The active app uses USD demo prices and simulated checkout. The legacy India/INR package is separate and unapplied. Hosted SQLite storage requires a persistence plan."
+        "heading": "What the demo covers",
+        "body": "API, validation and shopping-flow tests accompany the code. Prices use USD and checkout is simulated. Hosted SQLite still requires a persistence plan."
       }
     ],
     "tags": [
@@ -711,14 +701,15 @@ export const projects = [
       "detail": "Repository records 45 passing application tests on 1 November 2026, covering storefront, API and cart flows.",
       "url": "https://github.com/Anshuman8705/Anshuvo#verification"
     },
-    "demoNote": "The hosted demo may take a moment to wake up. Checkout uses test details only."
+    "demoNote": "The hosted demo may take a moment to wake up. Checkout uses test details only.",
+    "previewLabel": "Browse products & build a cart"
   },
   {
     "id": "homely",
     "title": "Homely Hub",
     "role": "Webstack Academy MERN internship",
     "thumb": "house",
-    "body": "A full-stack property-rental platform for tenants and owners, with authentication, searchable listings, image uploads and an administrator dashboard.",
+    "body": "A MERN rental platform connecting searchable properties with tenant, owner and administrator workflows.",
     "tags": [
       "React",
       "Node.js",
@@ -744,28 +735,21 @@ export const projects = [
     "certificateId": "webstack-internship",
     "details": [
       {
-        "heading": "Core workflows",
-        "body": "Tenant and owner workflows include authentication, filtered listings, image uploads and an administrator dashboard."
-      },
-      {
-        "heading": "Technology",
-        "body": "The supplied project description identifies React, Node.js, Express and MongoDB, with JWT-based authentication."
-      },
-      {
-        "heading": "Evidence",
-        "body": "A public repository and the owner-supplied Webstack video accompany the internship certificate."
+        "heading": "Listings and access",
+        "body": "React presents searchable listings and image uploads. Express and MongoDB store property records, with JWT authentication for account access."
       }
     ],
     "screenshot": "/assets/projects/homely.jpg",
     "screenshotAlt": "Homely Hub rental listing interface with property cards and search controls",
-    "screenshotCaption": "Project screenshot supplied in the Homely Hub repository."
+    "screenshotCaption": "Project screenshot supplied in the Homely Hub repository.",
+    "previewLabel": "Searchable rental listings"
   },
   {
     "id": "flashy",
     "title": "Flashy Learn",
     "role": "Innovo Hackathon, SSGMCE · team project",
     "thumb": "cards",
-    "body": "A live AI study app that turns topics into flashcards without student signup. Learners flip cards, revisit saved topics and join teacher-led classrooms with a code.",
+    "body": "Generate a topic-based deck, flip cards in place and revisit saved topics—without student signup.",
     "tags": [
       "Python",
       "Flask",
@@ -787,28 +771,16 @@ export const projects = [
     ],
     "overviewNote": "Guest learning · saved topics · code-based classrooms",
     "problem": "Make it easy to move from a topic to a reusable flashcard deck, and let teachers share study material with a class.",
-    "boundary": "AI-generated answers can contain errors and should be checked against course material. Guest decks belong to a browser session; clearing cookies or switching browsers starts a separate session. Generation depends on Google API availability and quota.",
-    "contribution": "Originally built collaboratively with Mohammad Ammar, Kamran Ali and Kartik Hande during the Innovo Hackathon at SSGMCE. The application has since been extended with guest study sessions, classroom workflows and a hosted deployment.",
+    "boundary": "AI answers need checking. Guest decks are tied to browser cookies. Generation depends on Google availability and quota.",
+    "contribution": "Hackathon collaboration with Mohammad Ammar, Kamran Ali and Kartik Hande; later extended with guest study sessions, classrooms and a hosted deployment.",
     "details": [
       {
-        "heading": "Study without leaving the page",
-        "body": "Enter a topic to generate a deck, reveal answers and move through the cards on the home page. Saved cards survive refresh and are grouped by topic. A confirmation dialog protects topic deletion; bookmarks, ratings and study scores support review."
+        "heading": "From personal study to a classroom",
+        "body": "Teachers share cards through classes with eight-character join codes. Learners copy decks without duplicate imports. Topic selection, bookmarks and confirmed deletion keep study on one page."
       },
       {
-        "heading": "Classrooms for teachers and learners",
-        "body": "Teachers create an account, create classes, view enrolled learners and share flashcards. Learners join with an eight-character class code and can copy shared cards into their personal study topics. Repeated imports skip cards already copied."
-      },
-      {
-        "heading": "Generation resilience",
-        "body": "The Flask backend calls Gemini with bounded retries and a configurable Flash-Lite fallback. Request timeouts limit waiting, and a clear message appears if the provider remains unavailable. Cards are persisted only after a successful, validated response."
-      },
-      {
-        "heading": "Deployment and data",
-        "body": "The live application runs on Vercel with hosted PostgreSQL through SQLAlchemy. Signed browser sessions scope personal study data; teacher passwords are hashed. SQLite remains available for local development, and static assets are served from Vercel’s public directory."
-      },
-      {
-        "heading": "Verification",
-        "body": "On 4 November 2026, all 51 automated tests passed locally, including retry recovery, fallback, classroom access and topic deletion. Live checks generated 20-card decks and confirmed that a deck remained after refresh. Automated provider tests use mocked responses; availability still depends on Google."
+        "heading": "Handle a busy AI provider",
+        "body": "Bounded retries and a configurable Flash-Lite fallback recover from transient Gemini errors. Validated cards are saved to PostgreSQL; signed sessions keep guest decks separate."
       }
     ],
     "demo": "https://flashylearn.vercel.app/",
@@ -819,14 +791,14 @@ export const projects = [
       "Teacher accounts and eight-character class codes",
       "Shared classroom cards with duplicate-safe imports"
     ],
-    "screenshot": "/assets/projects/flashy-home.png",
-    "screenshotAlt": "Live FlashyLearn topic search and saved-topic controls after generating a study deck",
-    "screenshotCaption": "Captured from the live application on 4 November 2026 in a separate guest session with sample study content.",
+    "screenshot": "/assets/projects/flashy-study.png",
+    "screenshotAlt": "A generated Photosynthesis deck with an answer revealed and saved-topic controls",
+    "screenshotCaption": "Live guest session, 4 November 2026: generated cards with one answer revealed.",
     "gallery": [
       {
-        "image": "/assets/projects/flashy-study.png",
-        "title": "Flip through a saved topic",
-        "caption": "A generated deck on the same page, with an answer revealed and controls for topic selection and card navigation."
+        "image": "/assets/projects/flashy-home.png",
+        "title": "Generate and choose a topic",
+        "caption": "Topic search and saved decks in a live guest session."
       },
       {
         "image": "/assets/projects/flashy-classroom.png",
@@ -837,18 +809,18 @@ export const projects = [
     "evidence": {
       "value": "51 tests",
       "label": "Local automated checks passed",
-      "detail": "Checked on 4 November 2026. Live generation and refresh persistence were also verified separately.",
+      "detail": "Passed locally on 4 November 2026. Live generation and refresh persistence checked separately.",
       "url": "https://github.com/Anshuman8705/Flashy_Learn#verification"
     },
-    "screenshotHeight": 900
+    "screenshotHeight": 900,
+    "previewLabel": "A generated deck, ready to study"
   },
-
   {
     "id": "dotnet",
     "title": "ASP.NET MVC exercises",
     "role": ".NET training · One Smarter, Inc.",
     "thumb": "stack",
-    "body": "Focused exercises covering MVC, model binding, validation, session and cookie state, authentication and routing—the groundwork for the budget-management application.",
+    "body": "Focused C# exercises in MVC, validation and authentication—the foundation for the budget-management application.",
     "tags": [
       "C#",
       "ASP.NET MVC",
@@ -871,14 +843,11 @@ export const projects = [
     "boundary": "Training exercises rather than a standalone deployed product.",
     "details": [
       {
-        "heading": "Topics",
-        "body": "Models, controllers, views, model binding, validation, authentication, routing, session and cookie state."
-      },
-      {
-        "heading": "Progression",
-        "body": "These exercises provided the groundwork for the Expense & Budget Management application."
+        "heading": "Practice that became an application",
+        "body": "Exercises cover model binding, routing, session and cookie state. These foundations feed into the Expense & Budget Management project."
       }
-    ]
+    ],
+    "previewLabel": "MVC & account-flow exercises"
   }
 ];
 

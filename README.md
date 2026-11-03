@@ -10,7 +10,7 @@ Portfolio of an Information Technology undergraduate at SSGMCE Shegaon and **AI/
 - **ANSHUVO:** the current e-commerce project, with React, Express, SQLite and simulated checkout. [Live demo](https://anshuvo.onrender.com/) · [Source](https://github.com/Anshuman8705/Anshuvo).
 - **Expense & Budget Management:** collaborative ASP.NET Core MVC application with Rahul Paghrut.
 - **Homely Hub:** MERN property-rental platform from the Webstack Academy internship.
-- **Flashy Learn:** live Flask and Gemini study app with guest flashcards, saved topics, teacher classrooms and code-based enrollment; PostgreSQL on Vercel. [Live demo](https://flashylearn.vercel.app/) � [Source](https://github.com/Anshuman8705/Flashy_Learn).
+- **Flashy Learn:** live Flask and Gemini study app with guest flashcards, saved topics, teacher classrooms and code-based enrollment; PostgreSQL on Vercel. [Live demo](https://flashylearn.vercel.app/) · [Source](https://github.com/Anshuman8705/Flashy_Learn).
 - **ASP.NET MVC exercises:** foundational .NET training work.
 - **Hardware and CAD:** Fusion 360 excavator arm, ESP8266 ultrasonic distance monitor, Raspberry Pi IR presence detector and ESP32 prototyping.
 
@@ -47,3 +47,5 @@ The homepage features three projects; `/projects/` retains all six and video wal
 Use `npm run export` after source changes to refresh the root HTML/assets and remove obsolete hashed bundles. Vercel builds `dist/` directly. The active renderer is `src/templates.mjs`; obsolete React/Vite entrypoints have been removed. Project screenshots receive content-hashed URLs under `/assets/versioned/` and immutable caching; replacing an image produces a new URL. Legacy NimbusMart URLs redirect through `vercel.json`.
 
 FlashyLearn case study updated on 4 November 2026 with live guest-session screenshots, deployed feature details and a link to the running app. Original hackathon collaborators remain credited.
+
+Project presentation refined on 4 November 2026: shorter case studies lead with an outcome and a working preview; collaboration and technical decisions follow. Screenshot tours are optional, and original full-size images remain linked. The homepage uses larger project previews; the archive retains all six projects. Research limitations and evidence attribution are preserved.

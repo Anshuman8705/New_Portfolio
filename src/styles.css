@@ -130,3 +130,62 @@ img[src*="previews/ieee-internship"]{filter:brightness(1.16) contrast(1.08)}
 .education-row .eyebrow{font-size:12px}
 @media(max-width:720px){.portrait{grid-template-columns:140px minmax(0,1fr)}.portrait-caption{font-size:11px;padding:6px}.portrait-caption .icon{width:11px;height:11px}}
 @media(max-width:380px){.portrait{grid-template-columns:120px minmax(0,1fr);gap:12px}.portrait figcaption strong{font-size:15px}.portrait-caption{font-size:10px}}
+
+/* Project work takes the lead; supporting detail stays compact. */
+.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.project-screenshot img,.selected-projects .project-screenshot img{height:auto;aspect-ratio:16/10;object-fit:cover;object-position:center}
+.project-screenshot{background:#edf0ec}
+.project-screenshot span{padding:12px 18px;line-height:1.5}
+.selected-projects{grid-template-columns:1fr;gap:28px}
+.selected-projects .project-card{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+.selected-projects .project-screenshot{display:flex;flex-direction:column;justify-content:center;border-bottom:0;border-right:1px solid var(--line)}
+.selected-projects .project-card-body{padding:30px;justify-content:center}
+.selected-projects .project-card h3{font-size:28px;line-height:1.2}
+.selected-projects .project-card-body>p{font-size:15px;line-height:1.7}
+.selected-projects .project-overview{border-bottom:0;border-right:1px solid var(--line);padding:30px;min-height:300px;justify-content:center;gap:25px}
+.selected-projects .flow-node strong{font-size:15px}
+.project-card .project-actions{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px}
+.project-card .tags{margin-bottom:18px}
+.case-intro{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:44px;align-items:center;padding-block:26px 38px;border-bottom:1px solid var(--line)}
+.case-intro .detail-header{padding:0;min-width:0}
+.case-intro h1{font-size:clamp(32px,3.6vw,50px);margin:0 0 12px;max-width:20ch;text-wrap:balance}
+.case-meta{color:var(--accent);font-size:12px;margin-bottom:20px}
+.case-intro .detail-lede{font-size:17px;line-height:1.65}
+.case-intro .detail-actions{gap:12px;margin-top:24px}
+.case-intro .tags{margin-top:24px}
+.case-preview{min-width:0;margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.case-preview img{width:100%;height:auto;display:block}
+.case-preview figcaption{padding:12px 16px;font-size:12px;line-height:1.6;color:var(--muted)}
+.case-preview figcaption a,.case-gallery figcaption a{display:inline-flex;gap:6px;align-items:center;margin-top:6px;color:var(--ink);text-underline-offset:3px}
+.case-preview .icon,.case-gallery .icon{width:14px;height:14px}
+.case-story{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:64px;padding-block:36px 12px}
+.case-story article{max-width:72ch}
+.case-story section{margin-bottom:26px}
+.case-story h2{font-size:20px;line-height:1.3;margin-bottom:10px}
+.case-story p{font-size:15px;line-height:1.75;color:var(--muted)}
+.case-role .small-link{margin-top:10px}
+.case-proof{border-left:1px solid var(--line);padding-left:26px;align-self:start}
+.case-proof p{font-size:13px;margin-bottom:12px}
+.case-proof .small-link{margin-bottom:24px}
+.case-proof h2{font-size:16px}
+.case-results{margin:0}
+.case-results>div{display:flex;justify-content:space-between;gap:15px;padding:10px 0;border-bottom:1px solid var(--line)}
+.case-results dt{font-size:12px;color:var(--muted)}
+.case-results dd{margin:0;font-size:14px;font-weight:650;font-variant-numeric:tabular-nums}
+.case-limit{padding-top:18px;border-top:1px solid var(--line)}
+.case-limit h2{font-size:16px}
+.case-limit p{font-size:13px}
+.case-tour{border-block:1px solid var(--line);margin-top:12px}
+.case-tour>summary{list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:20px 0;cursor:pointer;font-weight:600;font-size:18px}
+.case-tour>summary::-webkit-details-marker{display:none}
+.case-tour>summary>span{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:400;color:var(--muted)}
+.case-tour[open]>summary .icon{transform:rotate(45deg)}
+.case-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding-bottom:24px}
+.case-gallery figure{margin:0;min-width:0}
+.case-gallery img{width:100%;height:auto;border:1px solid var(--line);border-radius:8px}
+.case-gallery figcaption{font-size:12px;color:var(--muted);line-height:1.6;padding-top:10px}
+.case-gallery figcaption strong{display:block;color:var(--ink);font-size:14px;margin-bottom:5px}
+.case-gallery figcaption a{display:flex;width:fit-content}
+.case-study .next-work{margin-top:28px}
+@media(max-width:900px){.case-intro{grid-template-columns:1fr;gap:26px}.case-intro .detail-header{max-width:65ch}.case-preview{max-width:760px}.case-story{gap:30px;grid-template-columns:minmax(0,1fr) 230px}.selected-projects .project-card{grid-template-columns:1fr}.selected-projects .project-screenshot,.selected-projects .project-overview{border-right:0;border-bottom:1px solid var(--line)}.selected-projects .project-card-body{padding:24px}.selected-projects .project-overview{min-height:220px}}
+@media(max-width:600px){.project-grid{grid-template-columns:1fr}.case-story{grid-template-columns:1fr;gap:12px}.case-proof{border-left:0;border-top:1px solid var(--line);padding:22px 0 0}.case-gallery{grid-template-columns:1fr}.case-intro{padding-top:18px}.case-intro .detail-lede{font-size:16px}.case-tour>summary{font-size:17px}.case-preview figcaption{padding:12px}.selected-projects .project-card h3{font-size:25px}}
