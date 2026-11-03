@@ -765,40 +765,84 @@ export const projects = [
     "title": "Flashy Learn",
     "role": "Innovo Hackathon, SSGMCE · team project",
     "thumb": "cards",
-    "body": "A collaborative Python and Flask study prototype that generates topic-based flashcards with Gemini, stores cards in SQLite, and tracks learning progress for signed-in users.",
+    "body": "A live AI study app that turns topics into flashcards without student signup. Learners flip cards, revisit saved topics and join teacher-led classrooms with a code.",
     "tags": [
       "Python",
       "Flask",
       "Gemini API",
+      "PostgreSQL",
       "SQLAlchemy",
-      "SQLite"
+      "Vercel"
     ],
     "repo": "https://github.com/Anshuman8705/Flashy_Learn",
     "href": "/projects/flashy/",
     "category": "Learning tools",
     "categoryId": "tools",
-    "year": "2025",
-    "overviewLabel": "Hackathon build",
+    "year": "2025–2026",
+    "overviewLabel": "From topic to study session",
     "overview": [
-      "Study topic",
-      "Flashcard deck",
-      "Review & learn"
+      "Search a topic",
+      "Generate & flip",
+      "Save or share"
     ],
-    "overviewNote": "Innovo Hackathon · collaborative project",
-    "problem": "Explore a flashcard-based study tool within a hackathon deadline.",
-    "boundary": "Hackathon prototype. Refer to the repository for its current implementation.",
-    "contribution": "Built collaboratively with Mohammad Ammar, Kamran Ali and Kartik Hande.",
+    "overviewNote": "Guest learning · saved topics · code-based classrooms",
+    "problem": "Make it easy to move from a topic to a reusable flashcard deck, and let teachers share study material with a class.",
+    "boundary": "AI-generated answers can contain errors and should be checked against course material. Guest decks belong to a browser session; clearing cookies or switching browsers starts a separate session. Generation depends on Google API availability and quota.",
+    "contribution": "Originally built collaboratively with Mohammad Ammar, Kamran Ali and Kartik Hande during the Innovo Hackathon at SSGMCE. The application has since been extended with guest study sessions, classroom workflows and a hosted deployment.",
     "details": [
       {
-        "heading": "Context",
-        "body": "A collaborative study-flashcard application developed during the Innovo Hackathon at SSGMCE."
+        "heading": "Study without leaving the page",
+        "body": "Enter a topic to generate a deck, reveal answers and move through the cards on the home page. Saved cards survive refresh and are grouped by topic. A confirmation dialog protects topic deletion; bookmarks, ratings and study scores support review."
       },
       {
-        "heading": "Implementation evidence",
-        "body": "The Flask backend handles accounts and sessions, requests topic-based flashcards from Gemini, and persists users, cards and scores through SQLAlchemy with SQLite. The frontend uses HTML, CSS and JavaScript."
+        "heading": "Classrooms for teachers and learners",
+        "body": "Teachers create an account, create classes, view enrolled learners and share flashcards. Learners join with an eight-character class code and can copy shared cards into their personal study topics. Repeated imports skip cards already copied."
+      },
+      {
+        "heading": "Generation resilience",
+        "body": "The Flask backend calls Gemini with bounded retries and a configurable Flash-Lite fallback. Request timeouts limit waiting, and a clear message appears if the provider remains unavailable. Cards are persisted only after a successful, validated response."
+      },
+      {
+        "heading": "Deployment and data",
+        "body": "The live application runs on Vercel with hosted PostgreSQL through SQLAlchemy. Signed browser sessions scope personal study data; teacher passwords are hashed. SQLite remains available for local development, and static assets are served from Vercel’s public directory."
+      },
+      {
+        "heading": "Verification",
+        "body": "On 4 November 2026, all 51 automated tests passed locally, including retry recovery, fallback, classroom access and topic deletion. Live checks generated 20-card decks and confirmed that a deck remained after refresh. Automated provider tests use mocked responses; availability still depends on Google."
       }
-    ]
+    ],
+    "demo": "https://flashylearn.vercel.app/",
+    "featureList": [
+      "Topic-to-flashcard generation without student signup",
+      "Inline card flipping and saved-topic selection",
+      "Confirmed deletion of a topic and its cards",
+      "Teacher accounts and eight-character class codes",
+      "Shared classroom cards with duplicate-safe imports"
+    ],
+    "screenshot": "/assets/projects/flashy-home.png",
+    "screenshotAlt": "Live FlashyLearn topic search and saved-topic controls after generating a study deck",
+    "screenshotCaption": "Captured from the live application on 4 November 2026 in a separate guest session with sample study content.",
+    "gallery": [
+      {
+        "image": "/assets/projects/flashy-study.png",
+        "title": "Flip through a saved topic",
+        "caption": "A generated deck on the same page, with an answer revealed and controls for topic selection and card navigation."
+      },
+      {
+        "image": "/assets/projects/flashy-classroom.png",
+        "title": "Join a class or teach one",
+        "caption": "The live classroom entry page provides a class-code form and separate teacher sign-in and account creation."
+      }
+    ],
+    "evidence": {
+      "value": "51 tests",
+      "label": "Local automated checks passed",
+      "detail": "Checked on 4 November 2026. Live generation and refresh persistence were also verified separately.",
+      "url": "https://github.com/Anshuman8705/Flashy_Learn#verification"
+    },
+    "screenshotHeight": 900
   },
+
   {
     "id": "dotnet",
     "title": "ASP.NET MVC exercises",
